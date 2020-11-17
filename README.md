@@ -1,8 +1,13 @@
-# Ca::AutomationExtensions
+# Citizens Advice - Automation Extensions
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ca/automation_extensions`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This package will allow you to extend your automated testing frameworks with the following
+- Driver creation: Allowing you to simply reference your drivers with a simple method
+(**No more confusing capability classes / methods**)
+- Simple extensions to regular classes (A bit like ActiveSupport where it's needed / common)
+- Extensions to the commonly used Automation Packages (Selenium / Capybara e.t.c.), DSL's
+(Think of things like enhancing `Capybara::Node::Element` e.t.c.)
+- Patches required to allow instant fixing of bugs in upstream repos whilst fixes are
+in PR and being reviewed / merged
 
 ## Installation
 
@@ -16,23 +21,27 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install ca-automation_extensions
-
 ## Usage
 
-TODO: Write usage instructions here
+Either require all of the extensions required, or require individual bits and pieces
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+```
+$ bundle
+# Code anything relevant - Add tests for each public method!
+$ rspec
+# Ensure all tests are green
+# Commit and push
+```
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To release a new version, update the version number in `version.rb`, and then create a release
+branch where the new version can be tagged and cut on github.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ca-automation_extensions.
+Bug reports and pull requests are welcome on GitHub at
+https://github.com/citizens-advice/ca-automation_extensions
 
 ## License
 
