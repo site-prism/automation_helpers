@@ -1,6 +1,5 @@
 source "https://rubygems.org"
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+gem "citizens-advice-style", github: "citizensadvice/citizens-advice-style-ruby", tag: "v0.4.0"
 
-# Specify your gem's dependencies in ca-automation_extensions.gemspec
 gemspec
