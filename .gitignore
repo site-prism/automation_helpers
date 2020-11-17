@@ -1,4 +1,6 @@
-/coverage/
-/spec/reports/
-/tmp/
+.DS_Store
+Gemfile.lock
+coverage/*
 .idea
+.env
+*.log*

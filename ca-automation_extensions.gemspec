@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Luke Hill"]
   spec.email         = ["lukehill_uk@hotmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = "Automation Extensions for All Ruby-based CA testing frameworks"
+  spec.description   = "Automation Patches / Extensions to allow you to extend your Ruby-based testing frameworks"
   spec.homepage      = "https://www.github.com/citizens-advice/ca-automation_extensions/"
   spec.license       = "MIT"
 
