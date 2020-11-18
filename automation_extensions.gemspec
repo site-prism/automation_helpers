@@ -1,22 +1,22 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "ca/automation_extensions/version"
+require "automation_extensions/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "ca-automation_extensions"
-  spec.version       = Ca::AutomationExtensions::VERSION
+  spec.name          = "automation_extensions"
+  spec.version       = AutomationExtensions::VERSION
   spec.authors       = ["Luke Hill"]
   spec.email         = %w[luke.hill@citizensadvice.org.uk]
 
-  spec.summary       = "CA Automation Extensions"
-  spec.description   = "Automation Patches / Extensions to allow you to extend your Ruby-based testing frameworks"
-  spec.homepage      = "https://www.github.com/citizens-advice/ca-automation_extensions/"
+  spec.summary       = "Citizens Advice - Automation Extensions"
+  spec.description   = "Automation Patches / Extensions that allow you to extend your Ruby-based testing frameworks"
+  spec.homepage      = "https://www.github.com/citizens-advice/automation_extensions/"
   spec.license       = "MIT"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://www.github.com/citizens-advice/ca-automation_extensions/"
-  spec.metadata["changelog_uri"] = "https://www.github.com/citizens-advice/ca-automation_extensions/blob/main/CHANGELOG.md"
+  spec.metadata["source_code_uri"] = "https://www.github.com/citizens-advice/automation_extensions/"
+  spec.metadata["changelog_uri"] = "https://www.github.com/citizens-advice/automation_extensions/blob/main/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
