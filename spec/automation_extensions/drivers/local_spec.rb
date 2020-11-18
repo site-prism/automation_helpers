@@ -1,5 +1,3 @@
-RSpec.describe AutomationExtensions do
-  it "has a version number" do
-    expect(AutomationExtensions::VERSION).not_to be nil
-  end
+RSpec.describe AutomationExtensions::Drivers::Local do
+  it { is_expected.to be_a AutomationExtensions::Drivers::Local }
 end
