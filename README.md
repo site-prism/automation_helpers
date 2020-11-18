@@ -30,9 +30,8 @@ Either require all of the extensions required, or require individual bits and pi
 ```
 $ bundle
 # Code anything relevant - Add tests for each public method!
-$ rspec
-# Ensure all tests are green
-# Commit and push
+$ bundle exec rake
+# Ensure it's all green! Then commit and push
 ```
 
 To release a new version, update the version number in `version.rb`, and then create a release
