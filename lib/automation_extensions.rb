@@ -1,6 +1,5 @@
+require "automation_extensions/drivers"
 require "automation_extensions/version"
 
-module AutomationExtensions
-  class Error < StandardError; end
-  # Your code goes here...
-end
+# {AutomationExtensions} namespace
+module AutomationExtensions; end
