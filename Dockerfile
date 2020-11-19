@@ -4,12 +4,15 @@ RUN gem install bundler -v '2.1.4'
 
 RUN mkdir -p app && chown 1000:1000 app
 
+RUN apk add --no-cache --update git curl
+
 USER 1000
 ENV HOME=/app
 
 WORKDIR /app
 
-COPY --chown=1000:1000 Gemfile* /app/
+COPY --chown=1000:1000 Gemfile* *.gemspec /app/
+COPY --chown=1000:1000 . /app/
 
 # NOTE If running through Jenkins - This will configure internal nexus redirects
 RUN [ -n "${CA_INTERNAL_NETWORK+set}" ] && \
@@ -20,5 +23,3 @@ RUN [ -n "${CA_INTERNAL_NETWORK+set}" ] && \
   bundle config path /app/vendor
 
 RUN bundle install && bundle clean --force
-
-COPY --chown=1000:1000 . /app/
