@@ -10,7 +10,8 @@ USER 1000
 ENV HOME=/app
 WORKDIR /app
 
-COPY --chown=1000:1000 Gemfile* *.gemspec lib/automation_extensions/version.rb /app/
+COPY --chown=1000:1000 Gemfile* *.gemspec /app/
+COPY --chown=1000:1000 lib/automation_extensions/version.rb /app/lib/automation_extensions/
 COPY --chown=1000:1000 . /app/
 
 RUN bundle config path /app/vendor && bundle install && bundle clean --force
