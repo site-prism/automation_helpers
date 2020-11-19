@@ -1,4 +1,4 @@
-
+# frozen_string_literal: true
 # {AutomationExtensions} namespace
 module AutomationExtensions
   module Drivers

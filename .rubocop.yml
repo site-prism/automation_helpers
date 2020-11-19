@@ -1,5 +1,8 @@
-inherit_from: .rubocop_todo.yml
-
 inherit_gem:
   citizens-advice-style:
     - default.yml
+
+# Remove this when we move to v1 of the style gem and v1 of rubocop
+AllCops:
+  Exclude:
+    - vendor/**/*
