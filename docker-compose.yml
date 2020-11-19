@@ -6,8 +6,6 @@ services:
       context: ./
     image: "automation_extensions${PROJECT_VERSION_TAG}"
     container_name: gem-tests.test
-#    environment:
-#      BUNDLE_APP_CONFIG: ./vendor
     command: bundle exec rake
-    volumes:
-      - .:/app
+#    volumes:
+#      - .:/app
