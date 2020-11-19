@@ -1,4 +1,4 @@
-FROM ruby:2.7
+FROM ruby:2.6-alpine
 
 RUN gem install bundler -v '2.1.4'
 
