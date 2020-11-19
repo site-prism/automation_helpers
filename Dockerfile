@@ -8,7 +8,6 @@ RUN apk add --no-cache --update git curl
 
 USER 1000
 ENV HOME=/app
-
 WORKDIR /app
 
 COPY --chown=1000:1000 Gemfile* *.gemspec /app/
