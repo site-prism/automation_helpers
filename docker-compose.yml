@@ -1,0 +1,11 @@
+version: "3.2"
+
+services:
+  gem-tests:
+    build:
+      context: ./
+    image: "automation_extensions${PROJECT_VERSION_TAG}"
+    container_name: gem-tests.test
+    command: bundle exec rake
+    volumes:
+      - .:/app
