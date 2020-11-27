@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 module AutomationExtensions
   module Drivers
-    # {AutomationExtensions::Drivers::V4} namespace
     module V4
-      # The local driver configuration for running Capybara-wrapped Selenium
       class Local
         attr_reader :browser
         private :browser
