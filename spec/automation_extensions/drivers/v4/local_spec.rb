@@ -1,28 +1,27 @@
 # frozen_string_literal: true
 RSpec.describe AutomationExtensions::Drivers::V4::Local do
-  let(:local_driver_class) { described_class.new(browser) }
-  let(:current_driver) { Capybara.current_session.driver }
-
   before { Capybara.default_driver = :selenium }
-  before { local_driver_class.register }
 
   describe "#register" do
     context "for chrome" do
+      before { described_class.new(browser).register }
+  
+      let(:session) { Capybara::Session.new(:selenium) }
       let(:browser) { :chrome }
       
       it "has correct top level properties" do
-        expect(current_driver.options.keys)
+        expect(session.driver.options.keys)
           .to eq(
             %i[browser clear_local_storage clear_session_storage service capabilities]
           )
       end
 
       it "has correct desired capabilities" do
-        expect(current_driver.options[:capabilities].first.as_json).to eq({})
+        expect(session.driver.options[:capabilities].first.as_json).to eq({})
       end
 
       it "has correct browser options" do
-        expect(current_driver.options[:capabilities].last.as_json)
+        expect(session.driver.options[:capabilities].last.as_json)
           .to eq(
             {
               "browserName" => "chrome",
@@ -33,25 +32,28 @@ RSpec.describe AutomationExtensions::Drivers::V4::Local do
     end
 
     context "for firefox" do
+      before { described_class.new(browser).register }
+  
+      let(:session) { Capybara::Session.new(:selenium) }
       let(:browser) { :firefox }
 
       it "has correct top level properties" do
-        expect(current_driver.options.keys)
+        expect(session.driver.options.keys)
           .to eq(
             %i[browser clear_local_storage clear_session_storage service capabilities]
           )
       end
 
       it "has correct desired capabilities" do
-        expect(current_driver.options[:capabilities].first.as_json).to eq({})
+        expect(session.driver.options[:capabilities].first.as_json).to eq({})
       end
 
       it "has correct browser options" do
-        expect(current_driver.options[:capabilities].last.as_json)
+        expect(session.driver.options[:capabilities].last.as_json)
           .to eq(
             {
-              "browserName" => "chrome",
-              "goog:chromeOptions" => {}
+              "browserName" => "firefox",
+              "moz:firefoxOptions"=>{"log"=>{"level"=>"info"}}
             }
           )
       end
@@ -76,12 +78,10 @@ RSpec.describe AutomationExtensions::Drivers::V4::Local do
           .to eq(
             {
               "browserName" => "chrome",
-              "goog:chromeOptions" => {}
+              "se:ieOptions"=>{"enablePersistentHover"=>true, "nativeEvents"=>true}
             }
           )
       end
-
-      it { is_expected.to have_attributes({ native_events: true, persistent_hover: true }) }
     end
 
     context "for safari" do
@@ -107,8 +107,6 @@ RSpec.describe AutomationExtensions::Drivers::V4::Local do
             }
           )
       end
-
-      it { is_expected.to have_attributes({ browser_name: "safari", automatic_inspection: true }) }
     end
 
     context "for ios" do
