@@ -1,10 +1,12 @@
 # frozen_string_literal: true
+
+require "automation_extensions/drivers/v4/local"
+
 # {AutomationExtensions} namespace
 module AutomationExtensions
   module Drivers
     # The local driver configuration for running Capybara-wrapped Selenium
-    class Local
-      # TBD - Will be added as a first pass for v0.2
-    end
+    # By default we want to use the V4 local (But others may be supported)
+    Local = V4::Local
   end
 end
