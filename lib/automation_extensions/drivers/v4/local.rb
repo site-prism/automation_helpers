@@ -51,6 +51,10 @@ module AutomationExtensions
           end
         end
 
+        def options
+          Options.new(browser).options
+        end
+
         def safari?
           browser == :safari
         end
