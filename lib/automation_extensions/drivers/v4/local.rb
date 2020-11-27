@@ -10,7 +10,7 @@ module AutomationExtensions
           @browser = browser
         end
 
-        def create
+        def register
           Capybara.register_driver :selenium do |app|
             Capybara::Selenium::Driver.new(
               app,
