@@ -32,5 +32,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "selenium-webdriver", [">= 4.0.0.alpha1", "< 4.1"]
 
   spec.add_development_dependency "rake", "~> 13.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "rspec", "~> 3.8"
 end

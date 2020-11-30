@@ -30,8 +30,8 @@ module AutomationExtensions
         def service
           return unless safari?
 
-          Selenium::WebDriver::Safari.technology_preview!
-          Selenium::WebDriver::Service.safari({ args: ["--diagnose"] })
+          ::Selenium::WebDriver::Safari.technology_preview!
+          ::Selenium::WebDriver::Service.safari({ args: ["--diagnose"] })
         end
 
         # This is required because Capybara and Safari aren't quite sure what the difference
@@ -41,10 +41,12 @@ module AutomationExtensions
         # NB: Whilst using Safari TP this is required. When not using Safari TP, this can
         # be removed
         def desired_capabilities
-          Selenium::WebDriver::Remote::Capabilities.new.tap do |capabilities|
+          ::Selenium::WebDriver::Remote::Capabilities.new.tap do |capabilities|
             if safari?
               capabilities["browserName"] = "Safari Technology Preview"
-              AutomationLogger.debug("Altering Browser Name request to alleviate Capybara failure with STP.")
+              # TOFIX: Implement logger
+              # AutomationLogger.debug("Altering Browser Name request to alleviate Capybara failure with STP.")
+              warn "Altering Browser Name request to alleviate Capybara failure with STP."
             end
           end
         end
