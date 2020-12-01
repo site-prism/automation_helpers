@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-module AutomationExtensions
+module CaTesting
   module Drivers
     module V4
       class Local

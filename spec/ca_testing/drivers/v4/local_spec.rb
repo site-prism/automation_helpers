@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-RSpec.describe AutomationExtensions::Drivers::V4::Local do
+RSpec.describe CaTesting::Drivers::V4::Local do
   before do
     Capybara.default_driver = :selenium
     described_class.new(browser).register

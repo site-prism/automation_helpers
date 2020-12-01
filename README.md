@@ -14,7 +14,7 @@ in PR and being reviewed / merged
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ca-automation_extensions'
+gem 'ca-ca_testing'
 ```
 
 And then execute:

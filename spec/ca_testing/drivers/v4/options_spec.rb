@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-RSpec.describe AutomationExtensions::Drivers::V4::Options do
+RSpec.describe CaTesting::Drivers::V4::Options do
   let(:extension_class_options) { described_class.new(browser) }
 
   describe "#options" do
