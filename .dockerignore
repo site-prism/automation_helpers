@@ -1,5 +1,3 @@
 .bundle/
-vendor/
-
 *.md
 *.txt

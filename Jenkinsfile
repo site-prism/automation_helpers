@@ -2,16 +2,13 @@ node("docker && awsaccess") {
   cleanWs()
   checkout scm
 
-  stage("build") {
-    docker.build("automation_extensions")
+  stage("Build Image") {
+    docker.build("ca_testing")
   }
 
-  docker.image("automation_extensions").inside {
-    stage("unit test") {
-      sh "bundle exec rubocop"
-    }
-    stage("unit test") {
-      sh "bundle exec rspec"
+  docker.image("ca_testing").inside {
+    stage("Lint and Unit Test") {
+      sh "bundle exec rake"
     }
   }
 }
