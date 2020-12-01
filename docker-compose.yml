@@ -4,6 +4,5 @@ services:
   gem-tests:
     build:
       context: ./
-    image: "automation_extensions${PROJECT_VERSION_TAG}"
-    container_name: gem-tests.test
+    image: ca_testing
     command: bundle exec rake
