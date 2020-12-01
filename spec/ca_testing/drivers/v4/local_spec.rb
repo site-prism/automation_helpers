@@ -5,8 +5,9 @@ RSpec.describe CaTesting::Drivers::V4::Local do
     described_class.new(browser).register
   end
 
+  subject(:options) { session.driver.options }
+
   let(:session) { Capybara::Session.new(:selenium) }
-  let(:options) { session.driver.options }
 
   describe "#register" do
     context "for chrome" do

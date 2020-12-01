@@ -1,4 +1,4 @@
-# Citizens Advice - Automation Extensions
+# Citizens Advice - Testing
 
 This package will allow you to extend your automated testing frameworks with the following
 - Driver creation: Allowing you to simply reference your drivers with a simple method
@@ -14,7 +14,7 @@ in PR and being reviewed / merged
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ca-ca_testing'
+gem "ca_testing"
 ```
 
 And then execute:
@@ -40,8 +40,9 @@ branch where the new version can be tagged and cut on github.
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
-https://github.com/citizens-advice/ca-automation_extensions
+https://github.com/citizens-advice/ca_testing
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the
+[MIT License](https://opensource.org/licenses/MIT).
