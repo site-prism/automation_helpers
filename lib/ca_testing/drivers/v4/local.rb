@@ -1,5 +1,8 @@
 # frozen_string_literal: true
-module AutomationExtensions
+
+require "ca_testing/drivers/v4/options"
+
+module CaTesting
   module Drivers
     module V4
       class Local

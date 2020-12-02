@@ -1,4 +1,4 @@
 # frozen_string_literal: true
-require "automation_extensions"
+require "ca_testing"
 require "selenium-webdriver"
 require "capybara"

@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "automation_extensions/version"
+require "ca_testing/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "automation_extensions"
-  spec.version       = AutomationExtensions::VERSION
+  spec.name          = "ca_testing"
+  spec.version       = CaTesting::VERSION
   spec.authors       = ["Luke Hill"]
   spec.email         = %w[luke.hill@citizensadvice.org.uk]
 
-  spec.summary       = "Citizens Advice - Automation Extensions"
+  spec.summary       = "Citizens Advice - Testing"
   spec.description   = "Automation Patches / Extensions that allow you to extend your Ruby-based testing frameworks"
-  spec.homepage      = "https://www.github.com/citizens-advice/automation_extensions/"
+  spec.homepage      = "https://www.github.com/citizens-advice/ca_testing/"
   spec.license       = "MIT"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://www.github.com/citizens-advice/automation_extensions/"
-  spec.metadata["changelog_uri"] = "https://www.github.com/citizens-advice/automation_extensions/blob/main/CHANGELOG.md"
+  spec.metadata["source_code_uri"] = "https://www.github.com/citizens-advice/ca_testing/"
+  spec.metadata["changelog_uri"] = "https://www.github.com/citizens-advice/ca_testing/blob/main/CHANGELOG.md"
 
   spec.required_ruby_version = ">= 2.6"
 
