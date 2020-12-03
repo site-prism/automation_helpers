@@ -10,6 +10,11 @@ USER 1000
 ENV HOME=/app
 WORKDIR /app
 
+COPY --chown=1000:1000 Gemfile* *.gemspec .git /app/
+COPY --chown=1000:1000 lib/ca_testing/version.rb /app/lib/ca_testing/
+
+RUN bundle config --local path "vendor/bundle" && bundle config --local && bundle install && gem cleanup
+
 COPY --chown=1000:1000 . /app/
 
-RUN bundle config path /app/vendor && bundle install && bundle clean --force
+#RUN bundle config path /app/vendor && bundle install && bundle clean --force
