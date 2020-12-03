@@ -7,14 +7,9 @@ RUN mkdir -p app && chown 1000:1000 app
 RUN apk add --no-cache --update build-base git
 
 USER 1000
-RUN addgroup --gid 1000 ruby && adduser --home /home/ruby --uid 1000 --ingroup ruby --disabled-password ruby
-
 ENV HOME=/app
 WORKDIR /app
 
-COPY --chown=1000:1000 Gemfile* *.gemspec .git /app/
-COPY --chown=1000:1000 lib/ca_testing/version.rb /app/lib/ca_testing/
+COPY --chown=1000:1000 . /app/
 
 RUN bundle config path /app/vendor && bundle install && bundle clean --force
-
-COPY --chown=1000:1000 . /app/
