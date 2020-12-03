@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 RSpec.describe CaTesting::Drivers::V4::Options do
-  let(:extension_class_options) { described_class.new(browser) }
-
   describe "#options" do
-    subject(:options) { extension_class_options.options }
+    subject(:options) { described_class.new(browser).options }
 
     context "for chrome" do
       let(:browser) { :chrome }

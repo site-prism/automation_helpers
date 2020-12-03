@@ -16,5 +16,3 @@ COPY --chown=1000:1000 lib/ca_testing/version.rb /app/lib/ca_testing/
 RUN bundle config path /app/vendor && bundle install && bundle clean --force
 
 COPY --chown=1000:1000 . /app/
-
-

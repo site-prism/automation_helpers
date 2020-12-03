@@ -34,8 +34,8 @@ $ bundle exec rake
 # Ensure it's all green! Then commit and push
 ```
 
-To release a new version, update the version number in `version.rb`, and then create a release
-branch where the new version can be tagged and cut on github.
+To release a new version, update the version number in `version.rb`, and then
+create a release branch where the new version can be tagged and cut on github.
 
 ## Contributing
 
