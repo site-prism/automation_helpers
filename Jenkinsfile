@@ -8,10 +8,6 @@ node("docker && awsaccess") {
     }
   }
 
-  stage("DEBUG after build") {
-    sh "docker-compose run gem-tests ls -la"
-  }
-
   stage("Lint and Unit Test") {
     sh "docker-compose run gem-tests"
   }
