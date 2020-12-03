@@ -10,8 +10,8 @@ node("docker && awsaccess") {
 
   stage("DEBUG after build") {
     docker.image("ca_testing").inside {
-      sh "pwd"
       sh "ls -la"
+      sh "ls -la .."
       sh "ls -la ./vendor/bundle/ruby/2.7.0/gems"
     }
   }
