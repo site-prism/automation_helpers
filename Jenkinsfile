@@ -2,17 +2,9 @@ node("docker && awsaccess") {
   cleanWs()
   checkout scm
 
-  stage("Build Image") {
+  stage("Build/Run/Cleanup Image") {
     withDockerRegistry(registry: [credentialsId: "docker_hub"]) {
-      sh "docker-compose build"
+      sh "docker-compose run --rm gem-tests"
     }
-  }
-
-  stage("Lint and Unit Test") {
-    sh "docker-compose run gem-tests"
-  }
-
-  stage("Cleanup Docker") {
-    sh "docker-compose down"
   }
 }
