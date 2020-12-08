@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
 describe CaTesting::Logger do
-  describe '#create' do
+  describe "#create" do
     subject(:logger) { described_class.new.create }
 
     it { is_expected.to be_a Logger }
 
-    it 'has a default name' do
-      expect(logger.progname).to eq('Citizens Advice')
+    it "has a default name" do
+      expect(logger.progname).to eq("Citizens Advice")
     end
 
-    it 'has a default logging level' do
+    it "has a default logging level" do
       expect(logger.level).to eq(5)
     end
   end
