@@ -5,7 +5,7 @@
 *
 
 **New**
-*
+* Added CI pipeline to repo
 
 **Removals**
 *
