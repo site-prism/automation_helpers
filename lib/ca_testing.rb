@@ -17,7 +17,7 @@ module CaTesting
     def logger=(logger)
       raise ArgumentError, "You must supply an existing Logger" unless logger.is_a?(::Logger)
 
-      self.remove_instance_variable(:@logger) if instance_variable_defined?(:@logger)
+      remove_instance_variable(:@logger) if instance_variable_defined?(:@logger)
       @logger = logger
     end
 

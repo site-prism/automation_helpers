@@ -57,21 +57,20 @@ describe CaTesting do
   end
 
   describe ".logger=" do
+    let(:existing_logger) { described_class.logger }
+
     context "with a valid Logger input" do
-      let(:existing_logger) { described_class.logger }
       let(:new_logger) { ::Logger.new($stdout) }
 
-      it "does not raise an error" do
-        expect { described_class.logger = new_logger }.not_to raise_error
-      end
-
       it "sets the Logger to the new type" do
-        expect { described_class.logger = new_logger }.to change { described_class.logger }.from(existing_logger).to(new_logger)
+        expect { described_class.logger = new_logger }
+          .to change { described_class.logger }
+          .from(existing_logger)
+          .to(new_logger)
       end
     end
 
     context "with an invalid Logger input" do
-      let(:existing_logger) { described_class.logger }
       let(:new_logger) { :not_a_logger }
 
       it "raises an ArgumentError" do
