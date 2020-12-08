@@ -3,7 +3,7 @@ require "ca_testing/drivers"
 require "ca_testing/version"
 
 module CaTesting
-  autoload :Logger, 'ca_testing/logger'
+  autoload :Logger, "ca_testing/logger"
 
   class << self
     def configure

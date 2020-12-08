@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'logger'
+require "logger"
 
 module CaTesting
   #
@@ -9,7 +9,7 @@ module CaTesting
   class Logger
     def create(output = $stdout)
       logger = ::Logger.new(output)
-      logger.progname = 'Citizens Advice'
+      logger.progname = "Citizens Advice"
       logger.level = :UNKNOWN
       logger.formatter = proc do |severity, time, progname, msg|
         "#{time.strftime('%F %T')} - #{severity} - #{progname} - #{msg}\n"
