@@ -7,7 +7,7 @@ describe CaTesting::Logger do
     it { is_expected.to be_a Logger }
 
     it "has a default name" do
-      expect(logger.progname).to eq("Citizens Advice")
+      expect(logger.progname).to eq("CA Testing Gem")
     end
 
     it "has a default logging level" do
