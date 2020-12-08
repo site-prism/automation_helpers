@@ -6,6 +6,7 @@
 
 **New**
 * Added CI pipeline to repo
+* Added Logging functionality to gem. Currently set to de-activated (Unknown level by default)
 
 **Removals**
 *

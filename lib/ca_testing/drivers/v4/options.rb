@@ -33,11 +33,7 @@ module CaTesting
             # A Support ticket has been raised with Browserstack to see if they can fix
             # anything at their end, as this is a bug with their matching protocols
             # LH - Aug 2020
-
-            # TOFIX: Implement logger
-            # AutomationLogger.warn("Removing `browser_name` key from options payload.")
-            puts("Removing `browser_name` key from options payload.")
-
+            CaTesting.logger.info("Removing `browser_name` key from options payload.")
             opts.options.delete(:browser_name)
           end
         end
