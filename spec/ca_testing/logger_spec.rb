@@ -2,7 +2,7 @@
 
 describe CaTesting::Logger do
   describe "#create" do
-    subject(:logger) { described_class.new.create }
+    subject(:logger) { described_class.create }
 
     it { is_expected.to be_a Logger }
 

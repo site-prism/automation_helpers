@@ -7,7 +7,7 @@ module CaTesting
   # @api private
   #
   class Logger
-    def create(output = $stdout)
+    def self.create(output = $stdout)
       logger = ::Logger.new(output)
       logger.progname = "CA Testing Gem"
       logger.level = :UNKNOWN

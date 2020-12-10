@@ -11,13 +11,12 @@ module CaTesting
     end
 
     def logger
-      @logger ||= CaTesting::Logger.new.create
+      @logger ||= Logger.create
     end
 
     def logger=(logger)
       raise ArgumentError, "You must supply an existing Logger" unless logger.is_a?(::Logger)
 
-      remove_instance_variable(:@logger) if instance_variable_defined?(:@logger)
       @logger = logger
     end
 
