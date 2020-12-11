@@ -47,9 +47,7 @@ module CaTesting
           ::Selenium::WebDriver::Remote::Capabilities.new.tap do |capabilities|
             if safari?
               capabilities["browserName"] = "Safari Technology Preview"
-              # TOFIX: Implement logger
-              # AutomationLogger.debug("Altering Browser Name request to alleviate Capybara failure with STP.")
-              warn "Altering Browser Name request to alleviate Capybara failure with STP."
+              CaTesting.logger.warn("Altering Browser Name request to alleviate Capybara failure with STP.")
             end
           end
         end
