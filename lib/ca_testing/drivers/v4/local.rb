@@ -19,9 +19,14 @@ module CaTesting
               app,
               browser: browser,
               service: service,
-              capabilities: [desired_capabilities, options]
+              capabilities: capabilities
             )
           end
+        end
+
+        #The order of this is important because Safari Tech Preview set the name twice
+        def capabilities
+          [options, desired_capabilities]
         end
 
         private
