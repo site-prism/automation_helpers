@@ -29,7 +29,11 @@ module CaTesting
         # as such we need to ensure the browserName we manually set in `desired_capabilities`
         # is retained as this is the one required by safari
         def capabilities
-          [options, desired_capabilities]
+          if safari?
+            [options, desired_capabilities]
+          else
+            [desired_capabilities, options]
+          end
         end
 
         private
