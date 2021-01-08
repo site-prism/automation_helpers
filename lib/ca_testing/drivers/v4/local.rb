@@ -19,8 +19,20 @@ module CaTesting
               app,
               browser: browser,
               service: service,
-              capabilities: [desired_capabilities, options]
+              capabilities: capabilities
             )
+          end
+        end
+
+        # The order of these capabilities is important because in the internal configuration
+        # for the driver; these 2 objects are merged (And both will contain a browserName)
+        # as such we need to ensure the browserName we manually set in `desired_capabilities`
+        # is retained as this is the one required by safari
+        def capabilities
+          if safari?
+            [options, desired_capabilities]
+          else
+            [desired_capabilities, options]
           end
         end
 
