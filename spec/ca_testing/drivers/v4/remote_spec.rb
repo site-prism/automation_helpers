@@ -62,7 +62,13 @@ RSpec.describe CaTesting::Drivers::V4::Remote do
       end
 
       it "has correct desired capabilities" do
-        expect(options[:capabilities].first.as_json).to eq({ "browserName" => "internet explorer", "platormName" => :windows })
+        expect(options[:capabilities].first.as_json)
+          .to eq(
+            {
+              "browserName" => "internet explorer",
+              "platformName" => :windows
+            }
+          )
       end
 
       it "has correct (Modified), browser options" do
