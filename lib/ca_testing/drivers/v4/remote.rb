@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 require "ca_testing/drivers/v4/options"
-require "selenium/webdriver/remote/capabilities"
+require "selenium/webdriver/remote"
 
 module CaTesting
   module Drivers
     module V4
-      class Local
+      class Remote
         attr_reader :browser
         private :browser
 
