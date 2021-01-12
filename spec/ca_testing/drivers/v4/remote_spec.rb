@@ -54,33 +54,6 @@ RSpec.describe CaTesting::Drivers::V4::Remote do
       end
     end
 
-    context "for internet explorer" do
-      let(:browser) { :internet_explorer }
-
-      it "has correct top level properties" do
-        expect(options.keys).to eq(%i[browser clear_local_storage clear_session_storage capabilities url])
-      end
-
-      it "has correct desired capabilities" do
-        expect(options[:capabilities].first.as_json)
-          .to eq(
-            {
-              "browserName" => "internet explorer",
-              "platformName" => :windows
-            }
-          )
-      end
-
-      it "has correct (Modified), browser options" do
-        expect(options[:capabilities].last.as_json)
-          .to eq(
-            {
-              "se:ieOptions" => { "enablePersistentHover" => true, "nativeEvents" => true }
-            }
-          )
-      end
-    end
-
     context "for an unsupported browser" do
       let(:browser) { :foo }
 
