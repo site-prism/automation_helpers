@@ -78,7 +78,7 @@ RSpec.describe CaTesting::Drivers::V4::Local do
     context "for an unsupported browser" do
       let(:browser) { :foo }
 
-      it "Doesn't work if the browser is not one of the supported browsers" do
+      it "doesn't work if the browser is not one of the supported browsers" do
         expect { options }.to raise_error(NoMethodError)
       end
     end
