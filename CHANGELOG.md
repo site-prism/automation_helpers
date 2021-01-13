@@ -5,7 +5,7 @@
 *
 
 **New**
-*
+* Added remote (grid), driver creation
 
 **Removals**
 *

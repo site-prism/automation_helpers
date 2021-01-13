@@ -10,7 +10,7 @@ describe CaTesting::Logger do
       expect(logger.progname).to eq("CA Testing Gem")
     end
 
-    it "has a default logging level" do
+    it "is turned off by default" do
       expect(logger.level).to eq(5)
     end
   end
