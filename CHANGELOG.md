@@ -11,7 +11,8 @@
 *
 
 **Bugfixes**
-*
+* Add Local Safari driver tests
+  * Previously these complained of an issue in missing browser / driver. This is now stubbed
 
 ## <sub>v0.2.1</sub>
 #### _Jan. 11, 2020_
