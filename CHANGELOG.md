@@ -5,10 +5,19 @@
 *
 
 **New**
-* Added remote (grid), driver creation
+*
 
 **Removals**
 *
+
+**Bugfixes**
+*
+
+## <sub>v0.3</sub>
+#### _Jan. 15, 2020_
+
+**New**
+* Added remote (grid), driver creation
 
 **Bugfixes**
 * Add Local Safari driver tests
