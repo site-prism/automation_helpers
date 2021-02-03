@@ -2,7 +2,5 @@ version: "3.2"
 
 services:
   gem-tests:
-    build:
-      context: ./
-    image: ca_testing
+    build: .
     command: bundle exec rake
