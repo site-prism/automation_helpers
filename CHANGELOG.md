@@ -4,11 +4,15 @@
 **Breaking Changes**
 *
 
+**Removals**
+*
+
 **New**
 *
 
-**Removals**
-*
+**Updates**
+* The docker files are now slightly lighter
+* LICENSE year update
 
 **Bugfixes**
 *
