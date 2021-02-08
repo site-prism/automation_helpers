@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 require "ca_testing/drivers"
+require "ca_testing/logger"
+require "ca_testing/patches"
 require "ca_testing/version"
 
 module CaTesting
-  autoload :Logger, "ca_testing/logger"
-
   class << self
     def configure
       yield self

@@ -22,7 +22,7 @@ module CaTesting
       end
 
       def perform
-        :this_will_edit_some_code
+        @changed_behaviour = :foo
       end
 
       def deprecate?
