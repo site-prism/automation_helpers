@@ -11,7 +11,9 @@ RSpec.describe CaTesting::Patches::Sample do
   describe "#patch!" do
     context "when permissible" do
       it "performs the patch successfully" do
-        expect { subject.patch! }.to change { subject.instance_variable_get(:@changed_behaviour) }
+        expect(subject).to receive(:perform)
+
+        subject.patch!
       end
     end
 
@@ -19,7 +21,9 @@ RSpec.describe CaTesting::Patches::Sample do
       let(:deprecate?) { true }
 
       it "performs the patch successfully" do
-        expect { subject.patch! }.to change { subject.instance_variable_get(:@changed_behaviour) }
+        expect(subject).to receive(:perform)
+
+        subject.patch!
       end
 
       it "notifies the user that it is deprecated" do
@@ -34,12 +38,6 @@ RSpec.describe CaTesting::Patches::Sample do
 
       it "raises an Error" do
         expect { subject.patch! }.to raise_error(RuntimeError).with_message("This is no longer supported")
-      end
-
-      it "does not attempt to patch any files" do
-        expect(subject).not_to receive(:perform)
-
-        subject.patch!
       end
     end
   end

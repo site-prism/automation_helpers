@@ -23,7 +23,7 @@ module CaTesting
       end
 
       def perform
-        @changed_behaviour = :foo
+        :change_some_behaviour
       end
 
       def deprecate?
