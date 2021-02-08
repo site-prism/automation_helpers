@@ -4,12 +4,13 @@ module CaTesting
   module Patches
     class Sample
       def patch!
+        raise "This is no longer supported" if prevent_usage?
+
+        Kernel.warn("This is now deprecated and should not be used") if deprecate?
         CaTesting.logger.info("Adding patch: #{self.class}")
         CaTesting.logger.debug(description)
         perform
         CaTesting.logger.info("Patch successfully added.")
-        Kernel.warn("This is now deprecated and should not be used") if deprecate?
-        raise "This is no longer supported" if prevent_usage?
       end
 
       private
