@@ -5,11 +5,11 @@ RSpec.describe CaTesting::Patches::Sample do
     allow(subject).to receive(:prevent_usage?).and_return(prevent_usage?)
   end
 
+  let(:deprecate?) { false }
+  let(:prevent_usage?) { false }
+
   describe "#patch!" do
     context "when permissible" do
-      let(:deprecate?) { false }
-      let(:prevent_usage?) { false }
-
       it "performs the patch successfully" do
         expect { subject.patch! }.to change { subject.instance_variable_get(:@changed_behaviour) }
       end
@@ -17,7 +17,6 @@ RSpec.describe CaTesting::Patches::Sample do
 
     context "when deprecated" do
       let(:deprecate?) { true }
-      let(:prevent_usage?) { false }
 
       it "performs the patch successfully" do
         expect { subject.patch! }.to change { subject.instance_variable_get(:@changed_behaviour) }
@@ -31,7 +30,6 @@ RSpec.describe CaTesting::Patches::Sample do
     end
 
     context "when EOL" do
-      let(:deprecate?) { true }
       let(:prevent_usage?) { true }
 
       it "raises an Error" do
