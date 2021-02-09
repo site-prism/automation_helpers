@@ -3,6 +3,7 @@ RSpec.describe CaTesting::Patches::Sample do
   before do
     allow(subject).to receive(:deprecate?).and_return(deprecate?)
     allow(subject).to receive(:prevent_usage?).and_return(prevent_usage?)
+    allow(Kernel).to receive(:warn)
   end
 
   let(:deprecate?) { false }
