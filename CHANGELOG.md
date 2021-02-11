@@ -8,7 +8,8 @@
 *
 
 **New**
-*
+* Added sample code / specs for patches
+  * This will now enable all future patches to conform to a sensible structure
 
 **Updates**
 * The docker files are now slightly lighter
