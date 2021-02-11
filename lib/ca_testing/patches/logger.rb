@@ -3,6 +3,11 @@
 module CaTesting
   module Patches
     class Logger < Base
+      def initialize(logger)
+        @logger = logger
+        super()
+      end
+
       private
 
       def description
@@ -13,7 +18,20 @@ module CaTesting
       end
 
       def perform
-        :change_some_behaviour
+        # Store previously set values
+        previous_internal = Encoding.default_internal
+        previous_external = Encoding.default_external
+
+        # Set them to ASCII_8BIT which seems to like writing special characters
+        Encoding.default_internal = Encoding.default_external = Encoding::ASCII_8BIT
+
+        # Set the outputter property to write to this desired encoding
+        outputter = @logger.instance_variable_get(:@logdev).dev
+        outputter.set_encoding(Encoding.default_internal, Encoding.default_external)
+
+        # Restore previous values
+        Encoding.default_internal = previous_internal
+        Encoding.default_external = previous_external
       end
 
       def deprecation_notice_date
