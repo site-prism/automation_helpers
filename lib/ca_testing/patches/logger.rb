@@ -18,20 +18,9 @@ module CaTesting
       end
 
       def perform
-        # Store previously set values
-        previous_internal = Encoding.default_internal
-        previous_external = Encoding.default_external
-
-        # Set them to ASCII_8BIT which seems to like writing special characters
-        Encoding.default_internal = Encoding.default_external = Encoding::ASCII_8BIT
-
-        # Set the outputter property to write to this desired encoding
+        # Set the outputter encoding to write to ASCII 8BIT (Which likes writing weird characters)
         outputter = @logger.instance_variable_get(:@logdev).dev
-        outputter.set_encoding(Encoding.default_internal, Encoding.default_external)
-
-        # Restore previous values
-        Encoding.default_internal = previous_internal
-        Encoding.default_external = previous_external
+        outputter.set_encoding(Encoding::ASCII_8BIT, Encoding::ASCII_8BIT)
       end
 
       def deprecation_notice_date
