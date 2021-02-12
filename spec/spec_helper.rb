@@ -3,6 +3,8 @@ require "ca_testing"
 require "selenium-webdriver"
 require "capybara"
 
+Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
+
 def capture_stdout
   original_stdout = $stdout
   $stdout = StringIO.new
