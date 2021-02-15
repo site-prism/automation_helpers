@@ -25,6 +25,10 @@ module CaTesting
       def prevent_usage?
         Time.new > prevent_usage_date
       end
+
+      def prevent_usage_date
+        Time.new(3000, 1, 1)
+      end
     end
   end
 end

@@ -26,10 +26,6 @@ module CaTesting
       def deprecation_notice_date
         Time.new(2022, 1, 1)
       end
-
-      def prevent_usage_date
-        Time.new(3000, 1, 1)
-      end
     end
   end
 end
