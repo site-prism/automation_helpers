@@ -12,19 +12,19 @@ module CaTesting
 
       def description
         <<~DESCRIPTION
-          This enables any Logger to convert it's encoding to one which supports special characters.
-          Examples of this are things like © which use the ASCII encoding protocol (Instead of UTF-8).
+          When using the Selenium Logger that is set to pipe to a file, the Net::HTTP adapter (default),
+          can return unencoded binary (confusingly called ASCII-8BIT in Ruby).
+          Consequently we set the logger to binmode so it doesn't try to encode the data - this would always
+          cause errors for non-ASCII characters, whatever the parent encoding is. An example of this is ©.
         DESCRIPTION
       end
 
       def perform
-        # Set the outputter encoding to write to ASCII 8BIT (Which likes writing weird characters)
-        outputter = @logger.instance_variable_get(:@logdev).dev
-        outputter.set_encoding(Encoding::ASCII_8BIT, Encoding::ASCII_8BIT)
+        Selenium::WebDriver.logger.io.binmode
       end
 
-      def deprecation_notice_date
-        Time.new(2022, 1, 1)
+      def deprecate?
+        false
       end
     end
   end
