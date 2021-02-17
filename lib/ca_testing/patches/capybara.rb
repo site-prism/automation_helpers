@@ -7,7 +7,9 @@ module CaTesting
 
       def description
         <<~DESCRIPTION
-          TODO
+          This patch is necessary when using the Safari browser. There is a bug in the text method and capybara
+          maintainers aren't willing to fix because according to them 'safari should fix their driver'.
+          As such we need to use Module.prepend, to ensure the correct default value is being passed.
         DESCRIPTION
       end
 
