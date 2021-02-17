@@ -7,27 +7,22 @@ module CaTesting
 
       def description
         <<~DESCRIPTION
-          TO DO
+          TODO
         DESCRIPTION
       end
 
       def perform
-        perform_safari_text_patch
-        perform_firefox_driver_patch
+        ::Capybara::Node::Element.prepend SafariTextPatch
       end
 
       def deprecate?
         false
       end
+    end
 
-      def perform_safari_text_patch
-        ::Capybara::Node::Element.prepend SafariTextPatch
-      end
-
-      module SafariTextPatch
-        def text(type = nil, normalize_ws: ::Capybara.default_normalize_ws)
-          super(type, normalize_ws: normalize_ws)
-        end
+    module SafariTextPatch
+      def text(type = nil, normalize_ws: ::Capybara.default_normalize_ws)
+        super(type, normalize_ws: normalize_ws)
       end
     end
   end
