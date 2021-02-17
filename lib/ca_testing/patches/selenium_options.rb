@@ -22,7 +22,11 @@ module CaTesting
 
       def description
         <<~DESCRIPTION
-          TODO
+          This patch fixes an issue with Selenium4 not camelising the browser_name property
+          The issue is the driver, which is now fully W3C conformant expects `browserName`
+
+          See: https://github.com/SeleniumHQ/selenium/pull/8834 for more details/discussion including this fix
+          LH - Nov 2020
         DESCRIPTION
       end
 
