@@ -18,7 +18,13 @@
 
 * Added Selenium Options patch
   * When using a Safari or Firefox driver, there was a bug where it didn't properly
-  camelCase the browserName property when using both capabilities and options.
+  camelCase the `browserName` property when using both capabilities and options properties
+  during driver creation
+    
+* Added Capybara Safari text patch
+  * Due to Safari having lots of issues with their driver. The w3c standard endpoint
+  that is used by driver consumers isn't returning correct text. This patches the already
+  patched Capybara patch, to ensure all calls to `#text` return expected values
   
 **Updates**
 * The docker files are now slightly lighter
