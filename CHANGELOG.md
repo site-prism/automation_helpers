@@ -8,6 +8,18 @@
 *
 
 **New**
+* 
+
+**Updates**
+* 
+
+**Bugfixes**
+*
+
+## <sub>v0.4</sub>
+#### _Feb. 22, 2020_
+
+**New**
 * Added sample code / specs for patches
   * This will now enable all future patches to conform to a sensible structure
   * Use shared examples to allow faster writing of new patch tests
@@ -29,9 +41,6 @@
 **Updates**
 * The docker files are now slightly lighter
 * LICENSE year update
-
-**Bugfixes**
-*
 
 ## <sub>v0.3</sub>
 #### _Jan. 15, 2020_
