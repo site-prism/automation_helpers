@@ -10,7 +10,16 @@
 **New**
 * Added sample code / specs for patches
   * This will now enable all future patches to conform to a sensible structure
+  * Use shared examples to allow faster writing of new patch tests
+  
+* Added Logger patch
+  * Selenium Webdriver Logger auto-writes when set to any level below `:WARN`. We need
+  to ensure that when it writes it uses `binmode` to avoid encoding special characters
 
+* Added Selenium Options patch
+  * When using a Safari or Firefox driver, there was a bug where it didn't properly
+  camelCase the browserName property when using both capabilities and options.
+  
 **Updates**
 * The docker files are now slightly lighter
 * LICENSE year update
