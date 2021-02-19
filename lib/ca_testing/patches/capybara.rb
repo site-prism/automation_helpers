@@ -7,9 +7,9 @@ module CaTesting
 
       def description
         <<~DESCRIPTION
-          This patch is necessary when using the Safari browser. There is a bug in the text method and capybara
-          maintainers aren't willing to fix because according to them 'safari should fix their driver'.
-          As such we need to use Module.prepend, to ensure the correct default value is being passed.
+          There is a bug in the #text method as Safari's w3c conformant endpoint isn't w3c conformant.
+
+          See https://github.com/teamcapybara/capybara/issues/2213 for more details.
         DESCRIPTION
       end
 
