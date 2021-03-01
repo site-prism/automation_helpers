@@ -8,9 +8,8 @@
 *
 
 **New**
-* Added Cookie httpOnly property patch
-* This patch fixes an issue with Selenium4 not camelising the browser_name property
-  The issue is the driver, which is now fully W3C conformant expects `browserName`
+* Added Selenium Cookie patch
+  * The cookie converter algorithm inside Selenium wasn't bubbling up the `httpOnly` property
 
 **Updates**
 * 
