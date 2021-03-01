@@ -5,7 +5,7 @@
 * Altered the Selenium Logger patch to no longer require an input logger object
 
 **Removals**
-*
+* Removed sample patch code in preparation for first major release
 
 **New**
 * Added Selenium Cookie patch
