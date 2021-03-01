@@ -12,7 +12,9 @@
   * The cookie converter algorithm inside Selenium wasn't bubbling up the `httpOnly` property
 
 **Updates**
-* 
+* Updated gemspec
+  * Don't expect feature files
+  * Use latest rspec
 
 **Bugfixes**
 *
