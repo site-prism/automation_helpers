@@ -2,7 +2,7 @@
 #### _N/A_
 
 **Breaking Changes**
-*
+* Altered the Selenium Logger patch to no longer require an input logger object
 
 **Removals**
 *
