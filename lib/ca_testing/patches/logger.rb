@@ -3,11 +3,6 @@
 module CaTesting
   module Patches
     class Logger < Base
-      def initialize(logger)
-        @logger = logger
-        super()
-      end
-
       private
 
       def description
