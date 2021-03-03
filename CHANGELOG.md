@@ -2,18 +2,19 @@
 #### _N/A_
 
 **Breaking Changes**
-*
+* Altered the Selenium Logger patch to no longer require an input logger object
 
 **Removals**
-*
+* Removed sample patch code in preparation for first major release
 
 **New**
-* Added Cookie httpOnly property patch
-* This patch fixes an issue with Selenium4 not camelising the browser_name property
-  The issue is the driver, which is now fully W3C conformant expects `browserName`
+* Added Selenium Cookie patch
+  * The cookie converter algorithm inside Selenium wasn't bubbling up the `httpOnly` property
 
 **Updates**
-* 
+* Updated gemspec
+  * Don't expect feature files
+  * Use latest rspec
 
 **Bugfixes**
 *
