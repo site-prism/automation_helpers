@@ -17,7 +17,7 @@
   * Use latest rspec
 
 **Bugfixes**
-*
+* Fixed Firefox log level to be the correct low-level one (`trace` not `info`)
 
 ## <sub>v0.4</sub>
 #### _Feb. 22, 2020_

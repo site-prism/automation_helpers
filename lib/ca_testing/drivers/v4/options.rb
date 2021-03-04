@@ -39,7 +39,7 @@ module CaTesting
         end
 
         def firefox_options
-          ::Selenium::WebDriver::Firefox::Options.new(log_level: "info")
+          ::Selenium::WebDriver::Firefox::Options.new(log_level: "trace")
         end
 
         def edge_options
