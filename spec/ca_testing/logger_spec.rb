@@ -11,7 +11,7 @@ describe CaTesting::Logger do
     end
 
     it "is turned off by default" do
-      expect(logger.level).to eq(5)
+      expect(logger.level).to eq(1)
     end
   end
 end

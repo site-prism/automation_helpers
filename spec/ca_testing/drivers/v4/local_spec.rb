@@ -49,7 +49,7 @@ RSpec.describe CaTesting::Drivers::V4::Local do
           .to eq(
             {
               "browserName" => "firefox",
-              "moz:firefoxOptions" => { "log" => { "level" => "info" } }
+              "moz:firefoxOptions" => { "log" => { "level" => "trace" } }
             }
           )
       end

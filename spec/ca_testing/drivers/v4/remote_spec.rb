@@ -48,7 +48,7 @@ RSpec.describe CaTesting::Drivers::V4::Remote do
           .to eq(
             {
               "browserName" => "firefox",
-              "moz:firefoxOptions" => { "log" => { "level" => "info" } }
+              "moz:firefoxOptions" => { "log" => { "level" => "trace" } }
             }
           )
       end

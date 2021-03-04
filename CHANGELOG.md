@@ -12,6 +12,8 @@
 **New**
 * Added Selenium Cookie patch
   * The cookie converter algorithm inside Selenium wasn't bubbling up the `httpOnly` property
+  
+* Logging for this gem is now switched on by default (Level `:INFO`)
 
 **Updates**
 * Updated gemspec
