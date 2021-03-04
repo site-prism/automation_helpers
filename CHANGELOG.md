@@ -2,7 +2,9 @@
 #### _N/A_
 
 **Breaking Changes**
-* Altered the Selenium Logger patch to no longer require an input logger object
+* Altered the Selenium Logger patch
+  * No longer require an input logger object (Only operates on selenium logger)
+  * Renamed the class to reflect the change
 
 **Removals**
 * Removed sample patch code in preparation for first major release
