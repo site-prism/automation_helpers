@@ -32,8 +32,8 @@ module CaTesting
 
       def perform
         case @browser
-        when :firefox then Selenium::WebDriver::Firefox::Options.include CapabilitiesAsJsonFix
-        when :safari then Selenium::WebDriver::Safari::Options.include CapabilitiesAsJsonFix
+        when :firefox then ::Selenium::WebDriver::Firefox::Options.include CapabilitiesAsJsonFix
+        when :safari then ::Selenium::WebDriver::Safari::Options.include CapabilitiesAsJsonFix
         end
       end
 

@@ -22,10 +22,9 @@ describe CaTesting do
 
   describe ".logger" do
     context "with default severity" do
-      it "does not log messages below UNKNOWN" do
+      it "does not log DEBUG messages" do
         log_messages = capture_stdout do
           described_class.logger.debug("DEBUG")
-          described_class.logger.fatal("FATAL")
         end
 
         expect(log_messages).to be_empty
@@ -114,12 +113,12 @@ describe CaTesting do
   describe ".log_level" do
     subject { described_class.log_level }
 
-    it { is_expected.to eq(:UNKNOWN) }
+    it { is_expected.to eq(:INFO) }
 
-    context "when changed to `INFO`" do
-      before { described_class.log_level = :INFO }
+    context "when changed to `DEBUG`" do
+      before { described_class.log_level = :DEBUG }
 
-      it { is_expected.to eq(:INFO) }
+      it { is_expected.to eq(:DEBUG) }
     end
   end
 end

@@ -2,7 +2,7 @@
 
 module CaTesting
   module Patches
-    class Logger < Base
+    class SeleniumLogger < Base
       private
 
       def description
@@ -17,7 +17,7 @@ module CaTesting
       end
 
       def perform
-        Selenium::WebDriver.logger.io.binmode
+        ::Selenium::WebDriver.logger.io.binmode
       end
 
       def deprecate?

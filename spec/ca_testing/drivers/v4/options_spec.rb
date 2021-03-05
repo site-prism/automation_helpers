@@ -12,7 +12,7 @@ RSpec.describe CaTesting::Drivers::V4::Options do
     context "for firefox" do
       let(:browser) { :firefox }
 
-      it { is_expected.to have_attributes({ browser_name: "firefox", log: { level: "info" } }) }
+      it { is_expected.to have_attributes({ browser_name: "firefox", log: { level: "trace" } }) }
     end
 
     context "for internet explorer" do
