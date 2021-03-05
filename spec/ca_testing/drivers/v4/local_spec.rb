@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 RSpec.describe CaTesting::Drivers::V4::Local do
   before do
     Capybara.default_driver = :selenium

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 RSpec.describe CaTesting::Drivers::V4::Options do
   describe "#options" do
     subject(:options) { described_class.new(browser).options }

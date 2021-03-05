@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 RSpec.shared_examples "a patch" do
   before do
     allow(subject).to receive(:deprecate?).and_return(deprecate?)
