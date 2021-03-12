@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 describe Capybara::Node::Element do
-  before(:each) { visit('/sample_page.html') }
+  before(:each) { visit("/sample_page.html") }
 
   let(:element) { page.find("input") }
 
