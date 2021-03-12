@@ -1,9 +1,20 @@
 # frozen_string_literal: true
 require "selenium-webdriver"
 require "capybara"
+require "capybara/dsl"
+require "webdrivers"
 require "ca_testing"
 
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
+
+RSpec.configure do |config|
+  config.include Capybara::DSL
+end
+
+Capybara.configure do |config|
+  config.default_driver = :selenium_chrome_headless
+  config.app_host = "file://#{File.dirname(__FILE__)}/support/fixtures"
+end
 
 def capture_stdout
   original_stdout = $stdout
