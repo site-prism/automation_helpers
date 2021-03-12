@@ -3,12 +3,8 @@
 module Capybara
   module Node
     class Element
-      def color
-        native.css_value("color")
-      end
-
-      def background_color
-        native.css_value("background-color")
+      def horizontal_position
+        native.rect[:x].to_i
       end
 
       def vertical_position
