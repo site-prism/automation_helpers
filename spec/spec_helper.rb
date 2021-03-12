@@ -1,7 +1,7 @@
 # frozen_string_literal: true
-require "ca_testing"
 require "selenium-webdriver"
 require "capybara"
+require "ca_testing"
 
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 
