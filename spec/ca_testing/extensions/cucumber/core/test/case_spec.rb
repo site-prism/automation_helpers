@@ -1,15 +1,9 @@
 # frozen_string_literal: true
 
 describe Cucumber::Core::Test::Case do
-  subject(:test_case) { described_class.new(:_id, :_name, [:_test_steps], location.new, :_tags, :_language) }
+  subject(:test_case) { described_class.new(:_id, :_name, [:_test_steps], location, :_tags, :_language) }
 
-  let(:location) do
-    Class.new do
-      def to_s
-        "file/path/to/feature.feature:5"
-      end
-    end
-  end
+  let(:location) { double(to_s: "file/path/to/feature.feature:5") }
 
   describe "#feature_file_name" do
     it "returns the top-left horizontal ordinate from the native rect" do
