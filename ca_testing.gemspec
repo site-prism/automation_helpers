@@ -31,6 +31,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "capybara", "~> 3.8"
   spec.add_runtime_dependency "selenium-webdriver", [">= 4.0.0.alpha1", "< 4.1"]
 
+  spec.add_development_dependency "cucumber", "~> 5.0"
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rspec", "~> 3.10"
   spec.add_development_dependency "webdrivers", "~> 4.6"
