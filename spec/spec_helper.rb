@@ -3,6 +3,8 @@ require "selenium-webdriver"
 require "capybara"
 require "capybara/dsl"
 require "webdrivers"
+require "cucumber"
+
 require "ca_testing"
 
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
