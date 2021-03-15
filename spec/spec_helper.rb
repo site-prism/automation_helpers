@@ -14,7 +14,6 @@ RSpec.configure do |config|
 end
 
 Capybara.configure do |config|
-  config.default_driver = :selenium_chrome_headless
   config.app_host = "file://#{File.dirname(__FILE__)}/support/fixtures"
 end
 

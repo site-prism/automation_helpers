@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 describe Capybara::Node::Element do
-  before(:each) { visit("/sample_page.html") }
+  before(:each) do
+    Capybara.default_driver = :selenium_chrome_headless
+    visit("/sample_page.html")
+  end
 
   let(:element) { page.find("input") }
 
