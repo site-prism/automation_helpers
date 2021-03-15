@@ -9,12 +9,12 @@ require "ca_testing"
 
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 
-RSpec.configure do |config|
-  config.include Capybara::DSL
-end
-
 Capybara.configure do |config|
   config.app_host = "file://#{File.dirname(__FILE__)}/support/fixtures"
+end
+
+CaTesting.configure do |config|
+  config.log_level = :UNKNOWN
 end
 
 def capture_stdout
