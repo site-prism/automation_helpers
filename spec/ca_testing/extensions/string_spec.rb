@@ -65,7 +65,7 @@ describe String do
     context "with multiple space's" do
       let(:string) { "Foo  Bar   Baz Today" }
 
-      it { is_expected.to eq("foo_bars_baz_today") }
+      it { is_expected.to eq("foo_bar_baz_today") }
     end
   end
 end
