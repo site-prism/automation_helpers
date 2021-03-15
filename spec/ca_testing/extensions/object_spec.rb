@@ -21,7 +21,6 @@ describe Object do
       let(:empty?) { true }
 
       it { is_expected.to be_blank }
-
     end
 
     context "with a non-empty object" do
