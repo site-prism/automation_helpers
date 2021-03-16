@@ -6,13 +6,13 @@ describe Cucumber::Core::Test::Case do
   let(:location) { double(to_s: "file/path/to/feature.feature:5") }
 
   describe "#feature_file_name" do
-    it "returns the top-left horizontal ordinate from the native rect" do
+    it "returns the name of the feature being ran" do
       expect(test_case.feature_file_name).to eq("feature")
     end
   end
 
   describe "#feature_file_path" do
-    it "returns the top-left vertical ordinate from the native rect" do
+    it "returns the fully qualified file path of the feature being ran" do
       expect(test_case.feature_file_path).to eq("file/path/to/feature.feature:5")
     end
   end
