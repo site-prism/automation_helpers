@@ -102,7 +102,7 @@ describe String do
       it { is_expected.to eq("foo  bar  baz") }
     end
 
-    context "with non-breaking whitespace (NBSP) characters" do
+    context "with non-breaking whitespace (NBSP), characters" do
       let(:string) { "foo\u00A0bar\u00A0baz" }
 
       it { is_expected.to eq("foo bar baz") }
