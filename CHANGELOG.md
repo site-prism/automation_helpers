@@ -21,11 +21,23 @@
 
 * Updated the gem to require Ruby 2.7+
   * This enables us to use the latest style guide changes from the citizens-advice-style-ruby gem
+  
+* Added extensions for `String#pascalize`, `String#snake_case` and `Object#blank?`
 
+* Added extensions for Cucumber
+  * `Cucumber::Core::Test::Case#feature_file_name`
+  * `Cucumber::Core::Test::Case#feature_file_path`
+
+* Added extensions for Capybara
+  * `Capybara::Node::Element#horizontal_position`
+  * `Capybara::Node::Element#vertical_position`
+  
 **Updates**
 * Updated gemspec
   * Don't expect feature files
   * Use latest rspec
+  * Migrate all runtime dependencies to dev dependencies
+    * Each of the patches / extensions are completely independent
 
 **Bugfixes**
 * Fixed Firefox log level to be the correct low-level one (`trace` not `info`)

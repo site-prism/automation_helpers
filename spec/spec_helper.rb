@@ -1,10 +1,22 @@
 # frozen_string_literal: true
 
-require "ca_testing"
 require "selenium-webdriver"
 require "capybara"
+require "capybara/dsl"
+require "webdrivers"
+require "cucumber"
+
+require "ca_testing"
 
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
+
+Capybara.configure do |config|
+  config.app_host = "file://#{File.dirname(__FILE__)}/support/fixtures"
+end
+
+CaTesting.configure do |config|
+  config.log_level = :UNKNOWN
+end
 
 def capture_stdout
   original_stdout = $stdout
