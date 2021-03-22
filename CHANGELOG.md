@@ -22,7 +22,7 @@
 * Updated the gem to require Ruby 2.7+
   * This enables us to use the latest style guide changes from the citizens-advice-style-ruby gem
   
-* Added extensions for `String#pascalize`, `String#snake_case` and `Object#blank?`
+* Added extensions for `String#pascalize` and `String#snake_case`
 
 * Added extensions for Cucumber
   * `Cucumber::Core::Test::Case#feature_file_name`
