@@ -68,4 +68,50 @@ describe String do
       it { is_expected.to eq("foo_bar_baz_today") }
     end
   end
+
+  describe "#sanitize_whitespace" do
+    subject { string.sanitize_whitespace }
+
+    context "with an a non-spaced string" do
+      let(:string) { "foobarbaz" }
+
+      it { is_expected.to eq("foobarbaz") }
+    end
+
+    context "with special characters string" do
+      let(:string) { "foo%!$#" }
+
+      it { is_expected.to eq("foo%!$#") }
+    end
+
+    context "with a regular spaced string" do
+      let(:string) { "foo bar baz" }
+
+      it { is_expected.to eq("foo bar baz") }
+    end
+
+    context "with an irregular spaced string" do
+      let(:string) { "foo   bar      baz" }
+
+      it { is_expected.to eq("foo   bar      baz") }
+    end
+
+    context "with other types of space characters" do
+      let(:string) { "foo\f\tbar\r\fbaz" }
+
+      it { is_expected.to eq("foo  bar  baz") }
+    end
+
+    context "with non-breaking whitespace (NBSP) characters" do
+      let(:string) { "foo\u00A0bar\u00A0baz" }
+
+      it { is_expected.to eq("foo bar baz") }
+    end
+
+    context "with new-line characters" do
+      let(:string) { "foo\nbar\nbaz" }
+
+      it { is_expected.to eq("foo\nbar\nbaz") }
+    end
+  end
 end

@@ -22,4 +22,8 @@ class String
       .tr("'", "")
       .downcase
   end
+
+  def sanitize_whitespace
+    gsub(/[ \t\r\f\u00A0]/, " ")
+  end
 end
