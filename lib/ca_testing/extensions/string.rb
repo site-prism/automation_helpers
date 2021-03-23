@@ -23,6 +23,10 @@ class String
       .downcase
   end
 
+  # @return [String]
+  #
+  # Sanitize and convert every individual whitespace character to
+  # a regular space character (Does not sanitize newlines)
   def sanitize_whitespace
     gsub(/[ \t\r\f\u00A0]/, " ")
   end
