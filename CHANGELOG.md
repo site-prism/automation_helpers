@@ -6,6 +6,10 @@
   * No longer require an input logger object (Only operates on selenium logger)
   * Renamed the class to reflect the change
 
+* Altered the dependency requirements of the gem
+  * Selenium / Capybara are no longer required to make the gem work (They never were)
+  * In order to perform the regular patching on selenium / capybara, you would still need them in that situation
+
 **Removals**
 * Removed sample patch code in preparation for first major release
 
@@ -15,7 +19,10 @@
   
 * Logging for this gem is now switched on by default (Level `:INFO`)
 
-* Added extensions for `String#pascalize`, `String#snake_case` and `Object#blank?`
+* Updated the gem to require Ruby 2.7+
+  * This enables us to use the latest style guide changes from the citizens-advice-style-ruby gem
+  
+* Added extensions for `String#pascalize` and `String#snake_case`
 
 * Added extensions for Cucumber
   * `Cucumber::Core::Test::Case#feature_file_name`
