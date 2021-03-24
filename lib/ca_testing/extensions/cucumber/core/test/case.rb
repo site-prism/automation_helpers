@@ -8,7 +8,7 @@ module Cucumber
         #
         # The file name of the feature being ran (Without the .feature extension)
         def feature_file_name
-          feature_file_path.split("/").last.split(".").first
+          feature_file_path.split("/").last&.split(".")&.first.to_s
         end
 
         # @return [String]
