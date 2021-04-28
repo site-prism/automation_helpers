@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class String
+class Array
   # @return [Boolean]
   #
   # Test whether an array is wholly unique
