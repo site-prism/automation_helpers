@@ -1,6 +1,12 @@
 ## <sub>main</sub>
 #### _N/A_
 
+**New**
+* Added extensions for `Array#uniq?` and `Array#non_uniq`
+  
+## <sub>v1.0</sub>
+#### _Mar. 24, 2021_
+
 **Breaking Changes**
 * Altered the Selenium Logger patch
   * No longer require an input logger object (Only operates on selenium logger)
@@ -43,7 +49,7 @@
 * Fixed Firefox log level to be the correct low-level one (`trace` not `info`)
 
 ## <sub>v0.4</sub>
-#### _Feb. 22, 2020_
+#### _Feb. 22, 2021_
 
 **New**
 * Added sample code / specs for patches
@@ -69,7 +75,7 @@
 * LICENSE year update
 
 ## <sub>v0.3</sub>
-#### _Jan. 15, 2020_
+#### _Jan. 15, 2021_
 
 **New**
 * Added remote (grid), driver creation
@@ -79,7 +85,7 @@
   * Previously these complained of an issue in missing browser / driver. This is now stubbed
 
 ## <sub>v0.2.1</sub>
-#### _Jan. 11, 2020_
+#### _Jan. 11, 2021_
 
 **New**
 * Added CI pipeline to repo
