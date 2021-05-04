@@ -1,6 +1,9 @@
 ## <sub>main</sub>
 #### _N/A_
 
+## <sub>v1.1</sub>
+#### _May. 4, 2021_
+
 **New**
 * Added extensions for `Array#uniq?` and `Array#non_uniq`
   
