@@ -36,7 +36,7 @@ module CaTesting
         end
 
         def options
-          Options.new(browser).options
+          Options.for(browser)
         end
 
         def hub_url

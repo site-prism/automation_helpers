@@ -7,6 +7,17 @@ module CaTesting
         attr_reader :browser
         private :browser
 
+        def self.for(browser)
+          case browser
+          when :chrome;             then ::Selenium::WebDriver::Chrome::Options.new
+          when :firefox;            then ::Selenium::WebDriver::Firefox::Options.new(log_level: "trace")
+          when :edge;               then ::Selenium::WebDriver::Edge::Options.new
+          when :safari;             then ::Selenium::WebDriver::Safari::Options.new(automatic_inspection: true)
+          when :internet_explorer;  then internet_explorer_options
+          else {}
+          end
+        end
+
         def initialize(browser)
           @browser = browser
         end
@@ -22,7 +33,7 @@ module CaTesting
         end
 
         # Constantly fire mouseOver events on click actions (Should help mitigate flaky clicks)
-        def internet_explorer_options
+        def self.internet_explorer_options
           ::Selenium::WebDriver::IE::Options.new(persistent_hover: true).tap do |opts|
             # This is needed to mitigate a Selenium4/Browserstack issue whereby in Se4
             # we combine Browser options and Capabilities and merge them. But for some
