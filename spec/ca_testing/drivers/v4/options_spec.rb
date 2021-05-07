@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 RSpec.describe CaTesting::Drivers::V4::Options do
-  describe "#options" do
-    subject(:options) { described_class.new(browser).options }
+  describe ".for" do
+    subject(:options) { described_class.for(browser) }
 
     context "for chrome" do
       let(:browser) { :chrome }
@@ -28,24 +28,10 @@ RSpec.describe CaTesting::Drivers::V4::Options do
       it { is_expected.to have_attributes({ browser_name: "safari", automatic_inspection: true }) }
     end
 
-    context "for ios" do
-      let(:browser) { :ios }
-
-      it { is_expected.to be_empty }
-    end
-
-    context "for android" do
-      let(:browser) { :android }
-
-      it { is_expected.to be_empty }
-    end
-
-    context "for an unsupported browser" do
+    context "for any other browser" do
       let(:browser) { :foo }
 
-      it "doesn't work if the browser is not one of the supported browsers" do
-        expect { subject }.to raise_error(NoMethodError)
-      end
+      it { is_expected.to be_empty }
     end
   end
 end
