@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-require "ca_testing/drivers/v4/options"
 require "selenium/webdriver/remote"
+
+require "ca_testing/drivers/v4/options"
 
 module CaTesting
   module Drivers
