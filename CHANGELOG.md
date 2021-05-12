@@ -1,6 +1,14 @@
 ## <sub>main</sub>
 #### _N/A_
 
+**Breaking Changes**
+* Options class refactors
+  * Now is no longer directly instantiated -> `Options.new(browser)` becomes `Options.for(browser)`
+  * Removed a few lines of redundant code that was duplicating some effort
+
+**Bugfixes**
+  * Fixed an issue where requiring just the local v4 driver wouldn't work due to not `require`ing selenium capabilities
+
 ## <sub>v1.1</sub>
 #### _May. 4, 2021_
 

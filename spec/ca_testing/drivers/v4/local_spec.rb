@@ -80,7 +80,7 @@ RSpec.describe CaTesting::Drivers::V4::Local do
     context "for safari" do
       let(:browser) { :safari }
 
-      # Prevent Docker container complaining it doesn't know where safari is!
+      # Prevent OS complaining it doesn't know where safari is!
       before { allow(Selenium::WebDriver::Platform).to receive(:assert_executable) }
 
       it "has correct top level properties" do
@@ -99,14 +99,6 @@ RSpec.describe CaTesting::Drivers::V4::Local do
               "safari:automaticInspection" => true
             }
           )
-      end
-    end
-
-    context "for an unsupported browser" do
-      let(:browser) { :foo }
-
-      it "doesn't work if the browser is not one of the supported browsers" do
-        expect { options }.to raise_error(NoMethodError)
       end
     end
   end

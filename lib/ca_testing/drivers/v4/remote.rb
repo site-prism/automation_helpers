@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-require "ca_testing/drivers/v4/options"
 require "selenium/webdriver/remote"
+
+require "ca_testing/drivers/v4/options"
 
 module CaTesting
   module Drivers
@@ -36,7 +37,7 @@ module CaTesting
         end
 
         def options
-          Options.new(browser).options
+          Options.for(browser)
         end
 
         def hub_url
