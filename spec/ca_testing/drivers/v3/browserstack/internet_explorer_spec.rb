@@ -5,14 +5,14 @@ RSpec.describe CaTesting::Drivers::V3::Browserstack::InternetExplorer do
 
   describe "#capabilities" do
     it "has correct internet explorer capabilities" do
-      expect(capabilities)
-        .to eq(
+      expect(capabilities).to eq(
           {
             "browserName" => "internet explorer",
             "bstack:options" => {
               "ie" => {
                 "driver" => "3.141.59",
                 "arch" => "x32"
+              }
             }
           }
         )
