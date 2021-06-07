@@ -8,16 +8,15 @@ RSpec.describe CaTesting::Drivers::V4::Browserstack::Ios do
       let(:appium_version) { "12" }
 
       it "has correct ios capabilities" do
-        expect(capabilities)
-          .to eq(
-            {
-              "bstack:options" => {
-                "deviceName" => "ios",
-                "realMobile" => "true",
-                "appiumVersion" => "1.19.1"
-              }
+        expect(capabilities).to eq(
+          {
+            "bstack:options" => {
+              "deviceName" => "ios",
+              "realMobile" => "true",
+              "appiumVersion" => "1.19.1"
             }
-          )
+          }
+        )
       end
 
       context "with an invalid appium version" do

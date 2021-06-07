@@ -8,10 +8,10 @@ module CaTesting
           def capabilities
             {
               "bstack:options" => {
-                 "osVersion" => "10.0",
-                 "deviceName" => "Samsung Galaxy S20",
-                 "realMobile" => "true",
-                 "appiumVersion" => "1.17.0"
+                "osVersion" => "10.0",
+                "deviceName" => "Samsung Galaxy S20",
+                "realMobile" => "true",
+                "appiumVersion" => "1.17.0"
               }
             }
           end

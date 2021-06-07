@@ -5,17 +5,16 @@ RSpec.describe CaTesting::Drivers::V4::Browserstack::Android do
 
   describe "#capabilities" do
     it "has correct android capabilities" do
-      expect(capabilities)
-        .to eq(
-          {
-            "bstack:options" => {
-               "osVersion" => "10.0",
-               "deviceName" => "Samsung Galaxy S20",
-               "realMobile" => "true",
-               "appiumVersion" => "1.17.0"
-            }
+      expect(capabilities).to eq(
+        {
+          "bstack:options" => {
+            "osVersion" => "10.0",
+            "deviceName" => "Samsung Galaxy S20",
+            "realMobile" => "true",
+            "appiumVersion" => "1.17.0"
           }
-        )
+        }
+      )
     end
   end
 end

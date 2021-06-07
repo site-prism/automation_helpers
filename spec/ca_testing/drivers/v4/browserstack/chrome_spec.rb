@@ -5,15 +5,14 @@ RSpec.describe CaTesting::Drivers::V4::Browserstack::Chrome do
 
   describe "#capabilities" do
     it "has correct chrome capabilities" do
-      expect(capabilities)
-        .to eq(
-          {
-            "goog:loggingPrefs" => {
-              browser: "ALL",
-              driver: "ALL"
-            }
+      expect(capabilities).to eq(
+        {
+          "goog:loggingPrefs" => {
+            browser: "ALL",
+            driver: "ALL"
           }
-        )
+        }
+      )
     end
   end
 end

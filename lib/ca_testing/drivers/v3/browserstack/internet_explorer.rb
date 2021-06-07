@@ -12,6 +12,7 @@ module CaTesting
                 "ie" => {
                   "driver" => "3.141.59",
                   "arch" => "x32"
+                }
               }
             }
           end
