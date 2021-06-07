@@ -9,12 +9,18 @@
 **Bugfixes**
   * Fixed an issue where requiring just the local v4 driver wouldn't work due to not `require`ing selenium capabilities
 
+## <sub>v1.2</sub>
+#### _June. 7, 2021_
+
+**New**
+* Added Browserstack capabilities for drivers
+
 ## <sub>v1.1</sub>
 #### _May. 4, 2021_
 
 **New**
 * Added extensions for `Array#uniq?` and `Array#non_uniq`
-  
+
 ## <sub>v1.0</sub>
 #### _Mar. 24, 2021_
 
@@ -33,12 +39,12 @@
 **New**
 * Added Selenium Cookie patch
   * The cookie converter algorithm inside Selenium wasn't bubbling up the `httpOnly` property
-  
+
 * Logging for this gem is now switched on by default (Level `:INFO`)
 
 * Updated the gem to require Ruby 2.7+
   * This enables us to use the latest style guide changes from the citizens-advice-style-ruby gem
-  
+
 * Added extensions for `String#pascalize` and `String#snake_case`
 
 * Added extensions for Cucumber
@@ -48,7 +54,7 @@
 * Added extensions for Capybara
   * `Capybara::Node::Element#horizontal_position`
   * `Capybara::Node::Element#vertical_position`
-  
+
 **Updates**
 * Updated gemspec
   * Don't expect feature files
@@ -66,7 +72,7 @@
 * Added sample code / specs for patches
   * This will now enable all future patches to conform to a sensible structure
   * Use shared examples to allow faster writing of new patch tests
-  
+
 * Added Logger patch
   * Selenium Webdriver Logger auto-writes when set to any level below `:WARN`. We need
   to ensure that when it writes it uses `binmode` to avoid encoding special characters
@@ -75,12 +81,12 @@
   * When using a Safari or Firefox driver, there was a bug where it didn't properly
   camelCase the `browserName` property when using both capabilities and options properties
   during driver creation
-    
+
 * Added Capybara Safari text patch
   * Due to Safari having lots of issues with their driver. The w3c standard endpoint
   that is used by driver consumers isn't returning correct text. This patches the already
   patched Capybara patch, to ensure all calls to `#text` return expected values
-  
+
 **Updates**
 * The docker files are now slightly lighter
 * LICENSE year update
@@ -105,7 +111,7 @@
 **Bugfixes**
 * Fixed Safari Capabilities creation on Local Driver
   * The v4 capabilities pass a 2-element array, but the STP usage was getting overwritten
-    
+
 * Fixed `.ruby-version` file forcing users to use `2.7.2` (When the gem supports v2.6 of ruby)
 
 ## <sub>v0.2</sub>
