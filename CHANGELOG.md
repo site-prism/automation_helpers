@@ -9,9 +9,6 @@
 **Bugfixes**
   * Fixed an issue where requiring just the local v4 driver wouldn't work due to not `require`ing selenium capabilities
 
-## <sub>v1.2</sub>
-#### _June. 7, 2021_
-
 **New**
 * Added Browserstack capabilities for drivers
 
