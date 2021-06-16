@@ -6,11 +6,11 @@
   * Now is no longer directly instantiated -> `Options.new(browser)` becomes `Options.for(browser)`
   * Removed a few lines of redundant code that was duplicating some effort
 
+**New**
+* Added Browserstack-specific capabilities for drivers (Chrome, Android, Ios, Internet Explorer)
+
 **Bugfixes**
   * Fixed an issue where requiring just the local v4 driver wouldn't work due to not `require`ing selenium capabilities
-
-**New**
-* Added Browserstack capabilities for drivers
 
 ## <sub>v1.1</sub>
 #### _May. 4, 2021_
