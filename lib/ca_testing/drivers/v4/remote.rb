@@ -15,6 +15,9 @@ module CaTesting
           @browser = browser
         end
 
+        # @return [Nil]
+        #
+        # Register a new driver with the default selenium name for use in a local grid setup
         def register
           Capybara.register_driver :selenium do |app|
             Capybara::Selenium::Driver.new(

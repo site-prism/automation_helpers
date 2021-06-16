@@ -5,6 +5,9 @@ module CaTesting
     module V4
       class Options
         class << self
+          # @return [Selenium::Webdriver::Options]
+          #
+          # Returns the Options payload relevant to the browser specified to be passed to the driver instantiation
           def for(browser)
             initial_options(browser).tap { |opts| opts.headless! if headless? }
           end

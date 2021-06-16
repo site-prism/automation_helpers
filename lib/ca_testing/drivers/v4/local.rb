@@ -15,6 +15,9 @@ module CaTesting
           @browser = browser
         end
 
+        # @return [Nil]
+        #
+        # Register a new driver with the default selenium name for use locally
         def register
           Capybara.register_driver :selenium do |app|
             Capybara::Selenium::Driver.new(
@@ -26,6 +29,8 @@ module CaTesting
           end
         end
 
+        # @return [Array]
+        #
         # The order of these capabilities is important because in the internal configuration
         # for the driver; these 2 objects are merged (And both will contain a browserName)
         # as such we need to ensure the browserName we manually set in `desired_capabilities`
@@ -43,7 +48,7 @@ module CaTesting
         # This is required to make local drivers work exclusively with Safari TP
         # This is required in V13 of Safari as the driver there is notoriously flaky
         # In V12 it doesn't hinder it
-        # We don't support Safari V11!
+        # Safari V11 is unsupported.
         def service
           return unless safari?
 
@@ -55,8 +60,7 @@ module CaTesting
         # is between the two browsers. So to compensate an illegal browserName value is
         # set that allows easy distinction between the two browsers
         #
-        # NB: Whilst using Safari TP this is required. When not using Safari TP, this can
-        # be removed
+        # NB: Whilst using Safari TP this is required.
         def desired_capabilities
           ::Selenium::WebDriver::Remote::Capabilities.new.tap do |capabilities|
             if safari?
