@@ -36,6 +36,8 @@ RSpec.describe CaTesting::Drivers::V4::Remote do
     end
 
     context "for firefox" do
+      before { CaTesting::Patches::SeleniumOptions.new(browser).patch! }
+
       let(:browser) { :firefox }
       let(:caps) { options[:capabilities].first.as_json }
       let(:opts) { options[:capabilities].last.as_json }

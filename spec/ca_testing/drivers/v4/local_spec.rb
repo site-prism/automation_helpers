@@ -37,6 +37,8 @@ RSpec.describe CaTesting::Drivers::V4::Local do
     end
 
     context "for firefox" do
+      before { CaTesting::Patches::SeleniumOptions.new(browser).patch! }
+
       let(:browser) { :firefox }
       let(:caps) { options[:capabilities].first.as_json }
       let(:opts) { options[:capabilities].last.as_json }
@@ -78,6 +80,8 @@ RSpec.describe CaTesting::Drivers::V4::Local do
     end
 
     context "for safari" do
+      before { CaTesting::Patches::SeleniumOptions.new(browser).patch! }
+
       let(:browser) { :safari }
 
       # Prevent OS complaining it doesn't know where safari is!
