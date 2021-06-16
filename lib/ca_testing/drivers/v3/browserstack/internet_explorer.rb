@@ -5,6 +5,9 @@ module CaTesting
     module V3
       module Browserstack
         class InternetExplorer
+          # @return [Hash]
+          #
+          # Returns the Specific Nested Browserstack capabilities for a W3C-compliant Internet Explorer Driver
           def capabilities
             {
               "browserName" => "internet explorer",

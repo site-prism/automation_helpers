@@ -5,6 +5,9 @@ module CaTesting
     module V4
       module Browserstack
         class Chrome
+          # @return [Hash]
+          #
+          # Returns the Specific Nested Google capabilities for a W3C-compliant Chrome Driver
           def capabilities
             {
               "goog:loggingPrefs" => {
