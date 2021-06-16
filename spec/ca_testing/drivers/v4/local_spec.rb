@@ -6,6 +6,8 @@ RSpec.describe CaTesting::Drivers::V4::Local do
     described_class.new(browser).register
   end
 
+  after(:each) { session.quit }
+
   subject(:options) { session.driver.options }
 
   let(:session) { Capybara::Session.new(:selenium) }
@@ -36,23 +38,21 @@ RSpec.describe CaTesting::Drivers::V4::Local do
 
     context "for firefox" do
       let(:browser) { :firefox }
+      let(:caps) { options[:capabilities].first.as_json }
+      let(:opts) { options[:capabilities].last.as_json }
 
       it "has correct top level properties" do
         expect(options.keys).to eq(standard_top_level_properties)
       end
 
       it "has correct desired capabilities" do
-        expect(options[:capabilities].first.as_json).to eq({})
+        expect(caps).to eq({})
       end
 
       it "has correct browser options" do
-        expect(options[:capabilities].last.as_json)
-          .to eq(
-            {
-              "browserName" => "firefox",
-              "moz:firefoxOptions" => { "log" => { "level" => "trace" } }
-            }
-          )
+        expect(opts).to match(a_hash_including("browserName" => "firefox"))
+
+        expect(opts["moz:firefoxOptions"]).to match(a_hash_including("log" => { "level" => "trace" }))
       end
     end
 
