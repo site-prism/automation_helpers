@@ -8,17 +8,21 @@ module CaTesting
         super()
       end
 
+      # @return [Nil || CaTesting.logger.info]
+      #
+      # For SeleniumOptions we only want to run the patch when
+      # we are on browsers without the relevant JSON fixes in upstream
       def patch!
         return unless valid?
 
         super
       end
 
+      private
+
       def valid?
         %i[firefox safari].include?(@browser)
       end
-
-      private
 
       def description
         <<~DESCRIPTION

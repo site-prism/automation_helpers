@@ -12,6 +12,9 @@ module CaTesting
             @ios_version = ios_version
           end
 
+          # @return [Hash]
+          #
+          # Returns the Specific Nested Browserstack capabilities for a W3C-compliant Ios Driver
           def capabilities
             {
               "bstack:options" => {
