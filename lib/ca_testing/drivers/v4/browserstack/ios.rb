@@ -5,10 +5,11 @@ module CaTesting
     module V4
       module Browserstack
         class Ios
-          attr_reader :ios_version
-          private :ios_version
+          attr_reader :device_name, :ios_version
+          private :device_name, :ios_version
 
-          def initialize(ios_version)
+          def initialize(device_name, ios_version)
+            @device_name = device_name
             @ios_version = ios_version
           end
 
@@ -18,7 +19,7 @@ module CaTesting
           def capabilities
             {
               "bstack:options" => {
-                "deviceName" => "ios",
+                "deviceName" => device_name,
                 "realMobile" => "true",
                 "appiumVersion" => appium_version
               }
