@@ -1,5 +1,11 @@
-## <sub>main</sub>
-#### _N/A_
+## <sub>v2.0.1</sub>
+#### _Jun. 18, 2021_
+
+**Bugfixes**
+* Fixed ios capabilities to accept a device name as well as an ios version
+
+## <sub>v2.0</sub>
+#### _Jun. 17, 2021_
 
 **Breaking Changes**
 * Options class refactors
