@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
 describe Capybara::Node::Element do
-  subject(:capybara_element) { described_class.new(:_session, :_base, :_query_scope, :_query) }
-  let(:selenium_element) { double(rect: rect) }
-  let(:rect) { instance_double(Selenium::WebDriver::Rectangle, { x: 8, y: 29, width: 185, height: 21 }) }
+  before { session.visit('/sample_page.html') }
 
-  before { allow(capybara_element).to receive(:native).and_return(selenium_element) }
+  subject(:capybara_element) { session.find(".embedded_element") }
+  let(:session) { Capybara::Session.new(:selenium_chrome_headless) }
 
   describe "#horizontal_position" do
     it "returns the top-left horizontal ordinate from the native rect" do
@@ -16,6 +15,21 @@ describe Capybara::Node::Element do
   describe "#vertical_position" do
     it "returns the top-left vertical ordinate from the native rect" do
       expect(capybara_element.vertical_position).to eq(29)
+    end
+  end
+
+  describe "#stale?" do
+    context "when not stale" do
+      it { is_expected.not_to be_stale }
+    end
+
+    context "when made stale" do
+      it "returns true" do
+        cached_element = capybara_element
+        session.find("#remove_container").click
+
+        expect(cached_element).to be_stale
+      end
     end
   end
 end

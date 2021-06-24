@@ -16,6 +16,13 @@ module Capybara
       def vertical_position
         native.rect.y.to_i
       end
+
+      # @return [Boolean]
+      #
+      # Whether the element is in a stale state or not
+      def stale?
+        self.inspect == "Obsolete #<Capybara::Node::Element>"
+      end
     end
   end
 end
