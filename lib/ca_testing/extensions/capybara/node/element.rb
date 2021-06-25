@@ -21,7 +21,7 @@ module Capybara
       #
       # Whether the element is in a stale state or not
       def stale?
-        self.inspect == "Obsolete #<Capybara::Node::Element>"
+        inspect == "Obsolete #<Capybara::Node::Element>"
       end
     end
   end
