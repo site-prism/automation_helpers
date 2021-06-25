@@ -14,7 +14,7 @@ describe Capybara::Node::Element do
 
   describe "#vertical_position" do
     it "returns the top-left vertical ordinate from the native rect" do
-      expect(capybara_element.vertical_position).to eq(29)
+      expect(capybara_element.vertical_position).to eq(169)
     end
   end
 
