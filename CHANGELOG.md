@@ -1,3 +1,9 @@
+## <sub>main</sub>
+#### _Unreleased_
+
+**New**
+* Added extension for `Capybara::Node::Element#stale?`
+
 ## <sub>v2.0.1</sub>
 #### _Jun. 18, 2021_
 

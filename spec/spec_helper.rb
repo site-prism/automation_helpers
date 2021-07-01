@@ -12,6 +12,7 @@ Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 
 Capybara.configure do |config|
   config.app_host = "file://#{File.dirname(__FILE__)}/support/fixtures"
+  config.default_max_wait_time = 0
 end
 
 CaTesting.configure do |config|
