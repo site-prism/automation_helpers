@@ -13,6 +13,9 @@ module CaTesting
             @browserstack_options = browserstack_options
           end
 
+          # @return [Nil]
+          #
+          # Register a new driver with the default selenium name for use in a remote browserstack setup
           def register
             Capybara.register_driver :selenium do |app|
               Capybara::Selenium::Driver.new(
@@ -29,13 +32,19 @@ module CaTesting
           def desired_capabilities
             Selenium::WebDriver::Remote::Capabilities.new(
               Faraday::Utils.deep_merge(
-                standard_browserstack_capabilities.merge(general_browser_capabilities),
+                # Browserstack Capabilities and General Capabilities are at different levels, so we merge first
+                browserstack_capabilities.merge(general_browser_capabilities),
+                # Then we deep merge with anything specific to each browser, as these can be nested and require merging
                 specific_browser_capabilities
               )
             )
           end
 
-          def standard_browserstack_capabilities
+          def browserstack_capabilities
+            Faraday::Utils.deep_merge(configured_browserstack_capabilities, static_browserstack_capabilities)
+          end
+
+          def configured_browserstack_capabilities
             {
               "bstack:options" => {
                 "buildName" => browserstack_options[:build_name],
@@ -43,7 +52,14 @@ module CaTesting
                 "sessionName" => browserstack_options[:session_name],
                 "debug" => browserstack_options[:browserstack_debug_mode],
                 "os" => os,
-                "osVersion" => os_version,
+                "osVersion" => os_version
+              }
+            }
+          end
+
+          def static_browserstack_capabilities
+            {
+              "bstack:options" => {
                 "local" => "false",
                 "seleniumVersion" => "4.0.0-alpha-6",
                 "consoleLogs" => "verbose",
