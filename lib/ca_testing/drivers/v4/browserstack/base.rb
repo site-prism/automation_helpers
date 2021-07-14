@@ -7,6 +7,14 @@ module CaTesting
         class Base
           include Helpers::EnvVariables
 
+          attr_reader :browser, :browserstack_options
+          private :browser, :browserstack_options
+
+          def initialize(browser, browserstack_options)
+            @browser = browser
+            @browserstack_options = browserstack_options
+          end
+
           def register
             Capybara.register_driver :selenium do |app|
               Capybara::Selenium::Driver.new(
@@ -27,32 +35,30 @@ module CaTesting
           end
 
           def standard_capabilities
-            standard_browserstack_capabilities.merge(browser_version)
+            standard_browserstack_capabilities.merge(general_browser_capabilities)
           end
 
           def specific_browser_capabilities
             {}
           end
 
-          def browser_version
-            if device?
-              {}
-            else
-              { "browserVersion" => browserstack_browser_version }
-            end
+          def general_browser_capabilities
+            return {} if device?
+
+            { "browserVersion" => browser_version }
           end
 
           def standard_browserstack_capabilities
             {
               "bstack:options" => {
-                "buildName" => build_name,
+                "buildName" => browserstack_options[:build_name],
                 "projectName" => "Public-Website tests",
-                "sessionName" => session_name,
-                "os" => browserstack_os,
-                "osVersion" => browserstack_os_version,
+                "sessionName" => browserstack_options[:session_name],
+                "os" => os,
+                "osVersion" => os_version,
                 "local" => "false",
-                "seleniumVersion" => selenium_jar_version,
-                "debug" => browserstack_debug_mode,
+                "seleniumVersion" => "4.0.0-alpha-6",
+                "debug" => browserstack_options[:browserstack_debug_mode],
                 "consoleLogs" => "verbose",
                 "networkLogs" => "true",
                 "resolution" => "1920x1080"
@@ -65,19 +71,23 @@ module CaTesting
           end
 
           def browserstack_hub_url
-            "https://#{browserstack_username}:#{browserstack_api_key}@hub-cloud.browserstack.com/wd/hub"
+            "https://#{browserstack_options[:username]}:#{browserstack_options[:api_key]}@hub-cloud.browserstack.com/wd/hub"
           end
 
-          def build_name
-            PayloadValuesGenerator.build_name
+          def os
+            browserstack_options[:config].split("_")[0]
           end
 
-          def session_name
-            PayloadValuesGenerator.session_name
+          def os_version
+            browserstack_options[:config].split("_")[1]
           end
 
-          def selenium_jar_version
-            "4.0.0-alpha-6"
+          def browser_version
+            browserstack_options[:config].split("_")[2]
+          end
+
+          def device?
+            %i[android ios].include?(browser)
           end
         end
       end
