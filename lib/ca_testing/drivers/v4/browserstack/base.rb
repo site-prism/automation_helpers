@@ -5,8 +5,6 @@ module CaTesting
     module V4
       module Browserstack
         class Base
-          include Helpers::EnvVariables
-
           attr_reader :browser, :browserstack_options
           private :browser, :browserstack_options
 
@@ -30,16 +28,29 @@ module CaTesting
 
           def desired_capabilities
             Selenium::WebDriver::Remote::Capabilities.new(
-              Faraday::Utils.deep_merge(standard_capabilities, specific_browser_capabilities)
+              Faraday::Utils.deep_merge(
+                standard_browserstack_capabilities.merge(general_browser_capabilities),
+                specific_browser_capabilities
+              )
             )
           end
 
-          def standard_capabilities
-            standard_browserstack_capabilities.merge(general_browser_capabilities)
-          end
-
-          def specific_browser_capabilities
-            {}
+          def standard_browserstack_capabilities
+            {
+              "bstack:options" => {
+                "buildName" => browserstack_options[:build_name],
+                "projectName" => browserstack_options[:project_name],
+                "sessionName" => browserstack_options[:session_name],
+                "debug" => browserstack_options[:browserstack_debug_mode],
+                "os" => os,
+                "osVersion" => os_version,
+                "local" => "false",
+                "seleniumVersion" => "4.0.0-alpha-6",
+                "consoleLogs" => "verbose",
+                "networkLogs" => "true",
+                "resolution" => "1920x1080"
+              }
+            }
           end
 
           def general_browser_capabilities
@@ -48,22 +59,8 @@ module CaTesting
             { "browserVersion" => browser_version }
           end
 
-          def standard_browserstack_capabilities
-            {
-              "bstack:options" => {
-                "buildName" => browserstack_options[:build_name],
-                "projectName" => "Public-Website tests",
-                "sessionName" => browserstack_options[:session_name],
-                "os" => os,
-                "osVersion" => os_version,
-                "local" => "false",
-                "seleniumVersion" => "4.0.0-alpha-6",
-                "debug" => browserstack_options[:browserstack_debug_mode],
-                "consoleLogs" => "verbose",
-                "networkLogs" => "true",
-                "resolution" => "1920x1080"
-              }
-            }
+          def specific_browser_capabilities
+            {}
           end
 
           def options
