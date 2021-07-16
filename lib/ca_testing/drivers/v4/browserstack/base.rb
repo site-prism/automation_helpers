@@ -79,7 +79,11 @@ module CaTesting
           end
 
           def specific_browser_capabilities
-            {}
+            if defined?(capabilities)
+              capabilities
+            else
+              {}
+            end
           end
 
           def options
