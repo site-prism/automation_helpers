@@ -8,12 +8,13 @@ module CaTesting
           #
           # api private (Not intended to be instantiated directly!)
           #
-          attr_reader :browser, :browserstack_options
-          private :browser, :browserstack_options
+          attr_reader :browser, :browserstack_options, :defined_capabilities
+          private :browser, :browserstack_options, :defined_capabilities
 
-          def initialize(browser, browserstack_options)
+          def initialize(browser, browserstack_options, defined_capabilities = nil)
             @browser = browser
             @browserstack_options = browserstack_options
+            @defined_capabilities = defined_capabilities
           end
 
           # @return [Nil]
@@ -79,11 +80,7 @@ module CaTesting
           end
 
           def specific_browser_capabilities
-            if defined?(capabilities)
-              capabilities
-            else
-              {}
-            end
+            defined_capabilities || {}
           end
 
           def options
