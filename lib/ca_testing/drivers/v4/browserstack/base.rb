@@ -8,13 +8,13 @@ module CaTesting
           #
           # api private (Not intended to be instantiated directly!)
           #
-          attr_reader :browser, :browserstack_options, :defined_capabilities
-          private :browser, :browserstack_options, :defined_capabilities
+          attr_reader :browser, :browserstack_options, :custom_capabilities
+          private :browser, :browserstack_options, :custom_capabilities
 
-          def initialize(browser, browserstack_options, defined_capabilities = nil)
+          def initialize(browser, browserstack_options, custom_capabilities = {})
             @browser = browser
             @browserstack_options = browserstack_options
-            @defined_capabilities = defined_capabilities
+            @custom_capabilities = custom_capabilities
           end
 
           # @return [Nil]
@@ -37,18 +37,18 @@ module CaTesting
             Selenium::WebDriver::Remote::Capabilities.new(
               Faraday::Utils.deep_merge(
                 # Browserstack Capabilities and General Capabilities are at different levels, so we merge first
-                browserstack_capabilities.merge(general_browser_capabilities),
-                # Then we deep merge with anything specific to each browser, as these can be nested and require merging
-                specific_browser_capabilities
+                browserstack_capabilities.merge(browser_version_capability),
+                # Then we deep merge with anything specifically passed into the driver registration (as these can be nested)
+                custom_capabilities
               )
             )
           end
 
           def browserstack_capabilities
-            Faraday::Utils.deep_merge(configured_browserstack_capabilities, static_browserstack_capabilities)
+            Faraday::Utils.deep_merge(configurable_capabilities, static_capabilities)
           end
 
-          def configured_browserstack_capabilities
+          def configurable_capabilities
             {
               "bstack:options" => {
                 "buildName" => browserstack_options[:build_name],
@@ -61,7 +61,7 @@ module CaTesting
             }
           end
 
-          def static_browserstack_capabilities
+          def static_capabilities
             {
               "bstack:options" => {
                 "local" => "false",
@@ -73,14 +73,10 @@ module CaTesting
             }
           end
 
-          def general_browser_capabilities
+          def browser_version_capability
             return {} if device?
 
             { "browserVersion" => browser_version }
-          end
-
-          def specific_browser_capabilities
-            defined_capabilities || {}
           end
 
           def options
