@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "faraday"
+
 module CaTesting
   module Drivers
     module V4
@@ -35,7 +37,7 @@ module CaTesting
 
           def desired_capabilities
             Selenium::WebDriver::Remote::Capabilities.new(
-              Faraday::Utils.deep_merge(
+              ::Faraday::Utils.deep_merge(
                 # Browserstack Capabilities and General Capabilities are at different levels, so we merge first
                 browserstack_capabilities.merge(browser_version_capability),
                 # Then we deep merge with anything specifically passed into the driver registration (as these can be nested)
@@ -45,7 +47,7 @@ module CaTesting
           end
 
           def browserstack_capabilities
-            Faraday::Utils.deep_merge(configurable_capabilities, static_capabilities)
+            ::Faraday::Utils.deep_merge(configurable_capabilities, static_capabilities)
           end
 
           def configurable_capabilities
