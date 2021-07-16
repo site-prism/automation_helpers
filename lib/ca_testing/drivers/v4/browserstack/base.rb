@@ -5,6 +5,9 @@ module CaTesting
     module V4
       module Browserstack
         class Base
+          #
+          # api private (Not intended to be instantiated directly!)
+          #
           attr_reader :browser, :browserstack_options
           private :browser, :browserstack_options
 
