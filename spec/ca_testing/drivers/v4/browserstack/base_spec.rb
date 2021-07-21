@@ -49,5 +49,9 @@ RSpec.describe CaTesting::Drivers::V4::Browserstack::Base do
           }
         )
     end
+
+    it "sets the hub url using the browserstack credentials" do
+      expect(options[:url]).to eq("https://username:apikey123@hub-cloud.browserstack.com/wd/hub")
+    end
   end
 end
