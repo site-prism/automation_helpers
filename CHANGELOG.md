@@ -4,6 +4,8 @@
 **New**
 * Added extension for `Capybara::Node::Element#stale?`
 
+* Added Browserstack Base driver (capabilities / options)
+
 ## <sub>v2.0.1</sub>
 #### _Jun. 18, 2021_
 
