@@ -1,6 +1,11 @@
 ## <sub>main</sub>
 #### _Unreleased_
 
+
+
+## <sub>v2.1</sub>
+#### _Unreleased_
+
 **New**
 * Added extension for `Capybara::Node::Element#stale?`
 
