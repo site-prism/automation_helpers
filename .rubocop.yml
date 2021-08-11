@@ -1,3 +1,10 @@
 inherit_gem:
   citizens-advice-style:
     - default.yml
+
+AllCops:
+  Exclude:
+    # This patch is 80% copied code from the upstream repo. As such there are different style
+    - 'lib/ca_testing/patches/parallel_cucumber.rb'
+    # This needs fixing in the gem proper
+    - 'vendor/**/*'
