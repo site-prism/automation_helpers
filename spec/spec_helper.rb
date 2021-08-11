@@ -5,6 +5,7 @@ require "capybara"
 require "capybara/dsl"
 require "webdrivers"
 require "cucumber"
+require "parallel_tests/gherkin/runner"
 
 require "ca_testing"
 
