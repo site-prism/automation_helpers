@@ -1,7 +1,9 @@
-## <sub>main</sub>
+## <sub>v2.2</sub>
 #### _Unreleased_
 
-
+**New**
+* Added Parallel Tests patch
+  * The converted order of the command line options passed to cucumber was incorrect
 
 ## <sub>v2.1</sub>
 #### _Unreleased_
