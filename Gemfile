@@ -2,6 +2,6 @@
 
 source "https://rubygems.org"
 
-gem "citizens-advice-style", github: "citizensadvice/citizens-advice-style-ruby", tag: "v2.1.0"
+gem "citizens-advice-style", github: "citizensadvice/citizens-advice-style-ruby", tag: "v3.0.0"
 
 gemspec
