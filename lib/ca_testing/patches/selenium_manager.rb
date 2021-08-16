@@ -16,8 +16,12 @@ module CaTesting
         ::Selenium::WebDriver::Manager.prepend CookieConverter
       end
 
-      def deprecate?
-        Gem::Version.new(Selenium::WebDriver::VERSION) > Gem::Version.new("4.0.0.beta2")
+      def deprecate_from
+        "4.0.0.beta2"
+      end
+
+      def gem_version
+        Selenium::WebDriver::VERSION
       end
 
       def prevent_usage?
