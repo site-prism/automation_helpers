@@ -25,7 +25,7 @@ module CaTesting
       end
 
       def gem_version
-        Selenium::WebDriver::VERSION
+        ::Selenium::WebDriver::VERSION
       end
     end
 
