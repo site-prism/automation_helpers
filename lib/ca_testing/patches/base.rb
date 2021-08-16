@@ -18,8 +18,19 @@ module CaTesting
 
       private
 
+      #
+      # api private (Not intended to be instantiated directly!)
+      #
+      # From what point should this patch start throwing deprecation notices
+      # If a date is provided, then after that date
+      # If a version from is provided, then all releases after that one
+      # 
       def deprecate?
-        Time.new > deprecation_notice_date
+        if defined?(deprecation_notice_date)
+          Time.new > deprecation_notice_date
+        elsif defined?(deprecate_from)
+          Gem::Version.new(gem_version) > Gem::Version.new(deprecate_from)
+        end
       end
 
       def prevent_usage?
