@@ -45,12 +45,12 @@ module CaTesting
         "4.0.0.beta4"
       end
 
-      def gem_version
-        Selenium::WebDriver::VERSION
+      def prevent_usage_from
+        "4.0.0"
       end
 
-      def prevent_usage?
-        Gem::Version.new(Selenium::WebDriver::VERSION) > Gem::Version.new("4.0.0")
+      def gem_version
+        Selenium::WebDriver::VERSION
       end
     end
 
