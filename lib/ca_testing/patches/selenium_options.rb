@@ -41,12 +41,12 @@ module CaTesting
         end
       end
 
-      def deprecation_notice_date
-        Time.new(2021, 12, 25)
+      def deprecate?
+        Gem::Version.new(Selenium::WebDriver::VERSION) > Gem::Version.new("4.0.0.beta4")
       end
 
-      def prevent_usage_date
-        Time.new(2022, 6, 30)
+      def prevent_usage?
+        Gem::Version.new(Selenium::WebDriver::VERSION) > Gem::Version.new("4.0.0")
       end
     end
 
