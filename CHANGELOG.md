@@ -1,12 +1,23 @@
-## <sub>v2.2</sub>
+## <sub>main</sub>
 #### _Unreleased_
+
+**Breaking Changes**
+* Altered format / structure of patches to accept either...
+  * `#deprecation_notice_date` (Time) or `#deprecate_from` (Gem version)
+  * `#prevent_usage_date` (Time) or `#prevent_usage_from` (Gem version)
+
+**Removals**
+* Removed all Docker/Jenkins code as we now use GHA as our CI pipeline
+
+## <sub>v2.2</sub>
+#### _Aug. 12, 2021_
 
 **New**
 * Added Parallel Tests patch
   * The converted order of the command line options passed to cucumber was incorrect
 
 ## <sub>v2.1</sub>
-#### _Unreleased_
+#### _Jul. 26, 2021_
 
 **New**
 * Added extension for `Capybara::Node::Element#stale?`
