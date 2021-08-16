@@ -42,11 +42,11 @@ module CaTesting
       end
 
       def deprecate_from
-        "4.0.0.beta4"
+        "4.0.0.beta5"
       end
 
       def prevent_usage_from
-        "4.0.0"
+        "4.0.1"
       end
 
       def gem_version
