@@ -19,10 +19,6 @@ module CaTesting
       def perform
         ::Selenium::WebDriver.logger.io.binmode
       end
-
-      def deprecate?
-        false
-      end
     end
   end
 end
