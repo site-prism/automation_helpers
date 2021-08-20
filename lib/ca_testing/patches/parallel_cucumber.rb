@@ -21,8 +21,12 @@ module CaTesting
         Time.new(2022, 6, 30)
       end
 
-      def prevent_usage_date
-        Time.new(2022, 12, 25)
+      def prevent_usage_from
+        "4.0.0"
+      end
+
+      def gem_version
+        ::ParallelTests::VERSION
       end
     end
 

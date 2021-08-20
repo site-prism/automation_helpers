@@ -16,12 +16,16 @@ module CaTesting
         ::Selenium::WebDriver::Manager.prepend CookieConverter
       end
 
-      def deprecation_notice_date
-        Time.new(2021, 12, 25)
+      def deprecate_from
+        "4.0.0.beta3"
       end
 
-      def prevent_usage_date
-        Time.new(2022, 6, 30)
+      def prevent_usage_from
+        "4.0.0.beta5"
+      end
+
+      def gem_version
+        ::Selenium::WebDriver::VERSION
       end
     end
 
