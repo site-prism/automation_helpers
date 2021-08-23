@@ -10,9 +10,10 @@ module CaTesting
           # Returns the Capabilities hash relevant to the browser specified to be passed to the driver instantiation
           def for(browser, device_options = {})
             case browser
-            when :android; then android_capabilities
-            when :chrome;  then chrome_capabilities
-            when :ios;     then ios_capabilities(device_options)
+            when :android;           then android_capabilities
+            when :chrome;            then chrome_capabilities
+            when :internet_explorer; then internet_explorer_capabilities
+            when :ios;               then ios_capabilities(device_options)
             else {}
             end
           end
@@ -35,6 +36,20 @@ module CaTesting
               "goog:loggingPrefs" => {
                 browser: "ALL",
                 driver: "ALL"
+              }
+            }
+          end
+
+          def internet_explorer_capabilities
+            {
+              "browserName" => "internet explorer",
+              "bstack:options" => {
+                "ie" => {
+                  # This is a minor hack until the IEDriver catches up and releases a V4 compliant copy
+                  # It is confirmed to be compliant with V4 selenium jars e.t.c.
+                  "driver" => "3.141.59",
+                  "arch" => "x32"
+                }
               }
             }
           end
