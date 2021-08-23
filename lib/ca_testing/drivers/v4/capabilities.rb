@@ -1,14 +1,22 @@
 # frozen_string_literal: true
 
+require "selenium/webdriver/remote"
+
 module CaTesting
   module Drivers
     module V4
       class Capabilities
         class << self
-          # @return [Hash]
+          # @return [Selenium::WebDriver::Remote::Capabilities]
           #
           # Returns the Capabilities hash relevant to the browser specified to be passed to the driver instantiation
           def for(browser, device_options = {})
+            ::Selenium::WebDriver::Remote::Capabilities.new(capabilities_hash(browser, device_options))
+          end
+
+          private
+
+          def capabilities_hash(browser, device_options)
             case browser
             when :android;           then android_capabilities
             when :chrome;            then chrome_capabilities
@@ -17,8 +25,6 @@ module CaTesting
             else {}
             end
           end
-
-          private
 
           def android_capabilities
             {
