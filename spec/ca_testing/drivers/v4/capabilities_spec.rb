@@ -2,7 +2,7 @@
 
 RSpec.describe CaTesting::Drivers::V4::Capabilities do
   describe ".for" do
-    subject(:capabilities) { described_class.for(browser, device_options) }
+    subject(:capabilities) { described_class.for(browser, device_options).as_json }
 
     let(:device_options) { {} }
 
@@ -29,9 +29,10 @@ RSpec.describe CaTesting::Drivers::V4::Capabilities do
       it "has correct chrome capabilities" do
         expect(capabilities).to eq(
           {
+            "browserName" => "chrome",
             "goog:loggingPrefs" => {
-              browser: "ALL",
-              driver: "ALL"
+              "browser" => "ALL",
+              "driver" => "ALL"
             }
           }
         )

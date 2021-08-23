@@ -42,8 +42,8 @@ module CaTesting
             {
               "browserName" => "chrome",
               "goog:loggingPrefs" => {
-                browser: "ALL",
-                driver: "ALL"
+                "browser" => "ALL",
+                "driver" => "ALL"
               }
             }
           end

@@ -26,8 +26,8 @@ RSpec.describe CaTesting::Drivers::V4::Remote do
             {
               "browserName" => "chrome",
               "goog:loggingPrefs" => {
-                browser: "ALL",
-                driver: "ALL"
+                "browser" => "ALL",
+                "driver" => "ALL"
               }
             }
           )
