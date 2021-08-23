@@ -8,7 +8,7 @@ module CaTesting
           # @return [Hash]
           #
           # Returns the Capabilities hash relevant to the browser specified to be passed to the driver instantiation
-          def for(browser, device_options)
+          def for(browser, device_options = {})
             case browser
             when :android; then android_capabilities
             when :chrome;  then chrome_capabilities

@@ -32,11 +32,7 @@ module CaTesting
         private
 
         def browser_capabilities
-          case browser
-          when :chrome;            then Selenium::WebDriver::Remote::Capabilities.chrome
-          when :firefox;           then Selenium::WebDriver::Remote::Capabilities.firefox
-          else                     raise ArgumentError, "You must use a supported browser"
-          end
+          Capabilities.for(browser)
         end
 
         def options
