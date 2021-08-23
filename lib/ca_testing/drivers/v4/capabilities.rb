@@ -50,7 +50,7 @@ module CaTesting
 
           def firefox_capabilities
             {
-              "browserName" => "firefox",
+              "browserName" => "firefox"
             }
           end
 

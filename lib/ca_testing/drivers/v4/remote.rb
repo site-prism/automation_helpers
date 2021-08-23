@@ -31,6 +31,8 @@ module CaTesting
         private
 
         def browser_capabilities
+          raise ArgumentError, "You must use a supported browser" unless supported_browser?
+
           Capabilities.for(browser)
         end
 
@@ -40,6 +42,10 @@ module CaTesting
 
         def hub_url
           ENV["HUB_URL"]
+        end
+
+        def supported_browser?
+          %i[chrome firefox].include?(browser)
         end
       end
     end
