@@ -20,6 +20,7 @@ module CaTesting
             case browser
             when :android;           then android_capabilities
             when :chrome;            then chrome_capabilities
+            when :firefox;           then firefox_capabilities
             when :internet_explorer; then internet_explorer_capabilities
             when :ios;               then ios_capabilities(device_options)
             else {}
@@ -39,10 +40,17 @@ module CaTesting
 
           def chrome_capabilities
             {
+              "browserName" => "chrome",
               "goog:loggingPrefs" => {
                 browser: "ALL",
                 driver: "ALL"
               }
+            }
+          end
+
+          def firefox_capabilities
+            {
+              "browserName" => "firefox",
             }
           end
 
