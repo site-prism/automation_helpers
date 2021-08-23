@@ -7,13 +7,13 @@ module CaTesting
     module V4
       module Browserstack
         class Base
-          attr_reader :browser, :browserstack_options, :custom_capabilities
-          private :browser, :browserstack_options, :custom_capabilities
+          attr_reader :browser, :browserstack_options, :device_options
+          private :browser, :browserstack_options, :device_options
 
-          def initialize(browser, browserstack_options, custom_capabilities = {})
+          def initialize(browser, browserstack_options, device_options = {})
             @browser = browser
             @browserstack_options = browserstack_options
-            @custom_capabilities = custom_capabilities
+            @device_options = device_options
           end
 
           # @return [Nil]
@@ -38,7 +38,7 @@ module CaTesting
                 # Browserstack Capabilities and General Capabilities are at different levels, so we merge first
                 browserstack_capabilities.merge(browser_version_capability),
                 # Then we deep merge with anything specifically passed into the driver registration (as these can be nested)
-                custom_capabilities
+                browser_specific_capabilities
               )
             )
           end
@@ -70,6 +70,15 @@ module CaTesting
                 "resolution" => "1920x1080"
               }
             }
+          end
+
+          def browser_specific_capabilities
+            case browser
+            when :android; then Android.capabilities
+            when :chrome;  then Chrome.capabilities
+            when :ios;     then Ios.capabilities(device_options)
+            else {}
+            end
           end
 
           def browser_version_capability
