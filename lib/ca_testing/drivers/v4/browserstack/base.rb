@@ -73,12 +73,7 @@ module CaTesting
           end
 
           def browser_specific_capabilities
-            case browser
-            when :android; then Android.capabilities
-            when :chrome;  then Chrome.capabilities
-            when :ios;     then Ios.capabilities(device_options)
-            else {}
-            end
+            CaTesting::Drivers::V4::Capabilities.for(browser, device_options)
           end
 
           def browser_version_capability
