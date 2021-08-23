@@ -58,6 +58,7 @@ RSpec.describe CaTesting::Drivers::V4::Capabilities do
 
     context "for ios" do
       let(:browser) { :ios }
+      let(:device_options) { { device_name: "iPhone11", ios_version: "12" } }
 
       context "with a valid device / iOS version" do
         it "has correct ios capabilities" do
@@ -74,7 +75,7 @@ RSpec.describe CaTesting::Drivers::V4::Capabilities do
       end
 
       context "with an invalid iOS version" do
-        let(:ios_version) { "10" }
+        let(:device_options) { { device_name: "iPhone11", ios_version: "10" } }
 
         it "it complains that the iOS version is invalid" do
           expect { capabilities }.to raise_error(ArgumentError)
