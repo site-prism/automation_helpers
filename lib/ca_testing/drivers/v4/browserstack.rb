@@ -40,7 +40,7 @@ module CaTesting
               # Browserstack Capabilities and General Capabilities are at different levels, so we merge first
               browserstack_capabilities.merge(browser_version_capability),
               # Then we deep merge with anything specifically passed into the driver registration (as these can be nested)
-              browser_specific_capabilities
+              browser_specific_capabilities.as_json
             )
           )
         end
