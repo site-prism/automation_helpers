@@ -21,7 +21,16 @@ RSpec.describe CaTesting::Drivers::V4::Remote do
       end
 
       it "has correct desired capabilities" do
-        expect(options[:capabilities].first.as_json).to eq({ "browserName" => "chrome" })
+        expect(options[:capabilities].first.as_json)
+          .to eq(
+            {
+              "browserName" => "chrome",
+              "goog:loggingPrefs" => {
+                "browser" => "ALL",
+                "driver" => "ALL"
+              }
+            }
+          )
       end
 
       it "has correct browser options" do

@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-require "selenium/webdriver/remote"
-
+require "ca_testing/drivers/v4/capabilities"
 require "ca_testing/drivers/v4/options"
 
 module CaTesting
@@ -32,11 +31,9 @@ module CaTesting
         private
 
         def browser_capabilities
-          case browser
-          when :chrome;            then Selenium::WebDriver::Remote::Capabilities.chrome
-          when :firefox;           then Selenium::WebDriver::Remote::Capabilities.firefox
-          else                     raise ArgumentError, "You must use a supported browser"
-          end
+          raise ArgumentError, "You must use a supported browser" unless supported_browser?
+
+          Capabilities.for(browser)
         end
 
         def options
@@ -45,6 +42,10 @@ module CaTesting
 
         def hub_url
           ENV["HUB_URL"]
+        end
+
+        def supported_browser?
+          %i[chrome firefox].include?(browser)
         end
       end
     end

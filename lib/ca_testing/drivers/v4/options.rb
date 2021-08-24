@@ -1,5 +1,12 @@
 # frozen_string_literal: true
 
+require "selenium/webdriver/common/options"
+
+require "selenium/webdriver/chrome/options"
+require "selenium/webdriver/firefox/options"
+require "selenium/webdriver/edge/options"
+require "selenium/webdriver/safari/options"
+
 module CaTesting
   module Drivers
     module V4
