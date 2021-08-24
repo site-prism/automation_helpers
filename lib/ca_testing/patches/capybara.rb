@@ -16,10 +16,6 @@ module CaTesting
       def perform
         ::Capybara::Node::Element.prepend SafariTextPatch
       end
-
-      def deprecate?
-        false
-      end
     end
 
     module SafariTextPatch
