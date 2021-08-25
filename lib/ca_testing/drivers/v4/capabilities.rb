@@ -18,7 +18,7 @@ module CaTesting
 
           def capabilities_hash(browser, device_options)
             case browser
-            when :android;           then android_capabilities
+            when :android;           then android_capabilities(device_options)
             when :chrome;            then chrome_capabilities
             when :firefox;           then firefox_capabilities
             when :internet_explorer; then internet_explorer_capabilities
@@ -27,12 +27,12 @@ module CaTesting
             end
           end
 
-          def android_capabilities
+          def android_capabilities(device_options)
             {
               "bstack:options" => {
                 "deviceName" => device_options[:device_name],
                 "realMobile" => "true",
-                "appiumVersion" => ios_appium_version(device_options[:os_version])
+                "appiumVersion" => android_appium_version(device_options[:os_version])
               }
             }
           end

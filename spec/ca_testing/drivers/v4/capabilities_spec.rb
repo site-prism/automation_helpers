@@ -9,17 +9,28 @@ RSpec.describe CaTesting::Drivers::V4::Capabilities do
     context "for android" do
       let(:browser) { :android }
 
-      it "has correct android capabilities" do
-        expect(capabilities).to eq(
-          {
-            "bstack:options" => {
-              "osVersion" => "10.0",
-              "deviceName" => "Samsung Galaxy S20",
-              "realMobile" => "true",
-              "appiumVersion" => "1.17.0"
+      context "with a valid device / android version" do
+        let(:device_options) { { device_name: "SamsungGalaxyS20", os_version: "10" } }
+
+        it "has correct android capabilities" do
+          expect(capabilities).to eq(
+            {
+              "bstack:options" => {
+                "deviceName" => "SamsungGalaxyS20",
+                "realMobile" => "true",
+                "appiumVersion" => "1.21.0"
+              }
             }
-          }
-        )
+          )
+        end
+      end
+
+      context "with an invalid android version" do
+        let(:device_options) { { device_name: "SamsungGalaxyS20", os_version: "8" } }
+
+        it "it complains that the android version is invalid" do
+          expect { capabilities }.to raise_error(ArgumentError)
+        end
       end
     end
 
@@ -59,16 +70,17 @@ RSpec.describe CaTesting::Drivers::V4::Capabilities do
 
     context "for ios" do
       let(:browser) { :ios }
-      let(:device_options) { { device_name: "iPhone11", ios_version: "12" } }
 
       context "with a valid device / iOS version" do
-        it "has correct ios capabilities" do
+        let(:device_options) { { device_name: "iPhone11", os_version: "12" } }
+
+        it "has correct iOS capabilities" do
           expect(capabilities).to eq(
             {
               "bstack:options" => {
                 "deviceName" => "iPhone11",
                 "realMobile" => "true",
-                "appiumVersion" => "1.19.1"
+                "appiumVersion" => "1.20.2"
               }
             }
           )
@@ -76,7 +88,7 @@ RSpec.describe CaTesting::Drivers::V4::Capabilities do
       end
 
       context "with an invalid iOS version" do
-        let(:device_options) { { device_name: "iPhone11", ios_version: "10" } }
+        let(:device_options) { { device_name: "iPhone11", os_version: "10" } }
 
         it "it complains that the iOS version is invalid" do
           expect { capabilities }.to raise_error(ArgumentError)
