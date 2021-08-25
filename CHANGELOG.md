@@ -12,6 +12,9 @@
 
 * New (private) API for Capabilities which mirrors Options
 
+**New**
+* Added **working** Browserstack-specific capabilities for Android driver (Previously were hard-coded and placeholder)
+
 **Removals**
 * Removed all Docker/Jenkins code as we now use GHA as our CI pipeline
 
