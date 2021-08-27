@@ -6,8 +6,21 @@
   * `#deprecation_notice_date` (Time) or `#deprecate_from` (Gem version)
   * `#prevent_usage_date` (Time) or `#prevent_usage_from` (Gem version)
 
+* Rewrote public API of Browserstack Drivers
+  * Uses a similar `.for` notation to the remote API.
+  * Removes the need to provide the custom capabilities class (where it can be directly determined)
+
+* New (private) API for Capabilities which mirrors Options
+
+**New**
+* Added **working** Browserstack-specific capabilities for Android driver (Previously were hard-coded and placeholder)
+
 **Removals**
 * Removed all Docker/Jenkins code as we now use GHA as our CI pipeline
+
+**Changed**
+* Amalgamation / Standardisation down of tests and namespaces
+  * The previous v3 internet explorer namespace has been moved to v4 because it was actually a v4 driver
 
 ## <sub>v2.2</sub>
 #### _Aug. 12, 2021_

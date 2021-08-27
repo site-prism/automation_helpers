@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "faraday"
+require "selenium/webdriver/remote"
 
 require "ca_testing/drivers/v4/capabilities"
 require "ca_testing/drivers/v4/options"
@@ -75,7 +76,7 @@ module CaTesting
         end
 
         def browser_specific_capabilities
-          CaTesting::Drivers::V4::Capabilities.for(browser, device_options)
+          Capabilities.for(browser, device_options)
         end
 
         def browser_version_capability
@@ -85,7 +86,7 @@ module CaTesting
         end
 
         def options
-          CaTesting::Drivers::V4::Options.for(browser)
+          Options.for(browser)
         end
 
         def browserstack_hub_url

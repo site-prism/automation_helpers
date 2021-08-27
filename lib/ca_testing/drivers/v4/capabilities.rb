@@ -18,7 +18,7 @@ module CaTesting
 
           def capabilities_hash(browser, device_options)
             case browser
-            when :android;           then android_capabilities
+            when :android;           then android_capabilities(device_options)
             when :chrome;            then chrome_capabilities
             when :firefox;           then firefox_capabilities
             when :internet_explorer; then internet_explorer_capabilities
@@ -27,13 +27,12 @@ module CaTesting
             end
           end
 
-          def android_capabilities
+          def android_capabilities(device_options)
             {
               "bstack:options" => {
-                "osVersion" => "10.0",
-                "deviceName" => "Samsung Galaxy S20",
+                "deviceName" => device_options[:device_name],
                 "realMobile" => "true",
-                "appiumVersion" => "1.17.0"
+                "appiumVersion" => android_appium_version(device_options[:os_version])
               }
             }
           end
@@ -73,17 +72,24 @@ module CaTesting
               "bstack:options" => {
                 "deviceName" => device_options[:device_name],
                 "realMobile" => "true",
-                "appiumVersion" => appium_version(device_options[:ios_version])
+                "appiumVersion" => ios_appium_version(device_options[:os_version])
               }
             }
           end
 
-          def appium_version(ios_version)
+          def android_appium_version(android_version)
+            case android_version.to_f
+            when 10..; then "1.21.0"
+            when 9..;  then "1.20.2"
+            else raise ArgumentError, "Your Android Version is too low. Please don't use lower than Android Pie (9)."
+            end
+          end
+
+          def ios_appium_version(ios_version)
             case ios_version.to_f
-            when 14..15; then "1.20.3"
-            when 13..14; then "1.20.2"
-            when 12..13; then "1.19.1"
-            when 11..12; then "1.16.0"
+            when 13..; then "1.21.0"
+            when 12..; then "1.20.2"
+            when 11..; then "1.16.0"
             else raise ArgumentError, "Your iOS Version is too low. Please don't use lower than iOS 11."
             end
           end
