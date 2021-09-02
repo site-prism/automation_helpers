@@ -1,6 +1,9 @@
 ## <sub>main</sub>
 #### _Unreleased_
 
+## <sub>v3.0</sub>
+#### _Unreleased_
+
 **Breaking Changes**
 * Altered format / structure of patches to accept either...
   * `#deprecation_notice_date` (Time) or `#deprecate_from` (Gem version)
