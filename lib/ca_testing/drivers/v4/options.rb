@@ -5,6 +5,7 @@ require "selenium/webdriver/chrome/options"
 require "selenium/webdriver/firefox/options"
 require "selenium/webdriver/safari/options"
 
+# This is needed due to the paths being inconsistent during the v4 alphas/betas
 begin
   require "selenium/webdriver/edge/options"
 rescue LoadError
