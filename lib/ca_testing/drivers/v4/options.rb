@@ -1,11 +1,15 @@
 # frozen_string_literal: true
 
 require "selenium/webdriver/common/options"
-
 require "selenium/webdriver/chrome/options"
 require "selenium/webdriver/firefox/options"
-require "selenium/webdriver/edge/options"
 require "selenium/webdriver/safari/options"
+
+begin
+  require "selenium/webdriver/edge/options"
+rescue LoadError
+  require "selenium/webdriver/edge_chrome/options"
+end
 
 module CaTesting
   module Drivers
@@ -25,10 +29,19 @@ module CaTesting
             case browser
             when :chrome;             then ::Selenium::WebDriver::Chrome::Options.new
             when :firefox;            then ::Selenium::WebDriver::Firefox::Options.new(log_level: "trace")
-            when :edge;               then ::Selenium::WebDriver::Edge::Options.new
+            when :edge;               then edge_options
             when :safari;             then ::Selenium::WebDriver::Safari::Options.new(automatic_inspection: true)
             when :internet_explorer;  then internet_explorer_options
             else {}
+            end
+          end
+
+          # This is only needed before version 4.0 is stable
+          def edge_options
+            if defined? ::Selenium::WebDriver::EdgeChrome::Options
+              ::Selenium::WebDriver::EdgeChrome::Options.new
+            else
+              ::Selenium::WebDriver::Edge::Options.new
             end
           end
 
