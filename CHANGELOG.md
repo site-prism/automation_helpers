@@ -7,8 +7,7 @@
 **Bugfixes**
 * Fixed load error in Selenium Webdriver Edge
   * This issue was due to Selenium changing their path for Edge Options during the V4 betas
-
-
+  
 ## <sub>v3.0</sub>
 #### _Sep 02, 2021_
 
