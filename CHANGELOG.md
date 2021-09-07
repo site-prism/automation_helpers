@@ -1,8 +1,15 @@
 ## <sub>main</sub>
 #### _Unreleased_
 
-## <sub>v3.0</sub>
+## <sub>v3.0.1</sub>
 #### _Unreleased_
+
+**Bugfixes**
+* Fixed load error in Selenium Webdriver Edge
+  * This issue was due to Selenium changing their path for Edge Options during the V4 betas
+  
+## <sub>v3.0</sub>
+#### _Sep 02, 2021_
 
 **Breaking Changes**
 * Altered format / structure of patches to accept either...
