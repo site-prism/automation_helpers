@@ -9,7 +9,7 @@ jobs:
       fail-fast: false
       matrix:
         ruby: [ '2.7', '3.0' ]
-        gemfile: [ 'Gemfile', 'gemfiles/Gemfile.webdriver_alpha', 'gemfiles/Gemfile.beta' ]
+        gemfile: [ 'Gemfile', 'gemfiles/Gemfile.webdriver_alpha', 'gemfiles/Gemfile.webdriver_beta' ]
     env:
       BUNDLE_GEMFILE: ${{ matrix.gemfile }}
     steps:
