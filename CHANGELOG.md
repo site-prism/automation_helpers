@@ -1,11 +1,20 @@
 ## <sub>main</sub>
 #### _Unreleased_
 
+
 **New**
 * Added testing for a matrix of ruby / selenium versions
   * Initially we're testing alpha/beta/latest versions of selenium against ruby 2.7 and 3.0
 ## <sub>v3.0.1</sub>
+
 #### _Unreleased_
+**Bugfixes**
+* Fixed load error in Selenium Webdriver Edge
+  * We can not use Microsoft Edge Beta for automation
+  * Revert back to using out of the box default Edge settings
+
+## <sub>v3.0.1</sub>
+#### _Sep 07, 2021_
 
 **Bugfixes**
 * Fixed load error in Selenium Webdriver Edge
