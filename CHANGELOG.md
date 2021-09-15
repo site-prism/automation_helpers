@@ -9,9 +9,8 @@
 
 #### _Unreleased_
 **Bugfixes**
-* Fixed load error in Selenium Webdriver Edge
-  * We can not use Microsoft Edge Beta for automation
-  * Revert back to using out of the box default Edge settings
+* Fix Load error in Edge Options
+  * Mac Edge was not properly processing the browser name by default
 
 ## <sub>v3.0.1</sub>
 #### _Sep 07, 2021_
