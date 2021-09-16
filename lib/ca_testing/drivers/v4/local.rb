@@ -53,7 +53,7 @@ module CaTesting
           return unless safari?
 
           ::Selenium::WebDriver::Safari.technology_preview!
-          ::Selenium::WebDriver::Service.safari({ args: ["--diagnose"] })
+          ::Selenium::WebDriver::Service.safari(args: ["--diagnose"])
         end
 
         # This is required because Capybara and Safari aren't quite sure what the difference
