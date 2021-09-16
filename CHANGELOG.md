@@ -1,16 +1,13 @@
 ## <sub>main</sub>
 #### _Unreleased_
 
+**Bugfixes**
+* Fix Load error in Edge Options
+  * Mac Edge was not properly processing the browser name by default
 
 **New**
 * Added testing for a matrix of ruby / selenium versions
   * Initially we're testing alpha/beta/latest versions of selenium against ruby 2.7 and 3.0
-## <sub>v3.0.1</sub>
-
-#### _Unreleased_
-**Bugfixes**
-* Fix Load error in Edge Options
-  * Mac Edge was not properly processing the browser name by default
 
 ## <sub>v3.0.1</sub>
 #### _Sep 07, 2021_
