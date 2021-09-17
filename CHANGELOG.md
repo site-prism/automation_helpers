@@ -8,6 +8,8 @@
 **New**
 * Added testing for a matrix of ruby / selenium versions
   * Initially we're testing alpha/beta/latest versions of selenium against ruby 2.7 and 3.0
+* Add Local Edge driver tests
+  * Previously, there weren't any tests for Edge driver
 
 ## <sub>v3.0.1</sub>
 #### _Sep 07, 2021_
