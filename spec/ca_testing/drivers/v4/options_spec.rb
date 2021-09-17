@@ -28,6 +28,12 @@ RSpec.describe CaTesting::Drivers::V4::Options do
       it { is_expected.to have_attributes({ browser_name: "safari", automatic_inspection: true }) }
     end
 
+    context "for edge" do
+      let(:browser) { :edge }
+
+      it { is_expected.to have_attributes({ browser_name: "MicrosoftEdge" }) }
+    end
+
     context "when requesting a headless browser" do
       before { allow(described_class).to receive(:headless?) { true } }
 
