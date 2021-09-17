@@ -1,14 +1,18 @@
 ## <sub>main</sub>
 #### _Unreleased_
 
-**Bugfixes**
-* Fix Load error in Edge Options
-  * Mac Edge was not properly processing the browser name by default
-
 **New**
 * Added testing for a matrix of ruby / selenium versions
   * Initially we're testing alpha/beta/latest versions of selenium against ruby 2.7 and 3.0
 
+**Removals**
+* As we're using GHA we don't need rake tasks anymore
+  * `rake` is no longer a dev dependency
+
+**Bugfixes**
+* Fix Load error in Edge Options
+  * Mac Edge was not properly processing the browser name by default
+  
 ## <sub>v3.0.1</sub>
 #### _Sep 07, 2021_
 
@@ -28,7 +32,7 @@
   * Uses a similar `.for` notation to the remote API.
   * Removes the need to provide the custom capabilities class (where it can be directly determined)
 
-* New (private) API for Capabilities which mirrors Options
+* New (private), API for Capabilities which mirrors Options
 
 **New**
 * Added **working** Browserstack-specific capabilities for Android driver (Previously were hard-coded and placeholder)
