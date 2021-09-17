@@ -118,7 +118,6 @@ RSpec.describe CaTesting::Drivers::V4::Local do
       end
 
       it "has correct browser options" do
-
         expect(options[:capabilities].last.as_json)
           .to eq(
             {
