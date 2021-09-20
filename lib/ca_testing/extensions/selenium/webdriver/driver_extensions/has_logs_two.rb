@@ -2,12 +2,12 @@
 
 module Selenium
   module WebDriver
-    module Chrome
-      module Features
+    module DriverExtensions
+      module HasLogsTwo
         # @return [Hash]
         #
         # Perform the regular log fetch from Selenium, but then store the logs inside a Hash
-        def log(type)
+        def get(type)
           cached_logs[type] = super
         end
 
@@ -23,7 +23,7 @@ module Selenium
         private
 
         def default_file_path
-          CaTesting.chrome_log_path.tap { |path| raise "Path to log is missing" unless CaTesting.chrome_log_path }
+          CaTesting.chrome_log_path.tap { |path| raise "Set the path to store logs using CaTesting.chrome_log_path=" unless path }
         end
 
         def cached_logs
