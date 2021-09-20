@@ -105,5 +105,27 @@ RSpec.describe CaTesting::Drivers::V4::Local do
           )
       end
     end
+
+    context "for edge" do
+      let(:browser) { :edge }
+
+      it "has correct top level properties" do
+        expect(options.keys).to eq(standard_top_level_properties)
+      end
+
+      it "has correct desired capabilities" do
+        expect(options[:capabilities].first.as_json).to eq({})
+      end
+
+      it "has correct browser options" do
+        expect(options[:capabilities].last.as_json)
+          .to eq(
+            {
+              "browserName" => "MicrosoftEdge",
+              "ms:edgeOptions" => {}
+            }
+          )
+      end
+    end
   end
 end
