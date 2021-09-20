@@ -1,6 +1,9 @@
 ## <sub>main</sub>
 #### _Unreleased_
 
+## <sub>v3.0.2</sub>
+#### _Unreleased_
+
 **New**
 * Added testing for a matrix of ruby / selenium versions
   * Initially we're testing alpha/beta/latest versions of selenium against ruby 2.7 and 3.0
