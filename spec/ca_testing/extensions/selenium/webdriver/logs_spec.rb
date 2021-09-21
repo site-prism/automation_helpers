@@ -12,7 +12,7 @@ describe Selenium::WebDriver::Logs do
       .with(type)
       .and_return([log_entry])
 
-    allow(session.driver.browser.logs)
+    allow(logs)
       .to receive(:cached_logs)
       .and_call_original
   end
@@ -29,10 +29,7 @@ describe Selenium::WebDriver::Logs do
     end
 
     describe "#write_log_to_file" do
-      after do
-        file.close
-        file.unlink
-      end
+      after { file.close! }
 
       let(:file) { Tempfile.new("foo") }
 
@@ -78,10 +75,7 @@ describe Selenium::WebDriver::Logs do
     end
 
     describe "#write_log_to_file" do
-      after do
-        file.close
-        file.unlink
-      end
+      after { file.close! }
 
       let(:file) { Tempfile.new("foo") }
 
