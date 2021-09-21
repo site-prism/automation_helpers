@@ -14,9 +14,9 @@ module Selenium
       #
       # Write the logs to a filepath (If provided), or default file path (Configured).
       def write_log_to_file(type, file = default_file_path)
-        log(type) unless cached_logs.key?(type)
+        get(type) unless cached_logs.key?(type)
 
-        IO.write cached_logs[type], file
+        cached_logs[type].each { |log_entry| IO.write(log_entry, file) }
       end
 
       private
