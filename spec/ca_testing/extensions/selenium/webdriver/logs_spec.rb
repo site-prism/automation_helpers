@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
 describe Selenium::WebDriver::Logs do
-  let(:session) { Capybara::Session.new(:selenium_chrome_headless) }
+  # The Bridge is considered API Private, but we need to mock it!
+  let(:bridge) { session.driver.browser.logs.instance_variable_get(:@bridge) }
   let(:log_entry) { instance_double(Selenium::WebDriver::LogEntry, to_s: "Time - SEV - Browser or Driver Message") }
+  let(:session) { Capybara::Session.new(:selenium_chrome_headless) }
 
   before do
-    # This is the extended module on the Bridge that physically processes the log command
-    allow_any_instance_of(Selenium::WebDriver::Chrome::Features)
+    allow(bridge)
       .to receive(:log)
       .with(type)
       .and_return([log_entry])
