@@ -5,9 +5,9 @@ module Selenium
     class Logs
       # @return [Hash]
       #
-      # Perform the regular log fetch from Selenium, but then store the logs inside a Hash
+      # Identical to the regular log fetch from Selenium, but stores the logs inside a Hash to be writable later
       def get(type)
-        cached_logs[type] = @bridge.log type
+        cached_logs[type] = @bridge.log(type)
       end
 
       # @return [Integer]
