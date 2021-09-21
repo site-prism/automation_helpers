@@ -2,7 +2,6 @@
 
 describe Selenium::WebDriver::Logs do
   let(:session) { Capybara::Session.new(:selenium_chrome_headless) }
-  let(:filepath) { $stdout }
   let(:log_entry) { instance_double(Selenium::WebDriver::LogEntry, to_s: "Time - SEV - Browser or Driver Message") }
 
   before do
@@ -34,11 +33,10 @@ describe Selenium::WebDriver::Logs do
         file.unlink
       end
 
-      let(:file) { Tempfile.new('foo') }
-      let(:filepath) { file.path }
+      let(:file) { Tempfile.new("foo") }
 
       it "writes the log messages to a filepath" do
-        session.driver.browser.logs.write_log_to_file(type, filepath)
+        session.driver.browser.logs.write_log_to_file(type, file.path)
 
         expect(file.read).to eq(log_entry.to_s)
       end
@@ -70,11 +68,10 @@ describe Selenium::WebDriver::Logs do
         file.unlink
       end
 
-      let(:file) { Tempfile.new('foo') }
-      let(:filepath) { file.path }
+      let(:file) { Tempfile.new("foo") }
 
       it "writes the log messages to a filepath" do
-        session.driver.browser.logs.write_log_to_file(type, filepath)
+        session.driver.browser.logs.write_log_to_file(type, file.path)
 
         expect(file.read).to eq(log_entry.to_s)
       end
