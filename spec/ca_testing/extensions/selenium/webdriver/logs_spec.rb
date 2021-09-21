@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 describe Selenium::WebDriver::Logs do
-  let(:session) { Capybara::Session.new(:selenium_chrome) }
+  let(:session) { Capybara::Session.new(:selenium_chrome_headless) }
   let(:filepath) { $stdout }
   let(:log_entry) { instance_double(Selenium::WebDriver::LogEntry, to_s: "Time - SEV - Browser or Driver Message") }
 
@@ -10,7 +10,7 @@ describe Selenium::WebDriver::Logs do
     allow_any_instance_of(Selenium::WebDriver::Chrome::Features)
       .to receive(:log)
       .with(type)
-      .and_return([log_entry, log_entry])
+      .and_return([log_entry])
 
     allow(session.driver.browser.logs)
       .to receive(:cached_logs)
@@ -29,12 +29,26 @@ describe Selenium::WebDriver::Logs do
     end
 
     describe "#write_log_to_file" do
+      after do
+        file.close
+        file.unlink
+      end
+
+      let(:file) { Tempfile.new('foo') }
+      let(:filepath) { file.path }
+
       it "writes the log messages to a filepath" do
-        log_messages = capture_stdout do
-          session.driver.browser.logs.write_log_to_file(type, filepath)
+        session.driver.browser.logs.write_log_to_file(type, filepath)
+
+        expect(file.read).to eq(log_entry.to_s)
+      end
+
+      it "writes the log messages to $stdout" do
+        console_output = capture_stdout do
+          session.driver.browser.logs.write_log_to_file(type, $stdout)
         end
 
-        expect(log_messages).to be_empty
+        expect(console_output).to eq(log_entry.to_s)
       end
     end
   end
@@ -51,12 +65,26 @@ describe Selenium::WebDriver::Logs do
     end
 
     describe "#write_log_to_file" do
+      after do
+        file.close
+        file.unlink
+      end
+
+      let(:file) { Tempfile.new('foo') }
+      let(:filepath) { file.path }
+
       it "writes the log messages to a filepath" do
-        log_messages = capture_stdout do
-          session.driver.browser.logs.write_log_to_file(type, filepath)
+        session.driver.browser.logs.write_log_to_file(type, filepath)
+
+        expect(file.read).to eq(log_entry.to_s)
+      end
+
+      it "writes the log messages to $stdout" do
+        console_output = capture_stdout do
+          session.driver.browser.logs.write_log_to_file(type, $stdout)
         end
 
-        expect(log_messages).to be_empty
+        expect(console_output).to eq(log_entry.to_s)
       end
     end
   end
