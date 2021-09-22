@@ -27,10 +27,8 @@ describe Selenium::WebDriver::Logs do
     let(:type) { :browser }
 
     describe "#get" do
-      it "caches the response from browser logs" do
-        expect(logs).to receive(:cached_logs).once
-
-        logs.get(type)
+      it "stores the response from browser logs" do
+        expect { logs.get(type) }.to change(logs, :cached_logs).from({}).to(a_hash_including(type))
       end
     end
 
@@ -73,10 +71,8 @@ describe Selenium::WebDriver::Logs do
     let(:type) { :driver }
 
     describe "#get" do
-      it "caches the response from browser logs" do
-        expect(logs).to receive(:cached_logs).once
-
-        logs.get(type)
+      it "stores the response from browser logs" do
+        expect { logs.get(type) }.to change(logs, :cached_logs).from({}).to(a_hash_including(type))
       end
     end
 
