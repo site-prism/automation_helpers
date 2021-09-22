@@ -28,11 +28,15 @@ module Selenium
       private
 
       def default_file_path
-        CaTesting.chrome_log_path.tap { |path| raise "Set the path to store logs using CaTesting.chrome_log_path=" unless path }
+        CaTesting.chrome_log_path || raise(missing_file_path_error)
       end
 
       def cached_logs
         @cached_logs ||= {}
+      end
+
+      def missing_file_path_error
+        "Set the path to store logs using CaTesting.chrome_log_path= or pass in a filepath directly to #write_log_to_file"
       end
     end
   end
