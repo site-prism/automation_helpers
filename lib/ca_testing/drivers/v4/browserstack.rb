@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "faraday"
-require "selenium/webdriver/remote"
+require "selenium/webdriver"
 
 require "ca_testing/drivers/v4/capabilities"
 require "ca_testing/drivers/v4/options"
