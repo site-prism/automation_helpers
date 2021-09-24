@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
-require "selenium/webdriver/chrome"
-require "selenium/webdriver/firefox"
-require "selenium/webdriver/safari"
-require "selenium/webdriver/edge"
+require "selenium/webdriver"
 
 module CaTesting
   module Drivers

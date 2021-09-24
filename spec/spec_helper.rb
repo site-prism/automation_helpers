@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "selenium-webdriver"
+require "selenium/webdriver"
 require "capybara"
 require "capybara/dsl"
 require "webdrivers"
