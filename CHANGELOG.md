@@ -1,8 +1,13 @@
 ## <sub>main</sub>
 #### _Unreleased_
 
+**New**
+* Added new extension to Selenium Logs to improve Console Logging
+  * Console Logging is now non-destructive and all logs when fetched are cached (To be later written to a file)
+  * Console Logging can piped to a file or `$stdout` Using `#write_log_to_file`
+
 ## <sub>v3.0.2</sub>
-#### _Unreleased_
+#### _Sep 20, 2021_
 
 **New**
 * Added testing for a matrix of ruby / selenium versions

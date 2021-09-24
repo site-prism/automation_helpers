@@ -8,6 +8,8 @@ require "ca_testing/version"
 
 module CaTesting
   class << self
+    attr_accessor :chrome_log_path
+
     def configure
       yield self
     end
