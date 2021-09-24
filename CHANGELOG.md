@@ -6,13 +6,18 @@
   * Console Logging is now non-destructive and all logs when fetched are cached (To be later written to a file)
   * Console Logging can piped to a file or `$stdout` Using `#write_log_to_file`
 
+**Bugfixes**
+* Fix `require` errors in Driver registration process
+  * Some of the internal nested selenium code (Options / Capabilities e.t.c.), is not supported to be loaded
+  individually and instead should be loaded as a full package
+
 ## <sub>v3.0.2</sub>
 #### _Sep 20, 2021_
 
 **New**
 * Added testing for a matrix of ruby / selenium versions
   * Initially we're testing alpha/beta/latest versions of selenium against ruby 2.7 and 3.0
-  
+
 * Added Local Edge driver tests
   * Previously, there weren't any tests for Edge driver
 
