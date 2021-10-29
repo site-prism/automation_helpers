@@ -3,8 +3,8 @@
 require "faraday"
 require "selenium/webdriver"
 
-require "ca_testing/drivers/v4/capabilities"
-require "ca_testing/drivers/v4/options"
+require "automation_helpers/drivers/v4/capabilities"
+require "automation_helpers/drivers/v4/options"
 
 module CaTesting
   module Drivers

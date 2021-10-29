@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "ca_testing/drivers/v4/remote"
+require "automation_helpers/drivers/v4/remote"
 
 module CaTesting
   module Drivers

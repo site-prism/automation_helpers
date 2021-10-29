@@ -2,7 +2,7 @@
 
 lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "ca_testing/version"
+require "automation_helpers/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "ca_testing"
