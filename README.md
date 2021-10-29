@@ -1,4 +1,4 @@
-# Citizens Advice - Testing
+# Automation Helpers
 
 This package will allow you to extend your automated testing frameworks with the following
 - Driver creation: Allowing you to simply reference your drivers with a simple method
@@ -14,12 +14,14 @@ in PR and being reviewed / merged
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "ca_testing"
+gem 'automation_helpers'
 ```
 
 And then execute:
 
-    $ bundle
+```shell
+$ bundle
+```
 
 ## Usage
 
@@ -34,15 +36,11 @@ $ bundle exec rake
 # Ensure it's all green! Then commit and push
 ```
 
-To release a new version, update the version number in `version.rb`, and then
-create a release branch where the new version can be tagged and cut on github.
-
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
-https://github.com/citizens-advice/ca_testing
+https://github.com/site-prism/automation_helpers
 
-## License
+## Verbose Documentation
 
-The gem is available as open source under the terms of the
-[MIT License](https://opensource.org/licenses/MIT).
+This will come in time
