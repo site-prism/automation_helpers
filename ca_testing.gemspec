@@ -25,10 +25,10 @@ Gem::Specification.new do |spec|
 
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "faraday", "~> 1.0"
 
   spec.add_development_dependency "capybara", "~> 3.27"
   spec.add_development_dependency "cucumber", [">= 5.0", "< 8"]
+  spec.add_development_dependency "faraday", "~> 1.0"
   spec.add_development_dependency "parallel_tests", "~> 3.7"
   spec.add_development_dependency "rspec", "~> 3.10"
   spec.add_development_dependency "selenium-webdriver", [">= 4.0.0.alpha1", "< 4.0.0.beta5"]
