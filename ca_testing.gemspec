@@ -5,19 +5,19 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "ca_testing/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "ca_testing"
+  spec.name          = "automation_helpers"
   spec.version       = CaTesting::VERSION
-  spec.authors       = ["Luke Hill"]
-  spec.email         = %w[luke.hill@citizensadvice.org.uk]
+  spec.authors       = ["Luke Hill", "Marcelo Nicolosi Santos"]
+  spec.email         = %w[lukehill_uk@hotmail.com marcelo.nicolosi@citizensadvice.org.uk]
 
-  spec.summary       = "Citizens Advice - Testing"
+  spec.summary       = "Automation Helpers - Avoid writing the most common things in Ruby Automation"
   spec.description   = "Automation Patches / Extensions that allow you to extend your Ruby-based testing frameworks"
-  spec.homepage      = "https://www.github.com/citizens-advice/ca_testing/"
-  spec.license       = "MIT"
+  spec.homepage      = "https://www.github.com/site-prism/automation_helpers"
+  spec.license       = "BSD-3-Clause"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://www.github.com/citizens-advice/ca_testing/"
-  spec.metadata["changelog_uri"] = "https://www.github.com/citizens-advice/ca_testing/blob/main/CHANGELOG.md"
+  spec.metadata["source_code_uri"] = "https://www.github.com/site-prism/automation_helpers"
+  spec.metadata["changelog_uri"] = "https://www.github.com/site-prism/automation_helpers/blob/main/CHANGELOG.md"
 
   spec.required_ruby_version = ">= 2.7"
 
