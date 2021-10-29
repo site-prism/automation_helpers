@@ -42,11 +42,11 @@ module CaTesting
       end
 
       def deprecate_from
-        "4.0.0.beta5"
+        '4.0.0.beta5'
       end
 
       def prevent_usage_from
-        "4.0.1"
+        '4.0.1'
       end
 
       def gem_version
@@ -61,7 +61,7 @@ module CaTesting
         if value.is_a?(Hash)
           value.each_with_object({}) do |(key, val), hash|
             key = convert_json_key(key, camelize: camelize_keys)
-            hash[key] = generate_as_json(val, camelize_keys: key != "prefs")
+            hash[key] = generate_as_json(val, camelize_keys: key != 'prefs')
           end
         else
           super

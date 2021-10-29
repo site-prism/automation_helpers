@@ -6,7 +6,7 @@ class String
   # Convert's a regular string name into it's pascalized format
   # This can then be used to generate a ClassName
   def pascalize
-    split("_").map(&:capitalize).join
+    split('_').map(&:capitalize).join
   end
 
   # @return [String]
@@ -16,10 +16,10 @@ class String
   def snake_case
     gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
       .gsub(/([a-z\d])([A-Z])/, '\1_\2')
-      .squeeze(" ")
-      .tr("-", "_")
-      .tr(" ", "_")
-      .tr("'", "")
+      .squeeze(' ')
+      .tr('-', '_')
+      .tr(' ', '_')
+      .tr("'", '')
       .downcase
   end
 
@@ -28,6 +28,6 @@ class String
   # Sanitize and convert every individual whitespace character to
   # a regular space character (Does not sanitize newlines)
   def sanitize_whitespace
-    gsub(/[ \t\r\f\u00A0]/, " ")
+    gsub(/[ \t\r\f\u00A0]/, ' ')
   end
 end

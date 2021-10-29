@@ -17,11 +17,11 @@ module CaTesting
       end
 
       def deprecate_from
-        "4.0.0.beta3"
+        '4.0.0.beta3'
       end
 
       def prevent_usage_from
-        "4.0.0.beta5"
+        '4.0.0.beta5'
       end
 
       def gem_version
@@ -34,7 +34,7 @@ module CaTesting
         super(cookie)
           .merge(
             {
-              http_only: cookie["httpOnly"]
+              http_only: cookie['httpOnly']
             }
           )
       end

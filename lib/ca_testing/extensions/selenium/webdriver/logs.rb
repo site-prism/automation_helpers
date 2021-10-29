@@ -36,7 +36,7 @@ module Selenium
       end
 
       def missing_file_path_error
-        "Set the path to store logs using CaTesting.chrome_log_path= or pass in a filepath directly to #write_log_to_file"
+        'Set the path to store logs using CaTesting.chrome_log_path= or pass in a filepath directly to #write_log_to_file'
       end
     end
   end

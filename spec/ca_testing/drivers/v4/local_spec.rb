@@ -13,73 +13,73 @@ RSpec.describe CaTesting::Drivers::V4::Local do
   let(:session) { Capybara::Session.new(:selenium) }
   let(:standard_top_level_properties) { %i[browser clear_local_storage clear_session_storage service capabilities] }
 
-  describe "#register" do
-    context "for chrome" do
+  describe '#register' do
+    context 'for chrome' do
       let(:browser) { :chrome }
 
-      it "has correct top level properties" do
+      it 'has correct top level properties' do
         expect(options.keys).to eq(standard_top_level_properties)
       end
 
-      it "has correct desired capabilities" do
+      it 'has correct desired capabilities' do
         expect(options[:capabilities].first.as_json).to eq({})
       end
 
-      it "has correct browser options" do
+      it 'has correct browser options' do
         expect(options[:capabilities].last.as_json)
           .to eq(
             {
-              "browserName" => "chrome",
-              "goog:chromeOptions" => {}
+              'browserName' => 'chrome',
+              'goog:chromeOptions' => {}
             }
           )
       end
     end
 
-    context "for firefox" do
+    context 'for firefox' do
       before { CaTesting::Patches::SeleniumOptions.new(browser).patch! }
 
       let(:browser) { :firefox }
       let(:caps) { options[:capabilities].first.as_json }
       let(:opts) { options[:capabilities].last.as_json }
 
-      it "has correct top level properties" do
+      it 'has correct top level properties' do
         expect(options.keys).to eq(standard_top_level_properties)
       end
 
-      it "has correct desired capabilities" do
+      it 'has correct desired capabilities' do
         expect(caps).to eq({})
       end
 
-      it "has correct browser options" do
-        expect(opts).to match(a_hash_including("browserName" => "firefox"))
+      it 'has correct browser options' do
+        expect(opts).to match(a_hash_including('browserName' => 'firefox'))
 
-        expect(opts["moz:firefoxOptions"]).to match(a_hash_including("log" => { "level" => "trace" }))
+        expect(opts['moz:firefoxOptions']).to match(a_hash_including('log' => { 'level' => 'trace' }))
       end
     end
 
-    context "for internet explorer" do
+    context 'for internet explorer' do
       let(:browser) { :internet_explorer }
 
-      it "has correct top level properties" do
+      it 'has correct top level properties' do
         expect(options.keys).to eq(standard_top_level_properties)
       end
 
-      it "has correct desired capabilities" do
+      it 'has correct desired capabilities' do
         expect(options[:capabilities].first.as_json).to eq({})
       end
 
-      it "has correct (Modified), browser options" do
+      it 'has correct (Modified), browser options' do
         expect(options[:capabilities].last.as_json)
           .to eq(
             {
-              "se:ieOptions" => { "enablePersistentHover" => true, "nativeEvents" => true }
+              'se:ieOptions' => { 'enablePersistentHover' => true, 'nativeEvents' => true }
             }
           )
       end
     end
 
-    context "for safari" do
+    context 'for safari' do
       before { CaTesting::Patches::SeleniumOptions.new(browser).patch! }
 
       let(:browser) { :safari }
@@ -87,42 +87,42 @@ RSpec.describe CaTesting::Drivers::V4::Local do
       # Prevent OS complaining it doesn't know where safari is!
       before { allow(Selenium::WebDriver::Platform).to receive(:assert_executable) }
 
-      it "has correct top level properties" do
+      it 'has correct top level properties' do
         expect(options.keys).to eq(standard_top_level_properties)
       end
 
-      it "has correct desired capabilities" do
-        expect(options[:capabilities].last.as_json).to eq({ "browserName" => "Safari Technology Preview" })
+      it 'has correct desired capabilities' do
+        expect(options[:capabilities].last.as_json).to eq({ 'browserName' => 'Safari Technology Preview' })
       end
 
-      it "has correct browser options" do
+      it 'has correct browser options' do
         expect(options[:capabilities].first.as_json)
           .to eq(
             {
-              "browserName" => "safari",
-              "safari:automaticInspection" => true
+              'browserName' => 'safari',
+              'safari:automaticInspection' => true
             }
           )
       end
     end
 
-    context "for edge" do
+    context 'for edge' do
       let(:browser) { :edge }
 
-      it "has correct top level properties" do
+      it 'has correct top level properties' do
         expect(options.keys).to eq(standard_top_level_properties)
       end
 
-      it "has correct desired capabilities" do
+      it 'has correct desired capabilities' do
         expect(options[:capabilities].first.as_json).to eq({})
       end
 
-      it "has correct browser options" do
+      it 'has correct browser options' do
         expect(options[:capabilities].last.as_json)
           .to eq(
             {
-              "browserName" => "MicrosoftEdge",
-              "ms:edgeOptions" => {}
+              'browserName' => 'MicrosoftEdge',
+              'ms:edgeOptions' => {}
             }
           )
       end

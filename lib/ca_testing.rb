@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require "ca_testing/drivers"
-require "ca_testing/extensions"
-require "ca_testing/logger"
-require "ca_testing/patches"
-require "ca_testing/version"
+require 'ca_testing/drivers'
+require 'ca_testing/extensions'
+require 'ca_testing/logger'
+require 'ca_testing/patches'
+require 'ca_testing/version'
 
 module CaTesting
   class << self
@@ -19,7 +19,7 @@ module CaTesting
     end
 
     def logger=(logger)
-      raise ArgumentError, "You must supply an existing Logger" unless logger.is_a?(::Logger)
+      raise ArgumentError, 'You must supply an existing Logger' unless logger.is_a?(::Logger)
 
       @logger = logger
     end

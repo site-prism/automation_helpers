@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require "ca_testing/drivers/v4/capabilities"
-require "ca_testing/drivers/v4/options"
+require 'ca_testing/drivers/v4/capabilities'
+require 'ca_testing/drivers/v4/options'
 
 module CaTesting
   module Drivers
@@ -31,7 +31,7 @@ module CaTesting
         private
 
         def browser_capabilities
-          raise ArgumentError, "You must use a supported browser" unless supported_browser?
+          raise ArgumentError, 'You must use a supported browser' unless supported_browser?
 
           Capabilities.for(browser)
         end
@@ -41,7 +41,7 @@ module CaTesting
         end
 
         def hub_url
-          ENV["HUB_URL"]
+          ENV['HUB_URL']
         end
 
         def supported_browser?
