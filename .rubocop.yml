@@ -1,9 +1,24 @@
-inherit_gem:
-  citizens-advice-style:
-    - default.yml
-
 AllCops:
+  # Display all verbose info on failures to help people triage how to fix
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  # Enable all NewCops by default (Even new 1.x cops)
+  NewCops: enable
+  # Target Ruby 2.7 only
+  TargetRubyVersion: 2.7
   Exclude:
     # This patch is 80% copied code from the upstream repo. As such there are different style
     - 'lib/ca_testing/patches/parallel_cucumber.rb'
-  SuggestExtensions: false
+
+# We have a linelength of 140 characters across the codebase/s
+Layout/LineLength:
+  Max: 140
+  Exclude:
+    - '^Given'
+    - '^When'
+    - '^Then'
+
+Metrics/BlockLength:
+  Exclude:
+    # Specs deliberately will almost always break this cop (It should be added to rubocop-rspec defaults ideally)
+    - spec/**/*
