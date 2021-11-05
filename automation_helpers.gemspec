@@ -5,9 +5,9 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "automation_helpers/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = 'automation_helpers'
+  spec.name          = "automation_helpers"
   spec.version       = CaTesting::VERSION
-  spec.authors       = ['Luke Hill', 'Marcelo Nicolosi Santos']
+  spec.authors       = ["Luke Hill", "Marcelo Nicolosi Santos"]
   spec.email         = %w[lukehill_uk@hotmail.com celonicolosi@hotmail.com]
 
   spec.summary       = "Automation Helpers - Avoid writing the most common things in Ruby Automation"
