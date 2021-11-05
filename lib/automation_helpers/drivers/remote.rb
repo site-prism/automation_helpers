@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
-<<<<<<< HEAD:lib/ca_testing/drivers/remote.rb
-require 'ca_testing/drivers/v4/remote'
-=======
-require "automation_helpers/drivers/v4/remote"
->>>>>>> main:lib/automation_helpers/drivers/remote.rb
+require 'automation_helpers/drivers/v4/remote'
 
 module CaTesting
   module Drivers

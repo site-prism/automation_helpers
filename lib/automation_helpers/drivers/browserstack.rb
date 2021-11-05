@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
-<<<<<<< HEAD:lib/ca_testing/drivers/browserstack.rb
-require 'ca_testing/drivers/v4/browserstack'
-=======
-require "automation_helpers/drivers/v4/browserstack"
->>>>>>> main:lib/automation_helpers/drivers/browserstack.rb
+require 'automation_helpers/drivers/v4/browserstack'
 
 module CaTesting
   module Drivers
