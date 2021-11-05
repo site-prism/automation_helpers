@@ -20,7 +20,7 @@ module Selenium
           if file == $stdout
             file << log_entry
           else
-            IO.write(file, log_entry)
+            File.write(file, log_entry)
           end
         end
       end
