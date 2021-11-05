@@ -11,6 +11,8 @@ AllCops:
   Exclude:
     # This patch is 80% copied code from the upstream repo. As such there are different style
     - 'lib/automation_helpers/patches/parallel_cucumber.rb'
+    # Remove vendor files from being checked
+    - vendor/**/*
   SuggestExtensions: false
 
 # We have a linelength of 140 characters across the codebase/s
