@@ -3,8 +3,13 @@
 require 'faraday'
 require 'selenium/webdriver'
 
+<<<<<<< HEAD:lib/ca_testing/drivers/v4/browserstack.rb
 require 'ca_testing/drivers/v4/capabilities'
 require 'ca_testing/drivers/v4/options'
+=======
+require "automation_helpers/drivers/v4/capabilities"
+require "automation_helpers/drivers/v4/options"
+>>>>>>> main:lib/automation_helpers/drivers/v4/browserstack.rb
 
 module CaTesting
   module Drivers

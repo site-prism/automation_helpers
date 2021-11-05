@@ -2,7 +2,11 @@
 
 require 'selenium/webdriver'
 
+<<<<<<< HEAD:lib/ca_testing/drivers/v4/local.rb
 require 'ca_testing/drivers/v4/options'
+=======
+require "automation_helpers/drivers/v4/options"
+>>>>>>> main:lib/automation_helpers/drivers/v4/local.rb
 
 module CaTesting
   module Drivers

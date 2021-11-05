@@ -10,7 +10,8 @@ AllCops:
   TargetRubyVersion: 2.7
   Exclude:
     # This patch is 80% copied code from the upstream repo. As such there are different style
-    - 'lib/ca_testing/patches/parallel_cucumber.rb'
+    - 'lib/automation_helpers/patches/parallel_cucumber.rb'
+  SuggestExtensions: false
 
 # We have a linelength of 140 characters across the codebase/s
 Layout/LineLength:

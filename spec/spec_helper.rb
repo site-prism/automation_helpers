@@ -7,7 +7,7 @@ require 'webdrivers'
 require 'cucumber'
 require 'parallel_tests/gherkin/runner'
 
-require 'ca_testing'
+require "automation_helpers"
 
 Dir['./spec/support/**/*.rb'].sort.each { |f| require f }
 

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require 'ca_testing/drivers'
-require 'ca_testing/extensions'
-require 'ca_testing/logger'
-require 'ca_testing/patches'
-require 'ca_testing/version'
+require "automation_helpers/drivers"
+require "automation_helpers/extensions"
+require "automation_helpers/logger"
+require "automation_helpers/patches"
+require "automation_helpers/version"
 
 module CaTesting
   class << self
