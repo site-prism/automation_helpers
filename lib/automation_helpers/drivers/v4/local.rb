@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require "selenium/webdriver"
+require 'selenium/webdriver'
 
-require "automation_helpers/drivers/v4/options"
+require 'automation_helpers/drivers/v4/options'
 
 module CaTesting
   module Drivers
@@ -53,7 +53,7 @@ module CaTesting
           return unless safari?
 
           ::Selenium::WebDriver::Safari.technology_preview!
-          ::Selenium::WebDriver::Service.safari(args: ["--diagnose"])
+          ::Selenium::WebDriver::Service.safari(args: ['--diagnose'])
         end
 
         # This is required because Capybara and Safari aren't quite sure what the difference
@@ -64,8 +64,8 @@ module CaTesting
         def desired_capabilities
           ::Selenium::WebDriver::Remote::Capabilities.new.tap do |capabilities|
             if safari?
-              capabilities["browserName"] = "Safari Technology Preview"
-              CaTesting.logger.warn("Altering Browser Name request to alleviate Capybara failure with STP.")
+              capabilities['browserName'] = 'Safari Technology Preview'
+              CaTesting.logger.warn('Altering Browser Name request to alleviate Capybara failure with STP.')
             end
           end
         end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "automation_helpers/drivers/v4/browserstack"
+require 'automation_helpers/drivers/v4/browserstack'
 
 module CaTesting
   module Drivers

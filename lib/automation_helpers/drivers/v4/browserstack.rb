@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require "faraday"
-require "selenium/webdriver"
+require 'faraday'
+require 'selenium/webdriver'
 
-require "automation_helpers/drivers/v4/capabilities"
-require "automation_helpers/drivers/v4/options"
+require 'automation_helpers/drivers/v4/capabilities'
+require 'automation_helpers/drivers/v4/options'
 
 module CaTesting
   module Drivers
@@ -52,25 +52,25 @@ module CaTesting
 
         def configurable_capabilities
           {
-            "bstack:options" => {
-              "buildName" => browserstack_options[:build_name],
-              "projectName" => browserstack_options[:project_name],
-              "sessionName" => browserstack_options[:session_name],
-              "debug" => browserstack_options[:browserstack_debug_mode],
-              "os" => os,
-              "osVersion" => os_version
+            'bstack:options' => {
+              'buildName' => browserstack_options[:build_name],
+              'projectName' => browserstack_options[:project_name],
+              'sessionName' => browserstack_options[:session_name],
+              'debug' => browserstack_options[:browserstack_debug_mode],
+              'os' => os,
+              'osVersion' => os_version
             }
           }
         end
 
         def static_capabilities
           {
-            "bstack:options" => {
-              "local" => "false",
-              "seleniumVersion" => "4.0.0-alpha-6",
-              "consoleLogs" => "verbose",
-              "networkLogs" => "true",
-              "resolution" => "1920x1080"
+            'bstack:options' => {
+              'local' => 'false',
+              'seleniumVersion' => '4.0.0-alpha-6',
+              'consoleLogs' => 'verbose',
+              'networkLogs' => 'true',
+              'resolution' => '1920x1080'
             }
           }
         end
@@ -82,7 +82,7 @@ module CaTesting
         def browser_version_capability
           return {} if device?
 
-          { "browserVersion" => browser_version }
+          { 'browserVersion' => browser_version }
         end
 
         def options
@@ -94,15 +94,15 @@ module CaTesting
         end
 
         def os
-          browserstack_options[:config].split("_")[0]
+          browserstack_options[:config].split('_')[0]
         end
 
         def os_version
-          browserstack_options[:config].split("_")[1]
+          browserstack_options[:config].split('_')[1]
         end
 
         def browser_version
-          browserstack_options[:config].split("_")[2]
+          browserstack_options[:config].split('_')[2]
         end
 
         def device?

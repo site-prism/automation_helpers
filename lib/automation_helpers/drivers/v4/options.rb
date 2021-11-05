@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "selenium/webdriver"
+require 'selenium/webdriver'
 
 module CaTesting
   module Drivers
@@ -19,7 +19,7 @@ module CaTesting
           def initial_options(browser)
             case browser
             when :chrome;             then ::Selenium::WebDriver::Chrome::Options.new
-            when :firefox;            then ::Selenium::WebDriver::Firefox::Options.new(log_level: "trace")
+            when :firefox;            then ::Selenium::WebDriver::Firefox::Options.new(log_level: 'trace')
             when :edge;               then ::Selenium::WebDriver::Edge::Options.new
             when :safari;             then ::Selenium::WebDriver::Safari::Options.new(automatic_inspection: true)
             when :internet_explorer;  then internet_explorer_options
@@ -39,13 +39,13 @@ module CaTesting
               # A Support ticket has been raised with Browserstack to see if they can fix
               # anything at their end, as this is a bug with their matching protocols
               # LH - Aug 2020
-              CaTesting.logger.info("Removing `browser_name` key from options payload.")
+              CaTesting.logger.info('Removing `browser_name` key from options payload.')
               opts.options.delete(:browser_name)
             end
           end
 
           def headless?
-            ENV["HEADLESS"] == "true"
+            ENV['HEADLESS'] == 'true'
           end
         end
       end
