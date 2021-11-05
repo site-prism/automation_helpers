@@ -5,10 +5,10 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "ca_testing/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "automation_helpers"
+  spec.name          = 'automation_helpers'
   spec.version       = CaTesting::VERSION
-  spec.authors       = ["Luke Hill", "Marcelo Nicolosi Santos"]
-  spec.email         = %w[lukehill_uk@hotmail.com marcelo.nicolosi@citizensadvice.org.uk]
+  spec.authors       = ['Luke Hill', 'Marcelo Nicolosi Santos']
+  spec.email         = %w[lukehill_uk@hotmail.com celonicolosi@hotmail.com]
 
   spec.summary       = "Automation Helpers - Avoid writing the most common things in Ruby Automation"
   spec.description   = "Automation Patches / Extensions that allow you to extend your Ruby-based testing frameworks"
