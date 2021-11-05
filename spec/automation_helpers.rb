@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe CaTesting do
+describe AutomationHelpers do
   # Stop the $stdout process leaking cross-tests
   before { wipe_logger! }
 

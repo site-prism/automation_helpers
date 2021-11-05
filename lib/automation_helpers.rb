@@ -6,7 +6,7 @@ require 'automation_helpers/logger'
 require 'automation_helpers/patches'
 require 'automation_helpers/version'
 
-module CaTesting
+module AutomationHelpers
   class << self
     attr_accessor :chrome_log_path
 

@@ -2,7 +2,7 @@
 
 require 'logger'
 
-module CaTesting
+module AutomationHelpers
   #
   # @api private
   #

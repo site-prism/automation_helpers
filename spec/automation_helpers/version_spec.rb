@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-RSpec.describe CaTesting do
+RSpec.describe AutomationHelpers do
   it 'has a version number' do
-    expect(CaTesting::VERSION).not_to be nil
+    expect(AutomationHelpers::VERSION).not_to be nil
   end
 end

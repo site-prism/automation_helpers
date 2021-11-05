@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe CaTesting::Drivers::V4::Remote do
+RSpec.describe AutomationHelpers::Drivers::V4::Remote do
   before do
     Capybara.default_driver = :selenium
     described_class.new(browser).register
@@ -45,7 +45,7 @@ RSpec.describe CaTesting::Drivers::V4::Remote do
     end
 
     context 'for firefox' do
-      before { CaTesting::Patches::SeleniumOptions.new(browser).patch! }
+      before { AutomationHelpers::Patches::SeleniumOptions.new(browser).patch! }
 
       let(:browser) { :firefox }
       let(:caps) { options[:capabilities].first.as_json }

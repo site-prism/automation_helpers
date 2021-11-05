@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe CaTesting::Patches::SeleniumOptions do
+RSpec.describe AutomationHelpers::Patches::SeleniumOptions do
   context 'with firefox' do
     it_behaves_like 'a patch' do
       subject { described_class.new(:firefox) }

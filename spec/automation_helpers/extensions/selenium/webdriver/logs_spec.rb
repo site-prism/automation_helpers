@@ -52,10 +52,10 @@ describe Selenium::WebDriver::Logs do
       end
 
       context 'with no filepath specified' do
-        after { CaTesting.chrome_log_path = nil }
+        after { AutomationHelpers.chrome_log_path = nil }
 
         it 'uses the configured filepath from chrome_log_path' do
-          CaTesting.chrome_log_path = file.path
+          AutomationHelpers.chrome_log_path = file.path
 
           expect { logs.write_log_to_file(type, file.path) }.not_to raise_error
         end
@@ -96,10 +96,10 @@ describe Selenium::WebDriver::Logs do
       end
 
       context 'with no filepath specified' do
-        after { CaTesting.chrome_log_path = nil }
+        after { AutomationHelpers.chrome_log_path = nil }
 
         it 'uses the configured filepath from chrome_log_path' do
-          CaTesting.chrome_log_path = file.path
+          AutomationHelpers.chrome_log_path = file.path
 
           expect { logs.write_log_to_file(type, file.path) }.not_to raise_error
         end

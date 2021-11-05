@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe CaTesting::Logger do
+describe AutomationHelpers::Logger do
   describe '#create' do
     subject(:logger) { described_class.create }
 

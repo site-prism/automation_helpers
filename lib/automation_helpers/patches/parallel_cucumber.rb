@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module CaTesting
+module AutomationHelpers
   module Patches
     class ParallelCucumber < Base
       private

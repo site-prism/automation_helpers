@@ -2,7 +2,7 @@
 
 require 'selenium/webdriver'
 
-module CaTesting
+module AutomationHelpers
   module Drivers
     module V4
       class Capabilities

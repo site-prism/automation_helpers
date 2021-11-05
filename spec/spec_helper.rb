@@ -16,7 +16,7 @@ Capybara.configure do |config|
   config.default_max_wait_time = 0
 end
 
-CaTesting.configure do |config|
+AutomationHelpers.configure do |config|
   config.log_level = :UNKNOWN
 end
 
@@ -30,9 +30,9 @@ ensure
 end
 
 def wipe_logger!
-  return unless CaTesting.instance_variable_get(:@logger)
+  return unless AutomationHelpers.instance_variable_get(:@logger)
 
-  CaTesting.remove_instance_variable(:@logger)
+  AutomationHelpers.remove_instance_variable(:@logger)
 end
 
 def lines(string)

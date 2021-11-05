@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module CaTesting
+module AutomationHelpers
   module Patches
     class SeleniumOptions < Base
       def initialize(browser)
@@ -8,7 +8,7 @@ module CaTesting
         super()
       end
 
-      # @return [Nil || CaTesting.logger.info]
+      # @return [Nil || AutomationHelpers.logger.info]
       #
       # For SeleniumOptions we only want to run the patch when
       # we are on browsers without the relevant JSON fixes in upstream
