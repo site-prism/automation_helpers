@@ -9,7 +9,7 @@ module AutomationHelpers
   class Logger
     def self.create(output = $stdout)
       logger = ::Logger.new(output)
-      logger.progname = 'CA Testing Gem'
+      logger.progname = 'Automation Helpers'
       logger.level = :INFO
       logger.formatter = proc do |severity, time, progname, msg|
         "#{time.strftime('%F %T')} - #{severity} - #{progname} - #{msg}\n"

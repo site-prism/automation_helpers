@@ -7,7 +7,7 @@ describe AutomationHelpers::Logger do
     it { is_expected.to be_a Logger }
 
     it 'has a default name' do
-      expect(logger.progname).to eq('CA Testing Gem')
+      expect(logger.progname).to eq('Automation Helpers')
     end
 
     it 'is turned off by default' do
