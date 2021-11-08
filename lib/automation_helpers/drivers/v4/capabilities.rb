@@ -5,6 +5,12 @@ require 'selenium/webdriver'
 module AutomationHelpers
   module Drivers
     module V4
+      #
+      # {AutomationHelpers::Drivers::V4::Capabilities}
+      #
+      # The Capabilities object that will be used to instantiate whatever driver you
+      # are configuring
+      #
       class Capabilities
         class << self
           # @return [Selenium::WebDriver::Remote::Capabilities]

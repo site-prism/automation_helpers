@@ -10,8 +10,11 @@ module AutomationHelpers
   module Drivers
     module V4
       #
+      # {AutomationHelpers::Drivers::V4::Browserstack}
+      #
       # The Browserstack Driver that will connect to a hosted grid
       # Requires a series of pre-set values to be passed in
+      #
       class Browserstack
         attr_reader :browser, :browserstack_options, :device_options
         private :browser, :browserstack_options, :device_options
@@ -30,6 +33,7 @@ module AutomationHelpers
         #     i.e. Windows_10_92 means run on Windows Operating System, OS Version 10, Browser Version 92
         #   - :username (String)                 -> The username for Browserstack
         #   - :api_key (String)                  -> The api key for Browserstack
+        #
         def initialize(browser, browserstack_options, device_options = {})
           @browser = browser
           @browserstack_options = browserstack_options
