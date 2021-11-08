@@ -7,10 +7,19 @@ require 'automation_helpers/drivers/v4/options'
 module AutomationHelpers
   module Drivers
     module V4
+      #
+      # {AutomationHelpers::Drivers::V4::Local}
+      #
+      # The Local Driver that will spin up and run on your machine (Without connecting to any grid)
+      #
       class Local
         attr_reader :browser
         private :browser
 
+        # #### Initial setup options
+        #
+        # - **browser** (required) - When instantiating, the first argument must be the symbol that represents what browser to use
+        #
         def initialize(browser)
           @browser = browser
         end

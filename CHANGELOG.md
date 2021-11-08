@@ -1,6 +1,13 @@
 ## <sub>main</sub>
 #### _Unreleased_
 
+**Breaking Changes**
+* Gem has been renamed to `automation_helpers` to facilitate move to fully OSS
+  * All namespaces will need to be updated
+  * Usage of all specs now reflects new name
+  * New License (Moved to BSD-3-Clause in line with other SitePrism frameworks)
+  * New style guide based on standard rubocop (Still some issues to fix)
+
 **New**
 * Added new extension to Selenium Logs to improve Console Logging
   * Console Logging is now non-destructive and all logs when fetched are cached (To be later written to a file)

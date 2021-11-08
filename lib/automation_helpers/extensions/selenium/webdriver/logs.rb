@@ -12,7 +12,8 @@ module Selenium
 
       # @return [Integer]
       #
-      # Write the logs to a filepath (If provided), or default file path (Configured).
+      # Write the logs to a filepath (If provided), or default file path (Configured). Returns the filesize
+      # as per the regular Ruby Filesystem method
       def write_log_to_file(type, file = default_file_path)
         get(type) unless cached_logs.key?(type)
 

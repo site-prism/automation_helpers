@@ -9,10 +9,31 @@ require 'automation_helpers/drivers/v4/options'
 module AutomationHelpers
   module Drivers
     module V4
+      #
+      # {AutomationHelpers::Drivers::V4::Browserstack}
+      #
+      # The Browserstack Driver that will connect to a hosted grid
+      # Requires a series of pre-set values to be passed in
+      #
       class Browserstack
         attr_reader :browser, :browserstack_options, :device_options
         private :browser, :browserstack_options, :device_options
 
+        # #### Initial setup options
+        #
+        # - **browser** (required) - When instantiating, the first argument must be the symbol that represents what browser to use
+        # - **browserstack_options** (required) - A Hash of all required options that will be parsed and used to setup the driver
+        #   - :build_name (String)               -> The build name to be stored on browserstack servers
+        #   - :project_name (String)             -> The project name to be stored on browserstack servers
+        #   - :session_name (String)             -> The session name to be stored on browserstack servers
+        #   - :browserstack_debug_mode (Boolean) -> Set this to true to run in browserstack debug mode (Note this runs slower!)
+        #   - :config (String)                   -> This is an underscore separated key that distils the granular running information
+        #     i.e. Windows_7_86 means run on Windows Operating System, OS Version 7, Browser Version 86
+        #     i.e. OSX_Mojave_12 means run on Mac Operating System, OS Version Mojave, Browser Version 12
+        #     i.e. Windows_10_92 means run on Windows Operating System, OS Version 10, Browser Version 92
+        #   - :username (String)                 -> The username for Browserstack
+        #   - :api_key (String)                  -> The api key for Browserstack
+        #
         def initialize(browser, browserstack_options, device_options = {})
           @browser = browser
           @browserstack_options = browserstack_options
