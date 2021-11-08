@@ -4,7 +4,7 @@ require 'selenium/webdriver'
 
 require 'automation_helpers/drivers/v4/options'
 
-module CaTesting
+module AutomationHelpers
   module Drivers
     module V4
       class Local
@@ -65,7 +65,7 @@ module CaTesting
           ::Selenium::WebDriver::Remote::Capabilities.new.tap do |capabilities|
             if safari?
               capabilities['browserName'] = 'Safari Technology Preview'
-              CaTesting.logger.warn('Altering Browser Name request to alleviate Capybara failure with STP.')
+              AutomationHelpers.logger.warn('Altering Browser Name request to alleviate Capybara failure with STP.')
             end
           end
         end

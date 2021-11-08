@@ -2,7 +2,7 @@
 
 require 'selenium/webdriver'
 
-module CaTesting
+module AutomationHelpers
   module Drivers
     module V4
       class Options
@@ -39,7 +39,7 @@ module CaTesting
               # A Support ticket has been raised with Browserstack to see if they can fix
               # anything at their end, as this is a bug with their matching protocols
               # LH - Aug 2020
-              CaTesting.logger.info('Removing `browser_name` key from options payload.')
+              AutomationHelpers.logger.info('Removing `browser_name` key from options payload.')
               opts.options.delete(:browser_name)
             end
           end

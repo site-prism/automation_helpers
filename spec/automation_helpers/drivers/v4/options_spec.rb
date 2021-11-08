@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe CaTesting::Drivers::V4::Options do
+RSpec.describe AutomationHelpers::Drivers::V4::Options do
   describe '.for' do
     subject(:options) { described_class.for(browser) }
 

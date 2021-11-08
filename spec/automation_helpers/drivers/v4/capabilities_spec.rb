@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe CaTesting::Drivers::V4::Capabilities do
+RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
   describe '.for' do
     subject(:capabilities) { described_class.for(browser, device_options).as_json }
 

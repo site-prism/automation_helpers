@@ -7,7 +7,7 @@ require 'automation_helpers/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'automation_helpers'
-  spec.version       = CaTesting::VERSION
+  spec.version       = AutomationHelpers::VERSION
   spec.authors       = ['Luke Hill', 'Marcelo Nicolosi Santos']
   spec.email         = %w[lukehill_uk@hotmail.com celonicolosi@hotmail.com]
 

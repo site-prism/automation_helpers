@@ -2,7 +2,7 @@
 
 require 'automation_helpers/drivers/v4/local'
 
-module CaTesting
+module AutomationHelpers
   module Drivers
     Local = V4::Local
   end

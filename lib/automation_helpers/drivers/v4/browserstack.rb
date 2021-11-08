@@ -6,7 +6,7 @@ require 'selenium/webdriver'
 require 'automation_helpers/drivers/v4/capabilities'
 require 'automation_helpers/drivers/v4/options'
 
-module CaTesting
+module AutomationHelpers
   module Drivers
     module V4
       class Browserstack
