@@ -30,15 +30,7 @@ module AutomationHelpers
           # Constantly fire mouseOver events on click actions (Should help mitigate flaky clicks)
           def internet_explorer_options
             ::Selenium::WebDriver::IE::Options.new(persistent_hover: true).tap do |opts|
-              # This is needed to mitigate a Selenium4/Browserstack issue whereby in Se4
-              # we combine Browser options and Capabilities and merge them. But for some
-              # reason Browserstack insist on giving `internet_explorer` a non-conformant
-              # name `IE`. This then causes huge issues in trying to find a browser that
-              # would match using firstMatch in 2 different ways.
-              #
-              # A Support ticket has been raised with Browserstack to see if they can fix
-              # anything at their end, as this is a bug with their matching protocols
-              # LH - Aug 2020
+              # This can be removed once we migrate past Se4 proper (As the space version name is present there)
               AutomationHelpers.logger.info('Removing `browser_name` key from options payload.')
               opts.options.delete(:browser_name)
             end
