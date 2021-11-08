@@ -29,7 +29,7 @@ module AutomationHelpers
     def logger
       @logger ||= Logger.create
     end
-    
+
     def logger=(logger)
       raise ArgumentError, 'You must supply an existing Logger' unless logger.is_a?(::Logger)
 
@@ -51,7 +51,7 @@ module AutomationHelpers
     #   AutomationHelpers.log_level = 'DEBUG'
     #   AutomationHelpers.log_level = 0
     #
-    # To disable all logging (Done by default)
+    # To disable all logging
     #   AutomationHelpers.log_level = :UNKNOWN
     def log_level=(value)
       logger.level = value
@@ -59,7 +59,7 @@ module AutomationHelpers
 
     # To query what level is being logged
     #   AutomationHelpers.log_level
-    #   => :UNKNOWN # By default
+    #   => :INFO # By default
     def log_level
       %i[DEBUG INFO WARN ERROR FATAL UNKNOWN][logger.level]
     end
