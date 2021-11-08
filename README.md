@@ -43,4 +43,5 @@ https://github.com/site-prism/automation_helpers
 
 ## Verbose Documentation
 
-This will come in time
+This will come in time. Meanwhile if you check the gem code some of the methods are now
+beginning to get documented. Also check the specs
