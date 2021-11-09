@@ -130,7 +130,7 @@
 * Logging for this gem is now switched on by default (Level `:INFO`)
 
 * Updated the gem to require Ruby 2.7+
-  * This enables us to use the latest style guide changes from the citizens-advice-style-ruby gem
+  * This enables us to use the latest style guide changes from the `citizens-advice-style-ruby` gem
 
 * Added extensions for `String#pascalize` and `String#snake_case`
 
