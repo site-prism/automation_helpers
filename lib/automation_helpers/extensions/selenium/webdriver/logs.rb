@@ -2,6 +2,9 @@
 
 module Selenium
   module WebDriver
+    #
+    # Additional useful methods to extend the Selenium::WebDriver::Logs class with
+    #
     class Logs
       # @return [Hash]
       #

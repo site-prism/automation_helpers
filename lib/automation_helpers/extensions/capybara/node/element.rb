@@ -2,6 +2,9 @@
 
 module Capybara
   module Node
+    #
+    # Additional useful methods to extend the Capybara::Node::Element class with
+    #
     class Element
       # @return [Integer]
       #
