@@ -1,4 +1,4 @@
-## <sub>main</sub>
+## <sub>v4.0</sub>
 #### _Unreleased_
 
 **Breaking Changes**
