@@ -22,7 +22,7 @@ module AutomationHelpers
       end
 
       def prevent_usage_from
-        "4.0.0"
+        '4.0.0'
       end
 
       def gem_version

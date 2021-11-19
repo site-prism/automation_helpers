@@ -3,7 +3,8 @@
 
 **Breaking Changes**
 * Gem has been renamed to `automation_helpers` to facilitate move to fully OSS
-  * All namespaces will need to be updated
+  * All namespaces will need to be updated: **See 
+    [HERE](https://github.com/site-prism/automation_helpers/blob/main/UPGRADING.md) for details**
   * Usage of all specs now reflects new name
   * New License (Moved to BSD-3-Clause in line with other SitePrism frameworks)
   * New style guide based on standard rubocop (Still some issues to fix)
@@ -130,7 +131,7 @@
 * Logging for this gem is now switched on by default (Level `:INFO`)
 
 * Updated the gem to require Ruby 2.7+
-  * This enables us to use the latest style guide changes from the citizens-advice-style-ruby gem
+  * This enables us to use the latest style guide changes from the `citizens-advice-style-ruby` gem
 
 * Added extensions for `String#pascalize` and `String#snake_case`
 

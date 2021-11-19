@@ -3,6 +3,9 @@
 module Cucumber
   module Core
     module Test
+      #
+      # Additional useful methods to extend the Cucumber::Core::Test::Case class with
+      #
       class Case
         # @return [String]
         #

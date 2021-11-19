@@ -37,7 +37,9 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
     end
 
     context 'for firefox' do
-      before { AutomationHelpers::Patches::SeleniumOptions.new(browser).patch! }
+      before do
+        AutomationHelpers::Patches::SeleniumOptions.new(browser).patch! if run_selenium_options_patch?
+      end
 
       let(:browser) { :firefox }
       let(:caps) { options[:capabilities].first.as_json }
@@ -80,7 +82,9 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
     end
 
     context 'for safari' do
-      before { AutomationHelpers::Patches::SeleniumOptions.new(browser).patch! }
+      before do
+        AutomationHelpers::Patches::SeleniumOptions.new(browser).patch! if run_selenium_options_patch?
+      end
 
       let(:browser) { :safari }
 
