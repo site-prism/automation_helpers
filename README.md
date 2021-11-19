@@ -1,5 +1,7 @@
 # Automation Helpers
 
+#### The new OSS name for the gem formerly known as ca_testing
+
 This package will allow you to extend your automated testing frameworks with the following
 - Driver creation: Allowing you to simply reference your drivers with a simple method
 (**No more confusing capability classes / methods**)
