@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Additional useful methods to extend the String class with
 class String
   # @return [String]
   #

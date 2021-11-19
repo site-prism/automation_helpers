@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Additional useful methods to extend the Array class with
 class Array
   # @return [Boolean]
   #
