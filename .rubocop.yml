@@ -30,3 +30,6 @@ Metrics/BlockLength:
   Exclude:
     # Specs deliberately will almost always break this cop (It should be added to rubocop-rspec defaults ideally)
     - spec/**/*
+
+RSpec/ExampleLength:
+  CountAsOne: ['array', 'hash']
