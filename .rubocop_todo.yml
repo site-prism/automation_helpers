@@ -11,23 +11,23 @@
 # Prefixes: when, with, without
 RSpec/ContextWording:
   Exclude:
-    - 'spec/automation_helpers/drivers/v4/capabilities_spec.rb'
-    - 'spec/automation_helpers/drivers/v4/local_spec.rb'
-    - 'spec/automation_helpers/drivers/v4/options_spec.rb'
-    - 'spec/automation_helpers/drivers/v4/remote_spec.rb'
-    - 'spec/automation_helpers/extensions/selenium/webdriver/logs_spec.rb'
+#    - 'spec/automation_helpers/drivers/v4/capabilities_spec.rb'
+#    - 'spec/automation_helpers/drivers/v4/local_spec.rb'
+#    - 'spec/automation_helpers/drivers/v4/options_spec.rb'
+#    - 'spec/automation_helpers/drivers/v4/remote_spec.rb'
+#    - 'spec/automation_helpers/extensions/selenium/webdriver/logs_spec.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-RSpec/EmptyLineAfterFinalLet:
-  Exclude:
-    - 'spec/automation_helpers/extensions/selenium/webdriver/logs_spec.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-RSpec/EmptyLineAfterSubject:
-  Exclude:
-    - 'spec/automation_helpers/extensions/capybara/node/element_spec.rb'
+## Offense count: 1
+## Cop supports --auto-correct.
+#RSpec/EmptyLineAfterFinalLet:
+#  Exclude:
+#    - 'spec/automation_helpers/extensions/selenium/webdriver/logs_spec.rb'
+#
+## Offense count: 1
+## Cop supports --auto-correct.
+#RSpec/EmptyLineAfterSubject:
+#  Exclude:
+#    - 'spec/automation_helpers/extensions/capybara/node/element_spec.rb'
 
 # Offense count: 11
 # Configuration parameters: Max.

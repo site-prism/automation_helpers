@@ -1,17 +1,12 @@
 # frozen_string_literal: true
 
 describe Selenium::WebDriver::Logs do
-  before do
-    if Gem::Version.new(Selenium::WebDriver::VERSION) < Gem::Version.new('4.0.0.beta1')
-      skip('Only supported across all driver types from Webdriver beta2')
-    end
-  end
-
   # The Bridge is considered API Private, but we need to mock it!
   let(:bridge) { session.driver.browser.logs.instance_variable_get(:@bridge) }
   let(:log_entry) { instance_double(Selenium::WebDriver::LogEntry, to_s: 'Time - SEV - Browser or Driver Message') }
   let(:session) { Capybara::Session.new(:selenium_chrome_headless) }
   let(:logs) { session.driver.browser.logs }
+
   before do
     allow(bridge)
       .to receive(:log)
