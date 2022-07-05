@@ -1,5 +1,5 @@
 ## <sub>v4.0</sub>
-#### _Unreleased_
+#### _Nov. 19, 2021_
 
 **Breaking Changes**
 * Gem has been renamed to `automation_helpers` to facilitate move to fully OSS
@@ -20,7 +20,7 @@
   individually and instead should be loaded as a full package
 
 ## <sub>v3.0.2</sub>
-#### _Sep 20, 2021_
+#### _Sep. 20, 2021_
 
 **New**
 * Added testing for a matrix of ruby / selenium versions
@@ -38,14 +38,14 @@
   * Mac Edge was not properly processing the browser name by default
   
 ## <sub>v3.0.1</sub>
-#### _Sep 07, 2021_
+#### _Sep. 07, 2021_
 
 **Bugfixes**
 * Fixed load error in Selenium Webdriver Edge
   * This issue was due to Selenium changing their path for Edge Options during the V4 betas
   
 ## <sub>v3.0</sub>
-#### _Sep 02, 2021_
+#### _Sep. 02, 2021_
 
 **Breaking Changes**
 * Altered format / structure of patches to accept either...

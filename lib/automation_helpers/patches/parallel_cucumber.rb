@@ -17,8 +17,8 @@ module AutomationHelpers
         ::ParallelTests::Gherkin::Runner.extend RetryFlagFix
       end
 
-      def deprecation_notice_date
-        Time.new(2022, 6, 30)
+      def deprecate_from
+        '3.12.0'
       end
 
       def prevent_usage_from

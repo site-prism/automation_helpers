@@ -8,7 +8,7 @@ module AutomationHelpers
         super()
       end
 
-      # @return [Nil || AutomationHelpers.logger.info]
+      # @return [nil || true]
       #
       # For SeleniumOptions we only want to run the patch when
       # we are on browsers without the relevant JSON fixes in upstream
@@ -30,7 +30,6 @@ module AutomationHelpers
           The issue is the driver, which is now fully W3C conformant expects `browserName`
 
           See: https://github.com/SeleniumHQ/selenium/pull/8834 for more details/discussion including this fix
-          LH - Nov 2020
         DESCRIPTION
       end
 
@@ -42,11 +41,11 @@ module AutomationHelpers
       end
 
       def deprecate_from
-        '4.0.0.beta5'
+        '4.0.0'
       end
 
       def prevent_usage_from
-        '4.0.1'
+        '4.0.3'
       end
 
       def gem_version
