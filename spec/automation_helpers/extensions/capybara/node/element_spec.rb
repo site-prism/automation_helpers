@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 describe Capybara::Node::Element do
-  before { session.visit('/sample_page.html') }
-
   subject(:capybara_element) { session.find('.embedded_element') }
+
+  before { session.visit('/sample_page.html') }
 
   let(:session) { Capybara::Session.new(:selenium_chrome_headless) }
 

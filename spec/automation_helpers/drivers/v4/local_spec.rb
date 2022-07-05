@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 RSpec.describe AutomationHelpers::Drivers::V4::Local do
+  subject(:options) { session.driver.options }
+
   before do
     Capybara.default_driver = :selenium
     described_class.new(browser).register
   end
 
-  after(:each) { session.quit }
-
-  subject(:options) { session.driver.options }
+  after { session.quit }
 
   let(:session) { Capybara::Session.new(:selenium) }
   let(:standard_top_level_properties) { %i[browser clear_local_storage clear_session_storage service capabilities] }
