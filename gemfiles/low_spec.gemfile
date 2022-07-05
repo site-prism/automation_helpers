@@ -2,6 +2,8 @@
 
 source 'https://rubygems.org'
 
+gem 'capybara', '< 3.30'
+gem 'cucumber', '< 7'
 gem 'selenium-webdriver', '4.0.0.beta4'
 
 gemspec path: '..'
