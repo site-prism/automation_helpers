@@ -1,5 +1,8 @@
 inherit_from: .rubocop_todo.yml
 
+require:
+  - rubocop-performance
+
 AllCops:
   # Display all verbose info on failures to help people triage how to fix
   DisplayCopNames: true
@@ -13,7 +16,6 @@ AllCops:
     - 'lib/automation_helpers/patches/parallel_cucumber.rb'
     # Remove vendor files from being checked
     - vendor/**/*
-  SuggestExtensions: false
 
 # We have a linelength of 140 characters across the codebase/s
 Layout/LineLength:
