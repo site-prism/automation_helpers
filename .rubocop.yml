@@ -2,6 +2,7 @@ inherit_from: .rubocop_todo.yml
 
 require:
   - rubocop-performance
+  - rubocop-rspec
 
 AllCops:
   # Display all verbose info on failures to help people triage how to fix
