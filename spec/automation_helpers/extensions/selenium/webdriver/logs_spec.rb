@@ -23,7 +23,7 @@ describe Selenium::WebDriver::Logs do
       .and_call_original
   end
 
-  context 'for browser logging' do
+  context 'when logging browser messages' do
     let(:type) { :browser }
 
     describe '#get' do
@@ -67,7 +67,7 @@ describe Selenium::WebDriver::Logs do
     end
   end
 
-  context 'for driver logging' do
+  context 'when logging driver messages' do
     let(:type) { :driver }
 
     describe '#get' do

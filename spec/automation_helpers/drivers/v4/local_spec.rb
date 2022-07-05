@@ -14,7 +14,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
   let(:standard_top_level_properties) { %i[browser clear_local_storage clear_session_storage service capabilities] }
 
   describe '#register' do
-    context 'for chrome' do
+    context 'when chrome' do
       let(:browser) { :chrome }
 
       it 'has correct top level properties' do
@@ -36,7 +36,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
       end
     end
 
-    context 'for firefox' do
+    context 'when firefox' do
       before do
         AutomationHelpers::Patches::SeleniumOptions.new(browser).patch! if run_selenium_options_patch?
       end
@@ -60,7 +60,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
       end
     end
 
-    context 'for internet explorer' do
+    context 'when internet explorer' do
       let(:browser) { :internet_explorer }
 
       it 'has correct top level properties' do
@@ -81,7 +81,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
       end
     end
 
-    context 'for safari' do
+    context 'when safari' do
       before do
         AutomationHelpers::Patches::SeleniumOptions.new(browser).patch! if run_selenium_options_patch?
       end
@@ -110,7 +110,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
       end
     end
 
-    context 'for edge' do
+    context 'when edge' do
       let(:browser) { :edge }
 
       it 'has correct top level properties' do
