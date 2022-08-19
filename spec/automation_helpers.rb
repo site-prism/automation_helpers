@@ -85,7 +85,7 @@ describe AutomationHelpers do
 
       before { described_class.log_path = filename }
 
-      after { File.delete(filename) if File.exist?(filename) }
+      after { FileUtils.rm_f(filename)  }
 
       it 'sends the log messages to the file-path provided' do
         described_class.logger.unknown('This is sent to the file')

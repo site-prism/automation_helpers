@@ -11,6 +11,9 @@ module AutomationHelpers
       # The Options object that will be used to instantiate whatever driver you
       # are configuring
       #
+      # #### Initial setup options
+      #
+      # - **ENV["HEADLESS"]** (optional) - Whether you want your browser to run headless or not
       class Options
         class << self
           # @return [Selenium::Webdriver::Options]
@@ -43,7 +46,7 @@ module AutomationHelpers
           end
 
           def headless?
-            ENV['HEADLESS'] == 'true'
+            ENV.fetch('HEADLESS', 'false') == 'true'
           end
         end
       end
