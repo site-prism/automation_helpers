@@ -1,5 +1,9 @@
 inherit_from: .rubocop_todo.yml
 
+require:
+  - rubocop-performance
+  - rubocop-rspec
+
 AllCops:
   # Display all verbose info on failures to help people triage how to fix
   DisplayCopNames: true
@@ -13,7 +17,6 @@ AllCops:
     - 'lib/automation_helpers/patches/parallel_cucumber.rb'
     # Remove vendor files from being checked
     - vendor/**/*
-  SuggestExtensions: false
 
 # We have a linelength of 140 characters across the codebase/s
 Layout/LineLength:
@@ -27,3 +30,6 @@ Metrics/BlockLength:
   Exclude:
     # Specs deliberately will almost always break this cop (It should be added to rubocop-rspec defaults ideally)
     - spec/**/*
+
+RSpec/ExampleLength:
+  CountAsOne: ['array', 'hash']

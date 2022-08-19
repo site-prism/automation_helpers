@@ -6,7 +6,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
 
     let(:device_options) { {} }
 
-    context 'for android' do
+    context 'when the browser is android' do
       let(:browser) { :android }
 
       context 'with a valid device / android version' do
@@ -34,7 +34,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
       end
     end
 
-    context 'for chrome' do
+    context 'when the browser is chrome' do
       let(:browser) { :chrome }
 
       it 'has correct chrome capabilities' do
@@ -50,7 +50,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
       end
     end
 
-    context 'for internet_explorer' do
+    context 'when the browser is internet_explorer' do
       let(:browser) { :internet_explorer }
 
       it 'has correct chrome capabilities' do
@@ -68,7 +68,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
       end
     end
 
-    context 'for ios' do
+    context 'when the browser is ios' do
       let(:browser) { :ios }
 
       context 'with a valid device / iOS version' do
@@ -96,7 +96,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
       end
     end
 
-    context 'for any other browser' do
+    context 'when the browser is anything else' do
       let(:browser) { :foo }
 
       it { is_expected.to be_empty }

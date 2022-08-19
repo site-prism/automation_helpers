@@ -1,3 +1,21 @@
+## <sub>main</sub>
+#### _Unreleased_
+
+**New**
+* Added in new rubocop subgems
+  * Existing rubocop config has been slightly amended to avoid long arrays breaking the rules
+  * TODO file re-generated to show what other miscellaneous issues need fixing 
+
+**Changed**
+* Updated testing matrix for CI
+  * Removed selenium alpha testing, added ruby 3.1
+
+* Removed all references to beta versions in `#deprecate_from` and `#prevent_usage_from` in patches
+
+* `parallel_cucumber` now references a version instead of a date for `#deprecate_from` which is of a similar time
+
+* Fixed some documentation in `SeleniumOptions` patch
+
 ## <sub>v4.0</sub>
 #### _Nov. 19, 2021_
 

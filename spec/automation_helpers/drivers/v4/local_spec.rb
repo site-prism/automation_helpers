@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
 RSpec.describe AutomationHelpers::Drivers::V4::Local do
+  subject(:options) { session.driver.options }
+
   before do
     Capybara.default_driver = :selenium
     described_class.new(browser).register
   end
 
-  after(:each) { session.quit }
-
-  subject(:options) { session.driver.options }
+  after { session.quit }
 
   let(:session) { Capybara::Session.new(:selenium) }
   let(:standard_top_level_properties) { %i[browser clear_local_storage clear_session_storage service capabilities] }
 
   describe '#register' do
-    context 'for chrome' do
+    context 'when the browser is chrome' do
       let(:browser) { :chrome }
 
       it 'has correct top level properties' do
@@ -36,7 +36,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
       end
     end
 
-    context 'for firefox' do
+    context 'when the browser is firefox' do
       before do
         AutomationHelpers::Patches::SeleniumOptions.new(browser).patch! if run_selenium_options_patch?
       end
@@ -60,7 +60,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
       end
     end
 
-    context 'for internet explorer' do
+    context 'when the browser is internet explorer' do
       let(:browser) { :internet_explorer }
 
       it 'has correct top level properties' do
@@ -81,7 +81,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
       end
     end
 
-    context 'for safari' do
+    context 'when the browser is safari' do
       before do
         AutomationHelpers::Patches::SeleniumOptions.new(browser).patch! if run_selenium_options_patch?
       end
@@ -110,7 +110,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
       end
     end
 
-    context 'for edge' do
+    context 'when the browser is edge' do
       let(:browser) { :edge }
 
       it 'has correct top level properties' do

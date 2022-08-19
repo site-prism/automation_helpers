@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 describe Capybara::Node::Element do
+  subject(:capybara_element) { session.find('.embedded_element') }
+
   before { session.visit('/sample_page.html') }
 
-  subject(:capybara_element) { session.find('.embedded_element') }
   let(:session) { Capybara::Session.new(:selenium_chrome_headless) }
 
   describe '#horizontal_position' do

@@ -63,7 +63,7 @@ describe AutomationHelpers do
 
       it 'sets the Logger to the new type' do
         expect { described_class.logger = new_logger }
-          .to change { described_class.logger }
+          .to change(described_class, :logger)
           .from(existing_logger)
           .to(new_logger)
       end
