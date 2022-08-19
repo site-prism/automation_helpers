@@ -1,6 +1,11 @@
 ## <sub>main</sub>
 #### _Unreleased_
 
+**New**
+* Added in new rubocop subgems
+  * Existing rubocop config has been slightly amended to avoid long arrays breaking the rules
+  * TODO file re-generated to show what other miscellaneous issues need fixing 
+
 **Changed**
 * Updated testing matrix for CI
   * Removed selenium alpha testing, added ruby 3.1
