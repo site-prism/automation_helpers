@@ -4,6 +4,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Remote do
   subject(:options) { session.driver.options }
 
   before do
+    stub_const('ENV', { 'HUB_URL' => 'localhost' })
     Capybara.default_driver = :selenium
     described_class.new(browser).register
   end
