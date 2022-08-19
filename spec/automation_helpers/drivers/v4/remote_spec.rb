@@ -13,7 +13,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Remote do
   let(:session) { Capybara::Session.new(:selenium) }
 
   describe '#register' do
-    context 'when chrome' do
+    context 'when the browser is chrome' do
       let(:browser) { :chrome }
 
       it 'has correct top level properties' do
@@ -44,7 +44,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Remote do
       end
     end
 
-    context 'when firefox' do
+    context 'when the browser is firefox' do
       before do
         AutomationHelpers::Patches::SeleniumOptions.new(browser).patch! if run_selenium_options_patch?
       end
@@ -68,11 +68,11 @@ RSpec.describe AutomationHelpers::Drivers::V4::Remote do
       end
     end
 
-    context 'when using an unsupported browser' do
+    context 'when the browser is anything else' do
       let(:browser) { :foo }
 
-      it "doesn't work if the browser is not one of the supported browsers" do
-        expect { options }.to raise_error(ArgumentError)
+      it 'fails as the browser is unsupported' do
+        expect { options }.to raise_error(ArgumentError).with_message('You must use a supported browser')
       end
     end
   end
