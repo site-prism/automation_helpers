@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'parallel_tests', '~> 3.7'
   spec.add_development_dependency 'rspec', '~> 3.10'
   spec.add_development_dependency 'rubocop', '~> 1.22.3'
-  spec.add_development_dependency 'rubocop-performance', '~> 1.14.2'
+  spec.add_development_dependency 'rubocop-performance', '~> 1.14.3'
   spec.add_development_dependency 'rubocop-rspec', '~> 2.11.1'
   spec.add_development_dependency 'selenium-webdriver', ['>= 4.0.0.alpha1', '< 5']
   spec.add_development_dependency 'webdrivers', '~> 4.6'
