@@ -52,7 +52,7 @@ module AutomationHelpers
         end
 
         def hub_url
-          ENV['HUB_URL']
+          ENV.fetch('HUB_URL')
         end
 
         def supported_browser?

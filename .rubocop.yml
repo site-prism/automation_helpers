@@ -18,6 +18,10 @@ AllCops:
     # Remove vendor files from being checked
     - vendor/**/*
 
+# We don't enable MFA yet on this repo
+Gemspec/RequireMFA:
+  Enabled: false
+
 # We have a linelength of 140 characters across the codebase/s
 Layout/LineLength:
   Max: 140
