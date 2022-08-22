@@ -1,10 +1,13 @@
 ## <sub>main</sub>
 #### _Unreleased_
 
+## <sub>v4.0.1</sub>
+#### _Aug. 22, 2022_
+
 **New**
 * Added in new rubocop subgems
-  * Existing rubocop config has been slightly amended to avoid long arrays breaking the rules
-  * TODO file re-generated to show what other miscellaneous issues need fixing
+  * Existing rubocop config has been slightly amended to avoid long arrays/hashes breaking the rules
+  * TODO file re-generated (and partially fixed), to show what other cop offenses need tackling
   * Updated `rubocop` to a later version
 
 **Changed**
