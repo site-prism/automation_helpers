@@ -2,8 +2,8 @@
 
 RSpec.shared_examples 'a patch' do
   before do
-    allow(subject).to receive(:deprecate?).and_return(deprecate?)
-    allow(subject).to receive(:prevent_usage?).and_return(prevent_usage?)
+    allow(patch).to receive(:deprecate?).and_return(deprecate?)
+    allow(patch).to receive(:prevent_usage?).and_return(prevent_usage?)
     allow(Kernel).to receive(:warn)
   end
 
@@ -13,9 +13,9 @@ RSpec.shared_examples 'a patch' do
   describe '#patch!' do
     context 'when permissible' do
       it 'performs the patch successfully' do
-        expect(subject).to receive(:perform)
+        expect(patch).to receive(:perform)
 
-        subject.patch!
+        patch.patch!
       end
     end
 
@@ -23,15 +23,15 @@ RSpec.shared_examples 'a patch' do
       let(:deprecate?) { true }
 
       it 'performs the patch successfully' do
-        expect(subject).to receive(:perform)
+        expect(patch).to receive(:perform)
 
-        subject.patch!
+        patch.patch!
       end
 
       it 'notifies the user that it is deprecated' do
         expect(Kernel).to receive(:warn).with('This is now deprecated and should not be used')
 
-        subject.patch!
+        patch.patch!
       end
     end
 
@@ -39,7 +39,7 @@ RSpec.shared_examples 'a patch' do
       let(:prevent_usage?) { true }
 
       it 'raises an Error' do
-        expect { subject.patch! }.to raise_error(RuntimeError).with_message('This is no longer supported')
+        expect { patch.patch! }.to raise_error(RuntimeError).with_message('This is no longer supported')
       end
     end
   end

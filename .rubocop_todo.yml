@@ -42,16 +42,16 @@ RSpec/MultipleExpectations:
 RSpec/MultipleMemoizedHelpers:
   Max: 6
 
-# Offense count: 3
-# Configuration parameters: IgnoreSharedExamples.
-RSpec/NamedSubject:
-  Exclude:
-    - 'spec/automation_helpers/extensions/array_spec.rb'
-    - 'spec/automation_helpers/patches/selenium_options_spec.rb'
-
-# Offense count: 6
-RSpec/NestedGroups:
-  Max: 4
+## Offense count: 3
+## Configuration parameters: IgnoreSharedExamples.
+#RSpec/NamedSubject:
+#  Exclude:
+#    - 'spec/automation_helpers/extensions/array_spec.rb'
+#    - 'spec/automation_helpers/patches/selenium_options_spec.rb'
+#
+## Offense count: 6
+#RSpec/NestedGroups:
+#  Max: 4
 
 # Offense count: 1
 # Cop supports --auto-correct.
