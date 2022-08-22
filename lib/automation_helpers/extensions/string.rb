@@ -37,7 +37,5 @@ class String
   # Cast any string to true or false
   def to_bool
     %w[yes on true].include?(downcase)
-
-    %w[yes on true].any? { |positive| positive.casecmp?(self) }
   end
 end
