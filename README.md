@@ -34,7 +34,7 @@ Either require all of the extensions required, or require individual bits and pi
 ```
 $ bundle
 # Code anything relevant - Add tests for each public method!
-$ bundle exec rake
+$ rspec && rubocop
 # Ensure it's all green! Then commit and push
 ```
 
