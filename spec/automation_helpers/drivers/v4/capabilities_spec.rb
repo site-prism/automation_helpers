@@ -6,31 +6,29 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
 
     let(:device_options) { {} }
 
-    context 'when the browser is android' do
+    context 'with a valid device / android version' do
       let(:browser) { :android }
+      let(:device_options) { { device_name: 'SamsungGalaxyS20', os_version: '10' } }
 
-      context 'with a valid device / android version' do
-        let(:device_options) { { device_name: 'SamsungGalaxyS20', os_version: '10' } }
-
-        it 'has correct android capabilities' do
-          expect(capabilities).to eq(
-            {
-              'bstack:options' => {
-                'deviceName' => 'SamsungGalaxyS20',
-                'realMobile' => 'true',
-                'appiumVersion' => '1.21.0'
-              }
+      it 'has correct android capabilities' do
+        expect(capabilities).to eq(
+          {
+            'bstack:options' => {
+              'deviceName' => 'SamsungGalaxyS20',
+              'realMobile' => 'true',
+              'appiumVersion' => '1.21.0'
             }
-          )
-        end
+          }
+        )
       end
+    end
 
-      context 'with an invalid android version' do
-        let(:device_options) { { device_name: 'SamsungGalaxyS20', os_version: '8' } }
+    context 'with an invalid android version' do
+      let(:browser) { :android }
+      let(:device_options) { { device_name: 'SamsungGalaxyS20', os_version: '8' } }
 
-        it 'it complains that the android version is invalid' do
-          expect { capabilities }.to raise_error(ArgumentError)
-        end
+      it 'complains that the android version is invalid' do
+        expect { capabilities }.to raise_error(ArgumentError)
       end
     end
 
@@ -53,7 +51,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
     context 'when the browser is internet_explorer' do
       let(:browser) { :internet_explorer }
 
-      it 'has correct chrome capabilities' do
+      it 'has correct internet explorer capabilities' do
         expect(capabilities).to eq(
           {
             'browserName' => 'internet explorer',
@@ -68,31 +66,29 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
       end
     end
 
-    context 'when the browser is ios' do
+    context 'with a valid device / iOS version' do
       let(:browser) { :ios }
+      let(:device_options) { { device_name: 'iPhone11', os_version: '12' } }
 
-      context 'with a valid device / iOS version' do
-        let(:device_options) { { device_name: 'iPhone11', os_version: '12' } }
-
-        it 'has correct iOS capabilities' do
-          expect(capabilities).to eq(
-            {
-              'bstack:options' => {
-                'deviceName' => 'iPhone11',
-                'realMobile' => 'true',
-                'appiumVersion' => '1.20.2'
-              }
+      it 'has correct iOS capabilities' do
+        expect(capabilities).to eq(
+          {
+            'bstack:options' => {
+              'deviceName' => 'iPhone11',
+              'realMobile' => 'true',
+              'appiumVersion' => '1.20.2'
             }
-          )
-        end
+          }
+        )
       end
+    end
 
-      context 'with an invalid iOS version' do
-        let(:device_options) { { device_name: 'iPhone11', os_version: '10' } }
+    context 'with an invalid iOS version' do
+      let(:browser) { :ios }
+      let(:device_options) { { device_name: 'iPhone11', os_version: '10' } }
 
-        it 'it complains that the iOS version is invalid' do
-          expect { capabilities }.to raise_error(ArgumentError)
-        end
+      it 'complains that the iOS version is invalid' do
+        expect { capabilities }.to raise_error(ArgumentError)
       end
     end
 

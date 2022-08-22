@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe AutomationHelpers::Patches::SeleniumManager do
-  it_behaves_like 'a patch'
+  it_behaves_like 'a patch' do
+    subject(:patch) { described_class.new }
+  end
 end

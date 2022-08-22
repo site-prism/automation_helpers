@@ -41,9 +41,7 @@ describe Array do
     context 'with a non-unique array' do
       let(:array) { [nil, 1, :foo, :foo, Class.new] }
 
-      it 'returns only the items which are duplicated' do
-        expect(subject).to eq([:foo])
-      end
+      it { is_expected.to eq([:foo]) }
     end
   end
 end
