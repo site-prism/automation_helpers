@@ -28,7 +28,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
       context 'with an invalid android version' do
         let(:device_options) { { device_name: 'SamsungGalaxyS20', os_version: '8' } }
 
-        it 'it complains that the android version is invalid' do
+        it 'complains that the android version is invalid' do
           expect { capabilities }.to raise_error(ArgumentError)
         end
       end
@@ -90,7 +90,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
       context 'with an invalid iOS version' do
         let(:device_options) { { device_name: 'iPhone11', os_version: '10' } }
 
-        it 'it complains that the iOS version is invalid' do
+        it 'complains that the iOS version is invalid' do
           expect { capabilities }.to raise_error(ArgumentError)
         end
       end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe Selenium::WebDriver::Logs do
+describe Selenium::Webdriver::Logs do
   # The Bridge is considered API Private, but we need to mock it!
   let(:bridge) { session.driver.browser.logs.instance_variable_get(:@bridge) }
   let(:log_entry) { instance_double(Selenium::WebDriver::LogEntry, to_s: 'Time - SEV - Browser or Driver Message') }
