@@ -28,7 +28,10 @@ describe Selenium::WebDriver::Logs do
     end
 
     describe '#write_log_to_file' do
-      after { file.close! }
+      after do
+        AutomationHelpers.chrome_log_path = nil
+        file.close!
+      end
 
       let(:file) { Tempfile.new('foo') }
 
@@ -46,18 +49,14 @@ describe Selenium::WebDriver::Logs do
         expect(console_output).to eq(log_entry.to_s)
       end
 
-      context 'with no filepath specified' do
-        after { AutomationHelpers.chrome_log_path = nil }
+      it 'uses the configured filepath from chrome_log_path' do
+        AutomationHelpers.chrome_log_path = file.path
 
-        it 'uses the configured filepath from chrome_log_path' do
-          AutomationHelpers.chrome_log_path = file.path
+        expect { logs.write_log_to_file(type) }.not_to raise_error
+      end
 
-          expect { logs.write_log_to_file(type, file.path) }.not_to raise_error
-        end
-
-        it 'raises an error when there is no configured filepath' do
-          expect { logs.write_log_to_file(type) }.to raise_error(RuntimeError)
-        end
+      it 'raises an error when there is no configured filepath' do
+        expect { logs.write_log_to_file(type) }.to raise_error(RuntimeError)
       end
     end
   end
@@ -72,7 +71,10 @@ describe Selenium::WebDriver::Logs do
     end
 
     describe '#write_log_to_file' do
-      after { file.close! }
+      after do
+        AutomationHelpers.chrome_log_path = nil
+        file.close!
+      end
 
       let(:file) { Tempfile.new('foo') }
 
@@ -90,18 +92,14 @@ describe Selenium::WebDriver::Logs do
         expect(console_output).to eq(log_entry.to_s)
       end
 
-      context 'with no filepath specified' do
-        after { AutomationHelpers.chrome_log_path = nil }
+      it 'uses the configured filepath from chrome_log_path' do
+        AutomationHelpers.chrome_log_path = file.path
 
-        it 'uses the configured filepath from chrome_log_path' do
-          AutomationHelpers.chrome_log_path = file.path
+        expect { logs.write_log_to_file(type) }.not_to raise_error
+      end
 
-          expect { logs.write_log_to_file(type, file.path) }.not_to raise_error
-        end
-
-        it 'raises an error when there is no configured filepath' do
-          expect { logs.write_log_to_file(type) }.to raise_error(RuntimeError)
-        end
+      it 'raises an error when there is no configured filepath' do
+        expect { logs.write_log_to_file(type) }.to raise_error(RuntimeError)
       end
     end
   end
