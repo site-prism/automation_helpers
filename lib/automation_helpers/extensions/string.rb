@@ -31,4 +31,11 @@ class String
   def sanitize_whitespace
     gsub(/[ \t\r\f\u00A0]/, ' ')
   end
+
+  # @return [Boolean]
+  #
+  # Cast any string to true or false
+  def to_bool
+    %w[yes on true].include?(downcase)
+  end
 end

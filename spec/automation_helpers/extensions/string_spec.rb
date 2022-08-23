@@ -114,4 +114,50 @@ describe String do
       it { is_expected.to eq("foo\nbar\nbaz") }
     end
   end
+
+  describe '#to_bool' do
+    subject { string.to_bool }
+
+    context 'with yes' do
+      let(:string) { 'yes' }
+
+      it { is_expected.to be true }
+    end
+
+    context 'with true' do
+      let(:string) { 'true' }
+
+      it { is_expected.to be true }
+    end
+
+    context 'with on' do
+      let(:string) { 'on' }
+
+      it { is_expected.to be true }
+    end
+
+    context 'with YES' do
+      let(:string) { 'YES' }
+
+      it { is_expected.to be true }
+    end
+
+    context 'with TRUE' do
+      let(:string) { 'TRUE' }
+
+      it { is_expected.to be true }
+    end
+
+    context 'with ON' do
+      let(:string) { 'ON' }
+
+      it { is_expected.to be true }
+    end
+
+    context 'with any other string' do
+      let(:string) { SecureRandom.alphanumeric(rand(20)) }
+
+      it { is_expected.to be false }
+    end
+  end
 end
