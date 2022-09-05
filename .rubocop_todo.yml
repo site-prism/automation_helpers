@@ -19,9 +19,9 @@
 RSpec/MessageSpies:
   EnforcedStyle: receive
 
-# Offense count: 2
-RSpec/MultipleExpectations:
-  Max: 2
+## Offense count: 2
+#RSpec/MultipleExpectations:
+#  Max: 2
 
 # Offense count: 2
 # Configuration parameters: AllowSubject.
