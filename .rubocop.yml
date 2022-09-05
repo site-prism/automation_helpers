@@ -37,3 +37,7 @@ Metrics/BlockLength:
 
 RSpec/ExampleLength:
   CountAsOne: ['array', 'hash']
+
+RSpec/FilePath:
+  CustomTransform:
+    WebDriver: webdriver
