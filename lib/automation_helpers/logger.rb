@@ -7,6 +7,9 @@ module AutomationHelpers
   # @api private
   #
   class Logger
+    #
+    # api private (Not intended to be instantiated directly!)
+    #
     def self.create(output = $stdout)
       logger = ::Logger.new(output)
       logger.progname = 'Automation Helpers'

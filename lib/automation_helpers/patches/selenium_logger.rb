@@ -2,6 +2,10 @@
 
 module AutomationHelpers
   module Patches
+    #
+    # Fix the issue where the Selenium Logger isn't designed to parse characters that aren't standard ASCII
+    # (This is an issue in the parent Net-HTTP adapter that most loggers are built on)
+    #
     class SeleniumLogger < Base
       private
 

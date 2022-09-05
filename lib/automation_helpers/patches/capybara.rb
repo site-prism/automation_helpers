@@ -2,6 +2,9 @@
 
 module AutomationHelpers
   module Patches
+    #
+    # Fix the issue where the `#text` method doesn't normalize whitespace (Only the matchers do)
+    #
     class Capybara < Base
       private
 

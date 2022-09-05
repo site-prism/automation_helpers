@@ -2,6 +2,9 @@
 
 module AutomationHelpers
   module Patches
+    #
+    # Fix the issue where the parser for parallel_tests doesn't permit the --retry flag (Or other flags at the end)
+    #
     class ParallelCucumber < Base
       private
 

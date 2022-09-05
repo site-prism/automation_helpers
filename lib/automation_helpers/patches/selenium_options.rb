@@ -2,6 +2,9 @@
 
 module AutomationHelpers
   module Patches
+    #
+    # Fix the issue where for some drivers selenium doesn't camelize the browser name key 'browserName' correctly
+    #
     class SeleniumOptions < Base
       def initialize(browser)
         @browser = browser
