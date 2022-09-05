@@ -28,13 +28,13 @@ RSpec/MultipleExpectations:
 RSpec/MultipleMemoizedHelpers:
   Max: 6
 
-# Offense count: 1
-# This cop supports safe autocorrection (--autocorrect).
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: and_return, block
-RSpec/ReturnFromStub:
-  Exclude:
-    - 'spec/automation_helpers/drivers/v4/options_spec.rb'
+## Offense count: 1
+## This cop supports safe autocorrection (--autocorrect).
+## Configuration parameters: EnforcedStyle.
+## SupportedStyles: and_return, block
+#RSpec/ReturnFromStub:
+#  Exclude:
+#    - 'spec/automation_helpers/drivers/v4/options_spec.rb'
 
 # Offense count: 2
 RSpec/ScatteredSetup:
