@@ -22,11 +22,11 @@ RSpec/SubjectStub:
   Exclude:
     - 'spec/automation_helpers/patches/selenium_options_spec.rb'
 
-# Offense count: 1
-# Configuration parameters: IgnoreNameless, IgnoreSymbolicNames.
-RSpec/VerifiedDoubles:
-  Exclude:
-    - 'spec/automation_helpers/extensions/cucumber/core/test/case_spec.rb'
+## Offense count: 1
+## Configuration parameters: IgnoreNameless, IgnoreSymbolicNames.
+#RSpec/VerifiedDoubles:
+#  Exclude:
+#    - 'spec/automation_helpers/extensions/cucumber/core/test/case_spec.rb'
 
 # Offense count: 3
 # Configuration parameters: AllowedConstants.
