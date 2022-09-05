@@ -65,7 +65,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Remote do
           .to match(
             a_hash_including(
               'browserName' => 'firefox',
-              'moz:firefoxOptions' => { 'log' => { 'level' => 'trace' } }
+              'moz:firefoxOptions' => hash_including({ 'log' => { 'level' => 'trace' } })
             )
           )
       end
