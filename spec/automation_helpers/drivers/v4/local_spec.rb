@@ -84,12 +84,11 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
     context 'when the browser is safari' do
       before do
         AutomationHelpers::Patches::SeleniumOptions.new(browser).patch! if run_selenium_options_patch?
+        # Prevent OS complaining it doesn't know where safari is!
+        allow(Selenium::WebDriver::Platform).to receive(:assert_executable)
       end
 
       let(:browser) { :safari }
-
-      # Prevent OS complaining it doesn't know where safari is!
-      before { allow(Selenium::WebDriver::Platform).to receive(:assert_executable) }
 
       it 'has correct top level properties' do
         expect(options.keys).to eq(standard_top_level_properties)

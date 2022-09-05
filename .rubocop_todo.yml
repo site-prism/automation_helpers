@@ -36,10 +36,10 @@ RSpec/MultipleMemoizedHelpers:
 #  Exclude:
 #    - 'spec/automation_helpers/drivers/v4/options_spec.rb'
 
-# Offense count: 2
-RSpec/ScatteredSetup:
-  Exclude:
-    - 'spec/automation_helpers/drivers/v4/local_spec.rb'
+## Offense count: 2
+#RSpec/ScatteredSetup:
+#  Exclude:
+#    - 'spec/automation_helpers/drivers/v4/local_spec.rb'
 
 # Offense count: 1
 RSpec/SubjectStub:
