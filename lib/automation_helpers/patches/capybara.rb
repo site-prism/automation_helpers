@@ -21,6 +21,9 @@ module AutomationHelpers
       end
     end
 
+    #
+    # @api private
+    #
     module SafariTextPatch
       def text(type = nil, normalize_ws: ::Capybara.default_normalize_ws)
         super(type, normalize_ws: normalize_ws)

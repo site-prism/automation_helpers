@@ -8,8 +8,6 @@ module AutomationHelpers
   module Drivers
     module V4
       #
-      # {AutomationHelpers::Drivers::V4::Local}
-      #
       # The Local Driver that will spin up and run on your machine (Without connecting to any grid)
       #
       class Local

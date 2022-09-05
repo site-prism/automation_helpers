@@ -56,6 +56,9 @@ module AutomationHelpers
       end
     end
 
+    #
+    # @api private
+    #
     module CapabilitiesAsJsonFix
       private
 

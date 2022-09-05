@@ -33,6 +33,9 @@ module AutomationHelpers
       end
     end
 
+    #
+    # @api private
+    #
     module CookieConverter
       def convert_cookie(cookie)
         super(cookie)

@@ -10,10 +10,8 @@ module AutomationHelpers
   module Drivers
     module V4
       #
-      # {AutomationHelpers::Drivers::V4::Browserstack}
-      #
       # The Browserstack Driver that will connect to a hosted grid
-      # Requires a series of pre-set values to be passed in
+      # This requires a series of pre-set values to be passed in
       #
       class Browserstack
         attr_reader :browser, :browserstack_options, :device_options
