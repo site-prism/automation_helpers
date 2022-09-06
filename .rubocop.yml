@@ -35,9 +35,15 @@ Metrics/BlockLength:
     # Specs deliberately will almost always break this cop (It should be added to rubocop-rspec defaults ideally)
     - spec/**/*
 
+# Remove specs breaking the cop limit for large array/hash responses
 RSpec/ExampleLength:
   CountAsOne: ['array', 'hash']
 
+# This is a single standardised transform
 RSpec/FilePath:
   CustomTransform:
     WebDriver: webdriver
+
+# Stylistic preference to make the RSpec tests flow better
+RSpec/MessageSpies:
+  EnforcedStyle: receive
