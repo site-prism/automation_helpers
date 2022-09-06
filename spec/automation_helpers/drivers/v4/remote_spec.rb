@@ -11,7 +11,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Remote do
 
   after { session.quit }
 
-  let(:session) { Capybara::Session.new(:selenium) }
+  let(:session) { capybara_session(:selenium) }
 
   describe '#register' do
     context 'when the browser is chrome' do

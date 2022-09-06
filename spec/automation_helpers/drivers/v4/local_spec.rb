@@ -10,7 +10,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
 
   after { session.quit }
 
-  let(:session) { Capybara::Session.new(:selenium) }
+  let(:session) { capybara_session(:selenium) }
   let(:standard_top_level_properties) { %i[browser clear_local_storage clear_session_storage service capabilities] }
 
   describe '#register' do

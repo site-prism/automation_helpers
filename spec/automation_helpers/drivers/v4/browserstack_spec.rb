@@ -10,7 +10,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Browserstack do
 
   after { session.quit }
 
-  let(:session) { Capybara::Session.new(:selenium) }
+  let(:session) { capybara_session(:selenium) }
   let(:browserstack_options) do
     {
       build_name: 'build',
