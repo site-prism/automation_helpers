@@ -11,7 +11,7 @@
 RSpec/MultipleMemoizedHelpers:
   Max: 6
 
-# Offense count: 1
-RSpec/SubjectStub:
-  Exclude:
-    - 'spec/automation_helpers/patches/selenium_options_spec.rb'
+## Offense count: 1
+#RSpec/SubjectStub:
+#  Exclude:
+#    - 'spec/automation_helpers/patches/selenium_options_spec.rb'

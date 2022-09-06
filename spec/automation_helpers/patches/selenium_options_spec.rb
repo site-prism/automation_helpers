@@ -17,7 +17,7 @@ RSpec.describe AutomationHelpers::Patches::SeleniumOptions do
     subject(:patch) { described_class.new(:foo) }
 
     it 'does not perform the patch' do
-      expect(patch).not_to receive(:perform)
+      expect(AutomationHelpers.logger).not_to receive(:info).with(/Adding patch/)
 
       patch.patch!
     end
