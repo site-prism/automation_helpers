@@ -4,8 +4,7 @@ describe Selenium::WebDriver::Logs do
   # The Bridge is considered API Private, but we need to mock it!
   let(:bridge) { logs.instance_variable_get(:@bridge) }
   let(:log_entry) { instance_double(Selenium::WebDriver::LogEntry, to_s: 'Time - SEV - Browser or Driver Message') }
-  let(:session) { Capybara::Session.new(:selenium_chrome_headless) }
-  let(:logs) { session.driver.browser.logs }
+  let(:logs) { capybara_session.driver.browser.logs }
 
   before do
     allow(bridge)

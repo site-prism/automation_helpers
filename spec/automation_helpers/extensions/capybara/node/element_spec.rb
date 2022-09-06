@@ -5,7 +5,7 @@ describe Capybara::Node::Element do
 
   before { session.visit('/sample_page.html') }
 
-  let(:session) { Capybara::Session.new(:selenium_chrome_headless) }
+  let(:session) { capybara_session }
 
   describe '#horizontal_position' do
     it 'returns the top-left horizontal ordinate from the native rect' do
