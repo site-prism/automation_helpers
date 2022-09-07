@@ -2,9 +2,12 @@
 
 module AutomationHelpers
   module Patches
+    #
+    # @api private
+    #
     class Base
       #
-      # api private (Not intended to be instantiated directly!)
+      # api private (Not intended to be instantiated directly! Use the child classes)
       #
       def patch!
         raise 'This is no longer supported' if prevent_usage?

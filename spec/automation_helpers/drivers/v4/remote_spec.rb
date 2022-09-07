@@ -11,7 +11,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Remote do
 
   after { session.quit }
 
-  let(:session) { Capybara::Session.new(:selenium) }
+  let(:session) { capybara_session(:selenium) }
 
   describe '#register' do
     context 'when the browser is chrome' do
@@ -51,21 +51,23 @@ RSpec.describe AutomationHelpers::Drivers::V4::Remote do
       end
 
       let(:browser) { :firefox }
-      let(:caps) { options[:capabilities].first.as_json }
-      let(:opts) { options[:capabilities].last.as_json }
 
       it 'has correct top level properties' do
         expect(options.keys).to eq(%i[browser clear_local_storage clear_session_storage capabilities url])
       end
 
       it 'has correct desired capabilities' do
-        expect(caps).to eq({ 'browserName' => 'firefox' })
+        expect(options[:capabilities].first.as_json).to eq({ 'browserName' => 'firefox' })
       end
 
       it 'has correct browser options' do
-        expect(opts).to match(a_hash_including('browserName' => 'firefox'))
-
-        expect(opts['moz:firefoxOptions']).to match(a_hash_including('log' => { 'level' => 'trace' }))
+        expect(options[:capabilities].last.as_json)
+          .to match(
+            a_hash_including(
+              'browserName' => 'firefox',
+              'moz:firefoxOptions' => hash_including({ 'log' => { 'level' => 'trace' } })
+            )
+          )
       end
     end
 

@@ -7,10 +7,8 @@ module AutomationHelpers
   module Drivers
     module V4
       #
-      # {AutomationHelpers::Drivers::V4::Remote}
-      #
       # The Remote Driver that will connect to a dockerised self-hosted grid
-      # Expects the grid to be live and accepting node requests
+      # This expects the grid to be live **and** accepting node requests
       #
       class Remote
         attr_reader :browser

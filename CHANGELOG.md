@@ -4,6 +4,8 @@
 **New**
 * Added extension for `String#to_bool`
 
+* Fixed up all outstanding cop offenses for rubocop
+
 ## <sub>v4.0.1</sub>
 #### _Aug. 22, 2022_
 

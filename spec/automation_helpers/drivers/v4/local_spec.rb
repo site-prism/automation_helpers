@@ -10,7 +10,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
 
   after { session.quit }
 
-  let(:session) { Capybara::Session.new(:selenium) }
+  let(:session) { capybara_session(:selenium) }
   let(:standard_top_level_properties) { %i[browser clear_local_storage clear_session_storage service capabilities] }
 
   describe '#register' do
@@ -42,21 +42,23 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
       end
 
       let(:browser) { :firefox }
-      let(:caps) { options[:capabilities].first.as_json }
-      let(:opts) { options[:capabilities].last.as_json }
 
       it 'has correct top level properties' do
         expect(options.keys).to eq(standard_top_level_properties)
       end
 
       it 'has correct desired capabilities' do
-        expect(caps).to eq({})
+        expect(options[:capabilities].first.as_json).to eq({})
       end
 
       it 'has correct browser options' do
-        expect(opts).to match(a_hash_including('browserName' => 'firefox'))
-
-        expect(opts['moz:firefoxOptions']).to match(a_hash_including('log' => { 'level' => 'trace' }))
+        expect(options[:capabilities].last.as_json)
+          .to match(
+            a_hash_including(
+              'browserName' => 'firefox',
+              'moz:firefoxOptions' => hash_including({ 'log' => { 'level' => 'trace' } })
+            )
+          )
       end
     end
 
@@ -84,12 +86,11 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
     context 'when the browser is safari' do
       before do
         AutomationHelpers::Patches::SeleniumOptions.new(browser).patch! if run_selenium_options_patch?
+        # Prevent OS complaining it doesn't know where safari is!
+        allow(Selenium::WebDriver::Platform).to receive(:assert_executable)
       end
 
       let(:browser) { :safari }
-
-      # Prevent OS complaining it doesn't know where safari is!
-      before { allow(Selenium::WebDriver::Platform).to receive(:assert_executable) }
 
       it 'has correct top level properties' do
         expect(options.keys).to eq(standard_top_level_properties)

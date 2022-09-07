@@ -35,7 +35,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Options do
     end
 
     context 'when the browser is headless' do
-      before { allow(described_class).to receive(:headless?) { true } }
+      before { allow(described_class).to receive(:headless?).and_return(true) }
 
       let(:browser) { :chrome }
 

@@ -7,6 +7,9 @@ module AutomationHelpers
   # @api private
   #
   class Logger
+    #
+    # Generate the Logger used in the gem
+    #
     def self.create(output = $stdout)
       logger = ::Logger.new(output)
       logger.progname = 'Automation Helpers'

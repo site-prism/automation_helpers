@@ -2,6 +2,10 @@
 
 module AutomationHelpers
   module Patches
+    #
+    # Fix the issue where the `#convert_cookie` API private method in selenium-webdriver doesn't include the
+    # 'httpOnly' property in the returned cookie hash structure
+    #
     class SeleniumManager < Base
       private
 
@@ -29,6 +33,9 @@ module AutomationHelpers
       end
     end
 
+    #
+    # @api private
+    #
     module CookieConverter
       def convert_cookie(cookie)
         super(cookie)

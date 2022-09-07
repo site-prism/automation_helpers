@@ -2,6 +2,9 @@
 
 module AutomationHelpers
   module Patches
+    #
+    # Fix the issue where the `#text` method doesn't normalize whitespace (Only the matchers do)
+    #
     class Capybara < Base
       private
 
@@ -18,6 +21,9 @@ module AutomationHelpers
       end
     end
 
+    #
+    # @api private
+    #
     module SafariTextPatch
       def text(type = nil, normalize_ws: ::Capybara.default_normalize_ws)
         super(type, normalize_ws: normalize_ws)

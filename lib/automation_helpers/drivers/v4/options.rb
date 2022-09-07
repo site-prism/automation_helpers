@@ -6,8 +6,6 @@ module AutomationHelpers
   module Drivers
     module V4
       #
-      # {AutomationHelpers::Drivers::V4::Options}
-      #
       # The Options object that will be used to instantiate whatever driver you
       # are configuring
       #
