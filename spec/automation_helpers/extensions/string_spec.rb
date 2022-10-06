@@ -25,6 +25,16 @@ describe String do
 
       it { is_expected.to eq(('a'..'z').to_a + ('A'..'Z').to_a) }
     end
+
+    context 'with an invalid alphabet type' do
+      subject(:invalid_alphabet_type) { described_class.alphabet(:foo) }
+
+      it 'raises an error' do
+        expect { invalid_alphabet_type }
+          .to raise_error(ArgumentError)
+          .with_message('Invalid alphabet type. Must be :upper (default), :lower or :both')
+      end
+    end
   end
 
   describe '.alphabet_char' do

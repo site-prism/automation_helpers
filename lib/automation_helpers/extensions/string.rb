@@ -2,9 +2,30 @@
 
 # Additional useful methods to extend the String class with
 class String
+  # @return [Array]
+  #
+  # Generates an array of the english alphabet
+  # Accepts an input to determine what case of alphabet you want
+  def self.alphabet(type = :upper)
+    case type
+    when :upper; then ('A'..'Z').to_a
+    when :lower; then ('a'..'z').to_a
+    when :both;  then ('a'..'z').to_a + ('A'..'Z').to_a
+    else raise ArgumentError, 'Invalid alphabet type. Must be :upper (default), :lower or :both'
+    end
+  end
+
   # @return [String]
   #
-  # Convert's a regular string name into it's pascalized format
+  # Generates a single random letter from an array of the english alphabet
+  # Accepts an input to determine what case of alphabet you want
+  def self.alphabet_char(type = :upper)
+    alphabet(type).sample
+  end
+
+  # @return [String]
+  #
+  # Converts a regular string name into it's pascalized format
   # This can then be used to generate a ClassName
   def pascalize
     split('_').map(&:capitalize).join
@@ -20,7 +41,7 @@ class String
 
   # @return [String]
   #
-  # Convert's a regular string into a snake cased format
+  # Converts a regular string into a snake cased format
   # Will sanitize out some characters (Designed for titles)
   def snake_case
     gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
