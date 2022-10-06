@@ -12,6 +12,14 @@ class String
 
   # @return [String]
   #
+  # Sanitize and convert every individual whitespace character to
+  # a regular space character (Does not sanitize newlines)
+  def sanitize_whitespace
+    gsub(/[ \t\r\f\u00A0]/, ' ')
+  end
+
+  # @return [String]
+  #
   # Convert's a regular string into a snake cased format
   # Will sanitize out some characters (Designed for titles)
   def snake_case
@@ -22,14 +30,6 @@ class String
       .tr(' ', '_')
       .tr("'", '')
       .downcase
-  end
-
-  # @return [String]
-  #
-  # Sanitize and convert every individual whitespace character to
-  # a regular space character (Does not sanitize newlines)
-  def sanitize_whitespace
-    gsub(/[ \t\r\f\u00A0]/, ' ')
   end
 
   # @return [Boolean]
