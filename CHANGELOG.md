@@ -3,6 +3,8 @@
 
 **New**
 * Added extension for `String#to_bool`
+* Added extensions for `Array.alphabet` and `String.alphabet_char`
+  * These take a single argument for the casing of the alphabet (Defaults to upper case by default)
 
 * Fixed up all outstanding cop offenses for rubocop
 
