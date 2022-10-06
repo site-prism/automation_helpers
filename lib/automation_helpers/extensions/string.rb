@@ -2,25 +2,12 @@
 
 # Additional useful methods to extend the String class with
 class String
-  # @return [Array]
-  #
-  # Generates an array of the english alphabet
-  # Accepts an input to determine what case of alphabet you want
-  def self.alphabet(type = :upper)
-    case type
-    when :upper; then ('A'..'Z').to_a
-    when :lower; then ('a'..'z').to_a
-    when :both;  then ('a'..'z').to_a + ('A'..'Z').to_a
-    else raise ArgumentError, 'Invalid alphabet type. Must be :upper (default), :lower or :both'
-    end
-  end
-
   # @return [String]
   #
   # Generates a single random letter from an array of the english alphabet
   # Accepts an input to determine what case of alphabet you want
   def self.alphabet_char(type = :upper)
-    alphabet(type).sample
+    Array.alphabet(type).sample
   end
 
   # @return [String]
