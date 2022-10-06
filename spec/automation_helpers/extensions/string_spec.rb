@@ -61,6 +61,16 @@ describe String do
 
       it { is_expected.to match(/[a-zA-Z]/) }
     end
+
+    context 'with an invalid alphabet type' do
+      subject(:invalid_alphabet_type) { described_class.alphabet_char(:foo) }
+
+      it 'raises an error' do
+        expect { invalid_alphabet_type }
+          .to raise_error(ArgumentError)
+          .with_message('Invalid alphabet type. Must be :upper (default), :lower or :both')
+      end
+    end
   end
 
   describe '#pascalize' do
