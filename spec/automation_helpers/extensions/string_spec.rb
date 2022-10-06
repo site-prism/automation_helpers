@@ -1,6 +1,32 @@
 # frozen_string_literal: true
 
 describe String do
+  describe '.alphabet' do
+    subject { described_class.alphabet }
+
+    context 'with no argument provided' do
+      it { is_expected.to eq(('A'..'Z').to_a) }
+    end
+
+    context 'with upper case characters' do
+      subject { described_class.alphabet(:upper) }
+
+      it { is_expected.to eq(('A'..'Z').to_a) }
+    end
+
+    context 'with lower case characters' do
+      subject { described_class.alphabet(:lower) }
+
+      it { is_expected.to eq(('a'..'z').to_a) }
+    end
+
+    context 'with both upper and lower case characters' do
+      subject { described_class.alphabet(:both) }
+
+      it { is_expected.to eq(('a'..'z').to_a + ('A'..'Z').to_a) }
+    end
+  end
+
   describe '#pascalize' do
     subject { string.pascalize }
 
