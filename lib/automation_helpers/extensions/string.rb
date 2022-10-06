@@ -4,7 +4,15 @@
 class String
   # @return [String]
   #
-  # Convert's a regular string name into it's pascalized format
+  # Generates a single random letter from an array of the english alphabet
+  # Accepts an input to determine what case of alphabet you want
+  def self.alphabet_char(type = :upper)
+    Array.alphabet(type).sample
+  end
+
+  # @return [String]
+  #
+  # Converts a regular string name into it's pascalized format
   # This can then be used to generate a ClassName
   def pascalize
     split('_').map(&:capitalize).join
@@ -12,7 +20,15 @@ class String
 
   # @return [String]
   #
-  # Convert's a regular string into a snake cased format
+  # Sanitize and convert every individual whitespace character to
+  # a regular space character (Does not sanitize newlines)
+  def sanitize_whitespace
+    gsub(/[ \t\r\f\u00A0]/, ' ')
+  end
+
+  # @return [String]
+  #
+  # Converts a regular string into a snake cased format
   # Will sanitize out some characters (Designed for titles)
   def snake_case
     gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
@@ -22,14 +38,6 @@ class String
       .tr(' ', '_')
       .tr("'", '')
       .downcase
-  end
-
-  # @return [String]
-  #
-  # Sanitize and convert every individual whitespace character to
-  # a regular space character (Does not sanitize newlines)
-  def sanitize_whitespace
-    gsub(/[ \t\r\f\u00A0]/, ' ')
   end
 
   # @return [Boolean]
