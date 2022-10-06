@@ -4,7 +4,7 @@ describe String do
   describe '.alphabet' do
     subject { described_class.alphabet }
 
-    context 'with no argument provided' do
+    context 'with no argument provided - it defaults to upper case characters' do
       it { is_expected.to eq(('A'..'Z').to_a) }
     end
 
@@ -24,6 +24,32 @@ describe String do
       subject { described_class.alphabet(:both) }
 
       it { is_expected.to eq(('a'..'z').to_a + ('A'..'Z').to_a) }
+    end
+  end
+
+  describe '.alphabet_char' do
+    subject { described_class.alphabet_char }
+
+    context 'with no argument provided - it defaults to upper case characters' do
+      it { is_expected.to match(/[A-Z]/) }
+    end
+
+    context 'with upper case characters' do
+      subject { described_class.alphabet_char(:upper) }
+
+      it { is_expected.to match(/[A-Z]/) }
+    end
+
+    context 'with lower case characters' do
+      subject { described_class.alphabet_char(:lower) }
+
+      it { is_expected.to match(/[a-z]/) }
+    end
+
+    context 'with both upper and lower case characters' do
+      subject { described_class.alphabet_char(:both) }
+
+      it { is_expected.to match(/[a-zA-Z]/) }
     end
   end
 
