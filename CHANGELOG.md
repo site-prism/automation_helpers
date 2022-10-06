@@ -4,7 +4,10 @@
 **New**
 * Added extension for `String#to_bool`
 
+**Changed**
 * Fixed up all outstanding cop offenses for rubocop
+
+* Fixed an issue where the CI flows weren't switching ruby correctly
 
 ## <sub>v4.0.1</sub>
 #### _Aug. 22, 2022_
