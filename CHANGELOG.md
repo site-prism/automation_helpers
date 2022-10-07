@@ -6,7 +6,10 @@
 * Added extensions for `Array.alphabet` and `String.alphabet_char`
   * These take a single argument for the casing of the alphabet (Defaults to upper case by default)
 
+**Changed**
 * Fixed up all outstanding cop offenses for rubocop
+
+* Fixed an issue where the CI flows weren't switching ruby correctly
 
 ## <sub>v4.0.1</sub>
 #### _Aug. 22, 2022_
