@@ -1,5 +1,5 @@
-## <sub>main</sub>
-#### _Unreleased_
+## <sub>v4.1</sub>
+#### _Nov. 1, 2022_
 
 **New**
 * Added extension for `String#to_bool`
