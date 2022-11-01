@@ -27,7 +27,7 @@ describe Capybara::Node::Element do
     context 'when made stale' do
       it 'returns true' do
         cached_element = capybara_element
-        session.find('#remove_container').click
+        session.find_by_id('remove_container').click
 
         expect(cached_element).to be_stale
       end

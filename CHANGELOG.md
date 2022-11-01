@@ -7,7 +7,7 @@
   * These take a single argument for the casing of the alphabet (Defaults to upper case by default)
 
 **Changed**
-* Fixed up all outstanding cop offenses for rubocop
+* Fixed up all outstanding cop offenses for rubocop (And bumped all rubocop gems)
 
 * Fixed an issue where the CI flows weren't switching ruby correctly
 
