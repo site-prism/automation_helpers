@@ -7,7 +7,12 @@ class String
   # Generates a single random letter from an array of the english alphabet
   # Accepts an input to determine what case of alphabet you want
   def self.alphabet_char(type = :upper)
-    Array.alphabet(type).sample
+    case type
+    when :upper; then ('A'..'Z').to_a.sample
+    when :lower; then ('a'..'z').to_a.sample
+    when :both;  then ('a'..'z').to_a + ('A'..'Z').to_a.sample
+    else raise ArgumentError, 'Invalid alphabet type. Must be :upper (default), :lower or :both'
+    end
   end
 
   # @return [String]
