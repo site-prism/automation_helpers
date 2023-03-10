@@ -104,7 +104,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
         expect(options[:capabilities].first.as_json)
           .to eq(
             {
-              'browserName' => 'safari',
+              'browserName' => 'Safari Technology Preview',
               'safari:automaticInspection' => true
             }
           )
