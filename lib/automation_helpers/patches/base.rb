@@ -27,6 +27,7 @@ module AutomationHelpers
       # From what point should this patch start throwing deprecation notices
       # If a date is provided, then after that date
       # If a version from is provided, then all releases after that one (NB: You must provide a link to the gem version)
+      # Otherwise the patch is considered never to be deprecated
       #
       def deprecate?
         if defined?(deprecation_notice_date)
@@ -42,6 +43,7 @@ module AutomationHelpers
       # From what point should this patch start preventing usage deprecation notices
       # If a date is provided, then after that date
       # If a version from is provided, then all releases after that one (NB: You must provide a link to the gem version)
+      # Otherwise the patch is considered never to be prevented from being used
       #
       def prevent_usage?
         if defined?(prevent_usage_date)
