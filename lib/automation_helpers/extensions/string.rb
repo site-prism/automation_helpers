@@ -10,7 +10,7 @@ class String
     case type
     when :upper; then ('A'..'Z').to_a.sample
     when :lower; then ('a'..'z').to_a.sample
-    when :both;  then ('a'..'z').to_a + ('A'..'Z').to_a.sample
+    when :both;  then (('a'..'z').to_a + ('A'..'Z').to_a).sample
     else raise ArgumentError, 'Invalid alphabet type. Must be :upper (default), :lower or :both'
     end
   end
