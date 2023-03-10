@@ -13,8 +13,6 @@ AllCops:
   Exclude:
     # This patch is 80% copied code from the upstream repo. As such there are different style
     - 'lib/automation_helpers/patches/parallel_cucumber.rb'
-    # Remove vendor files from being checked
-    - vendor/**/*
 
 # We don't enable MFA yet on this repo
 Gemspec/RequireMFA:

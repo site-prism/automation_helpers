@@ -1,3 +1,14 @@
+## <sub>main</sub>
+#### _Unreleased_
+
+**New**
+* Run CI for Ruby 3.2
+* Add dependabot into repo
+
+**Bugfixes**
+* `String.alphabet_char` was referencing `Array` extension 
+  * Now runs of it's own volition so you won't get a `NoMethodError`
+
 ## <sub>v4.1</sub>
 #### _Nov. 1, 2022_
 
