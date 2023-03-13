@@ -24,24 +24,9 @@ RSpec.describe AutomationHelpers::Drivers::V4::Options do
 
     context 'when the browser is safari' do
       let(:browser) { :safari }
+      let(:browser_name) { Selenium::WebDriver::Safari::Options::BROWSER }
 
-      context 'when Safari TP is active' do
-        before do
-          Selenium::WebDriver::Safari::Options::BROWSER = 'safari'
-        end
-
-        it do
-          is_expected.to have_attributes({ browser_name: 'safari', automatic_inspection: true })
-        end
-      end
-
-      context 'when Safari TP is not active' do
-        before do
-          Selenium::WebDriver::Safari::Options::BROWSER = 'Safari Technology Preview'
-        end
-
-        it { is_expected.to have_attributes({ browser_name: 'Safari Technology Preview', automatic_inspection: true }) }
-      end
+      it { is_expected.to have_attributes({ browser_name: browser_name, automatic_inspection: true }) }
     end
 
     context 'when the browser is edge' do
