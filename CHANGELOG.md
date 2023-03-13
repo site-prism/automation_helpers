@@ -9,6 +9,9 @@
 * `String.alphabet_char` was referencing `Array` extension 
   * Now runs of it's own volition so you won't get a `NoMethodError`
 
+* Fix missing configuration for Safari Capabilities when running in remote or browserstack
+  * NB: For now remote execution isn't possible as there isn't a grid image for this
+
 ## <sub>v4.1</sub>
 #### _Nov. 1, 2022_
 
