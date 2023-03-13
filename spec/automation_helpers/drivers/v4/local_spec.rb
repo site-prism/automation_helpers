@@ -91,7 +91,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
       end
 
       let(:browser) { :safari }
-      let(:browser_name) { Selenium::WebDriver::Safari::Options::BROWSER }
+      let(:browser_name) { 'Safari Technology Preview' }
 
       it 'has correct top level properties' do
         expect(options.keys).to eq(standard_top_level_properties)
