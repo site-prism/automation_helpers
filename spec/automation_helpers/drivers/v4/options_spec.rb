@@ -25,7 +25,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Options do
     context 'when the browser is safari' do
       let(:browser) { :safari }
 
-      it { is_expected.to have_attributes({ browser_name: 'safari', automatic_inspection: true }) }
+      it { is_expected.to have_attributes({ browser_name: 'Safari Technology Preview', automatic_inspection: true }) }
     end
 
     context 'when the browser is edge' do

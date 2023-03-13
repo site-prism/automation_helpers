@@ -69,11 +69,10 @@ module AutomationHelpers
         #
         # NB: Whilst using Safari TP this is required.
         def desired_capabilities
-          ::Selenium::WebDriver::Remote::Capabilities.new.tap do |capabilities|
-            if safari?
-              capabilities['browserName'] = 'Safari Technology Preview'
-              AutomationHelpers.logger.warn('Altering Browser Name request to alleviate Capybara failure with STP.')
-            end
+          if safari?
+            Capabilities.for(:safari)
+          else
+            ::Selenium::WebDriver::Remote::Capabilities.new
           end
         end
 
