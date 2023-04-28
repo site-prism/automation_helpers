@@ -12,6 +12,8 @@
 * Fix missing configuration for Safari Capabilities when running in remote or browserstack
   * NB: For now remote execution isn't possible as there isn't a grid image for this
 
+* CI config for both workflows and dependabot was slightly incorrect
+
 ## <sub>v4.1</sub>
 #### _Nov. 1, 2022_
 
