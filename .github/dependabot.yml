@@ -5,9 +5,10 @@ updates:
     schedule:
       interval: "daily"
     ignore:
-      # We don't pin capybara as plenty of people might need old(er) versions
+      # We don't pin most of our patched gems as plenty of people might need old(er) versions
       - dependency-name: "capybara"
-      # We support old versions of selenium 4
+      - dependency-name: "cucumber"
+      - dependency-name: "parallel-tests"
       - dependency-name: "selenium-webdriver"
   - package-ecosystem: "github-actions"
     directory: "/"

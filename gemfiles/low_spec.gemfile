@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'capybara', '< 3.28'
+gem 'capybara', '< 3.31'
 gem 'cucumber', '< 7'
 gem 'selenium-webdriver', '< 4.1'
 
