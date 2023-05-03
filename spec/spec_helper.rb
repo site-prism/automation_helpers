@@ -40,7 +40,7 @@ def lines(string)
 end
 
 def run_selenium_options_patch?
-  ::Selenium::WebDriver::VERSION <= '4.0.0.beta5'
+  Selenium::WebDriver::VERSION <= '4.0.0.beta5'
 end
 
 def flaky_spec?
