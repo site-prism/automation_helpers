@@ -35,5 +35,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubocop-performance', '~> 1.17.1'
   spec.add_development_dependency 'rubocop-rspec', '~> 2.20.0'
   spec.add_development_dependency 'selenium-webdriver', '~> 4.0'
-  spec.add_development_dependency 'webdrivers', '~> 4.6'
+  spec.add_development_dependency 'webdrivers', '~> 5.2'
 end
