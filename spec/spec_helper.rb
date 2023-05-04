@@ -43,16 +43,8 @@ def run_selenium_options_patch?
   Selenium::WebDriver::VERSION <= '4.0.0.beta5'
 end
 
-def flaky_spec?
-  old_ruby? && old_capybara?
-end
-
 def old_ruby?
   RUBY_VERSION.to_f < 3
-end
-
-def old_capybara?
-  Gem::Version.new(Capybara::VERSION) < Gem::Version.new('3.30')
 end
 
 def capybara_session(type = :selenium_chrome_headless)
