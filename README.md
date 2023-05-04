@@ -29,6 +29,19 @@ $ bundle
 
 Either require all of the extensions required, or require individual bits and pieces
 
+```shell
+# Require all of the drivers/patches/extensions code
+require 'automation_helpers'
+# Require all driver code
+require 'automation_helpers/drivers'
+# Require just local drivers
+require 'automation_helpers/drivers/local'
+# Require all patches
+require 'automation_helpers/patches'
+# Require all extensions
+require 'automation_helpers/extensions'
+```
+
 ## Development
 
 ```

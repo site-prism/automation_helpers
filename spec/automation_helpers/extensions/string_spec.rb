@@ -32,7 +32,7 @@ describe String do
       it 'raises an error' do
         expect { invalid_alphabet_type }
           .to raise_error(ArgumentError)
-          .with_message('Invalid alphabet type. Must be :upper (default), :lower or :both')
+          .with_message('Invalid character type. Must be :upper (default), :lower or :both')
       end
     end
   end
