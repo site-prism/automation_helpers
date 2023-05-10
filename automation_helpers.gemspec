@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_development_dependency 'capybara', ['>= 3.30', '< 4']
-  spec.add_development_dependency 'cucumber', ['>= 5.0', '< 9']
+  spec.add_development_dependency 'cucumber', ['>= 7.0', '< 9']
   spec.add_development_dependency 'faraday', '~> 2.7'
   spec.add_development_dependency 'parallel_tests', ['>= 3.7', '< 5']
   spec.add_development_dependency 'rspec', '~> 3.11'

@@ -2,8 +2,8 @@
 
 source 'https://rubygems.org'
 
-gem 'capybara', '< 3.31'
-gem 'cucumber', '< 7'
-gem 'selenium-webdriver', '< 4.1'
+gem 'capybara', '3.30'
+gem 'parallel_tests', '3.7'
+gem 'selenium-webdriver', '4.0'
 
 gemspec path: '..'
