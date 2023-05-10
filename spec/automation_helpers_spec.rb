@@ -59,7 +59,7 @@ describe AutomationHelpers do
     let(:existing_logger) { described_class.logger }
 
     context 'with a valid Logger input' do
-      let(:new_logger) { ::Logger.new($stdout) }
+      let(:new_logger) { Logger.new($stdout) }
 
       it 'sets the Logger to the new type' do
         expect { described_class.logger = new_logger }

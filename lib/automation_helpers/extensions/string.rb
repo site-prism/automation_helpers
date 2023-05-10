@@ -11,7 +11,7 @@ class String
     when :upper; then ('A'..'Z').to_a.sample
     when :lower; then ('a'..'z').to_a.sample
     when :both;  then (('a'..'z').to_a + ('A'..'Z').to_a).sample
-    else raise ArgumentError, 'Invalid alphabet type. Must be :upper (default), :lower or :both'
+    else raise ArgumentError, 'Invalid character type. Must be :upper (default), :lower or :both'
     end
   end
 

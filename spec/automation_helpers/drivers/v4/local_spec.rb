@@ -85,9 +85,9 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
 
     context 'when the browser is safari' do
       before do
-        # These tests are notoriously flaky on some of the older rubies / gem versions.
+        # These tests are notoriously flaky on some of the older ruby versions.
         # Observe the failures and if they grow above 10-20% then we can just ignore them until we move to ruby3+
-        skip 'Test is flaky on ruby 2.7 with old gems' if flaky_spec?
+        skip 'Test is flaky on ruby 2.7' if old_ruby?
         AutomationHelpers::Patches::SeleniumOptions.new(browser).patch! if run_selenium_options_patch?
         # Prevent OS complaining it doesn't know where safari is!
         allow(Selenium::WebDriver::Platform).to receive(:assert_executable)
@@ -95,7 +95,6 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
 
       let(:browser) { :safari }
       let(:browser_name) { 'Safari Technology Preview' }
-      let(:flaky_spec?) { RUBY_VERSION.to_f < 3 && Capybara::VERSION.to_f < 3.3 }
 
       it 'has correct top level properties' do
         expect(options.keys).to eq(standard_top_level_properties)
