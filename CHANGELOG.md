@@ -1,9 +1,15 @@
 ## <sub>main</sub>
 #### _Unreleased_
 
+**Breaking Changes**
+
+**Removals**
+
 **New**
 
 **Changes**
+
+**Updates**
 
 **Bugfixes**
 
@@ -84,16 +90,16 @@
 ## <sub>v3.0.2</sub>
 #### _Sep. 20, 2021_
 
+**Removals**
+* As we're using GHA we don't need rake tasks anymore
+  * `rake` is no longer a dev dependency
+
 **New**
 * Added testing for a matrix of ruby / selenium versions
   * Initially we're testing alpha/beta/latest versions of selenium against ruby 2.7 and 3.0
 
 * Added Local Edge driver tests
   * Previously, there weren't any tests for Edge driver
-
-**Removals**
-* As we're using GHA we don't need rake tasks anymore
-  * `rake` is no longer a dev dependency
 
 **Bugfixes**
 * Fix Load error in Edge Options
@@ -120,11 +126,11 @@
 
 * New (private), API for Capabilities which mirrors Options
 
-**New**
-* Added **working** Browserstack-specific capabilities for Android driver (Previously were hard-coded and placeholder)
-
 **Removals**
 * Removed all Docker/Jenkins code as we now use GHA as our CI pipeline
+
+**New**
+* Added **working** Browserstack-specific capabilities for Android driver (Previously were hard-coded and placeholder)
 
 **Changes**
 * Amalgamation / Standardisation down of tests and namespaces
