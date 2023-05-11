@@ -2,6 +2,15 @@
 #### _Unreleased_
 
 **New**
+
+**Changed**
+
+**Bugfixes**
+
+## <sub>v4.1.1</sub>
+#### _May. 11, 2023_
+
+**New**
 * Run CI for Ruby 3.2
 * Add dependabot into repo
 
