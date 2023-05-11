@@ -5,6 +5,9 @@
 * Run CI for Ruby 3.2
 * Add dependabot into repo
 
+**Changed**
+* All patches are now more unrestricted in the gemspec
+
 **Bugfixes**
 * `String.alphabet_char` was referencing `Array` extension 
   * Now runs of it's own volition so you won't get a `NoMethodError`
