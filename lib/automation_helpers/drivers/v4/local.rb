@@ -31,22 +31,8 @@ module AutomationHelpers
               app,
               browser: browser,
               service: service,
-              capabilities: capabilities
+              options: options
             )
-          end
-        end
-
-        # @return [Array]
-        #
-        # The order of these capabilities is important because in the internal configuration
-        # for the driver; these 2 objects are merged (And both will contain a browserName)
-        # as such we need to ensure the browserName we manually set in `desired_capabilities`
-        # is retained as this is the one required by safari
-        def capabilities
-          if safari?
-            options
-          else
-            options
           end
         end
 
