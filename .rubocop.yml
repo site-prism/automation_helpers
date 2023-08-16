@@ -11,8 +11,6 @@ AllCops:
   # Target Ruby 2.7 only
   TargetRubyVersion: 2.7
   Exclude:
-    # This patch is 80% copied code from the upstream repo. As such there are different style
-    - lib/automation_helpers/patches/parallel_cucumber.rb
     # Remove vendor files from being checked
     - vendor/**/*
 
