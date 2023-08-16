@@ -26,7 +26,6 @@ module AutomationHelpers
             when :firefox;           then firefox_capabilities
             when :internet_explorer; then internet_explorer_capabilities
             when :ios;               then ios_capabilities(device_options)
-            when :safari;            then safari_capabilities
             else {}
             end
           end
@@ -96,14 +95,6 @@ module AutomationHelpers
             when 11..; then '1.16.0'
             else raise ArgumentError, "Your iOS Version is too low. Please don't use lower than iOS 11."
             end
-          end
-
-          def safari_capabilities
-            AutomationHelpers.logger.warn('Altering Browser Name request to alleviate Capybara failure with STP.')
-
-            {
-              'browserName' => 'Safari Technology Preview'
-            }
           end
         end
       end
