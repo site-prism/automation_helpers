@@ -11,7 +11,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
   after { session.quit }
 
   let(:session) { capybara_session(:selenium) }
-  let(:standard_top_level_properties) { %i[browser clear_local_storage clear_session_storage service capabilities] }
+  let(:standard_top_level_properties) { %i[browser clear_local_storage clear_session_storage service options] }
 
   describe '#register' do
     context 'when the browser is chrome' do
@@ -21,12 +21,8 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
         expect(options.keys).to eq(standard_top_level_properties)
       end
 
-      it 'has correct desired capabilities' do
-        expect(options[:capabilities].first.as_json).to eq({})
-      end
-
       it 'has correct browser options' do
-        expect(options[:capabilities].last.as_json)
+        expect(options[:options].as_json)
           .to eq(
             {
               'browserName' => 'chrome',
@@ -37,9 +33,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
     end
 
     context 'when the browser is firefox' do
-      before do
-        AutomationHelpers::Patches::SeleniumOptions.new(browser).patch! if run_selenium_options_patch?
-      end
+      before { AutomationHelpers::Patches::SeleniumOptions.new(browser).patch! if run_selenium_options_patch? }
 
       let(:browser) { :firefox }
 
@@ -47,12 +41,8 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
         expect(options.keys).to eq(standard_top_level_properties)
       end
 
-      it 'has correct desired capabilities' do
-        expect(options[:capabilities].first.as_json).to eq({})
-      end
-
       it 'has correct browser options' do
-        expect(options[:capabilities].last.as_json)
+        expect(options[:options].as_json)
           .to match(
             a_hash_including(
               'browserName' => 'firefox',
@@ -69,12 +59,8 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
         expect(options.keys).to eq(standard_top_level_properties)
       end
 
-      it 'has correct desired capabilities' do
-        expect(options[:capabilities].first.as_json).to eq({})
-      end
-
       it 'has correct (Modified), browser options' do
-        expect(options[:capabilities].last.as_json)
+        expect(options[:options].as_json)
           .to eq(
             {
               'se:ieOptions' => { 'enablePersistentHover' => true, 'nativeEvents' => true }
@@ -94,21 +80,16 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
       end
 
       let(:browser) { :safari }
-      let(:browser_name) { 'Safari Technology Preview' }
 
       it 'has correct top level properties' do
         expect(options.keys).to eq(standard_top_level_properties)
       end
 
-      it 'has correct desired capabilities' do
-        expect(options[:capabilities].last.as_json).to eq({ 'browserName' => browser_name })
-      end
-
       it 'has correct browser options' do
-        expect(options[:capabilities].first.as_json)
+        expect(options[:options].as_json)
           .to eq(
             {
-              'browserName' => browser_name,
+              'browserName' => 'Safari Technology Preview',
               'safari:automaticInspection' => true
             }
           )
@@ -122,12 +103,8 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
         expect(options.keys).to eq(standard_top_level_properties)
       end
 
-      it 'has correct desired capabilities' do
-        expect(options[:capabilities].first.as_json).to eq({})
-      end
-
       it 'has correct browser options' do
-        expect(options[:capabilities].last.as_json)
+        expect(options[:options].as_json)
           .to eq(
             {
               'browserName' => 'MicrosoftEdge',
