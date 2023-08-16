@@ -2,14 +2,20 @@
 #### _Unreleased_
 
 **Breaking Changes**
+* The v4 local driver is now instantiated completely differently, with a different key and payload
+  * This is to facilitate the switch to SM and also tidying up some deprecation notices
+  * Remote / Browserstack drivers are unaffected
 
 **Removals**
 
 **New**
 
 **Changes**
+* Safari Capabilities are now just a vanilla `{}` as the STP driver name is correctly determined and set
+by the `Selenium::WebDriver::Safari::Options` instance
 
 **Updates**
+* Rubocop updates across the suite of gems
 
 **Bugfixes**
 

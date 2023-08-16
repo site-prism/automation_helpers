@@ -31,22 +31,8 @@ module AutomationHelpers
               app,
               browser: browser,
               service: service,
-              capabilities: capabilities
+              options: options
             )
-          end
-        end
-
-        # @return [Array]
-        #
-        # The order of these capabilities is important because in the internal configuration
-        # for the driver; these 2 objects are merged (And both will contain a browserName)
-        # as such we need to ensure the browserName we manually set in `desired_capabilities`
-        # is retained as this is the one required by safari
-        def capabilities
-          if safari?
-            [options, desired_capabilities]
-          else
-            [desired_capabilities, options]
           end
         end
 
@@ -61,19 +47,6 @@ module AutomationHelpers
 
           ::Selenium::WebDriver::Safari.technology_preview!
           ::Selenium::WebDriver::Service.safari(args: ['--diagnose'])
-        end
-
-        # This is required because Capybara and Safari aren't quite sure what the difference
-        # is between the two browsers. So to compensate an illegal browserName value is
-        # set that allows easy distinction between the two browsers
-        #
-        # NB: Whilst using Safari TP this is required.
-        def desired_capabilities
-          if safari?
-            Capabilities.for(:safari)
-          else
-            ::Selenium::WebDriver::Remote::Capabilities.new
-          end
         end
 
         def options
