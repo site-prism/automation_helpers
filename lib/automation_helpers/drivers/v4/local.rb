@@ -46,7 +46,7 @@ module AutomationHelpers
           if safari?
             [options, desired_capabilities]
           else
-            [desired_capabilities, options]
+            options
           end
         end
 
