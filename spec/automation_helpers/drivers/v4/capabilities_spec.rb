@@ -25,7 +25,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
 
     context 'with an invalid android version' do
       let(:browser) { :android }
-      let(:device_options) { { device_name: 'SamsungGalaxyS20', os_version: '8' } }
+      let(:device_options) { { device_name: 'SamsungGalaxyS9', os_version: '8' } }
 
       it 'complains that the android version is invalid' do
         expect { capabilities }.to raise_error(ArgumentError)
@@ -68,15 +68,15 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
 
     context 'with a valid device / iOS version' do
       let(:browser) { :ios }
-      let(:device_options) { { device_name: 'iPhone11', os_version: '12' } }
+      let(:device_options) { { device_name: 'iPhone13', os_version: '15' } }
 
       it 'has correct iOS capabilities' do
         expect(capabilities).to eq(
           {
             'bstack:options' => {
-              'deviceName' => 'iPhone11',
+              'deviceName' => 'iPhone13',
               'realMobile' => 'true',
-              'appiumVersion' => '1.20.2'
+              'appiumVersion' => '1.22.0'
             }
           }
         )
@@ -85,7 +85,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
 
     context 'with an invalid iOS version' do
       let(:browser) { :ios }
-      let(:device_options) { { device_name: 'iPhone11', os_version: '10' } }
+      let(:device_options) { { device_name: 'iPhone8', os_version: '11' } }
 
       it 'complains that the iOS version is invalid' do
         expect { capabilities }.to raise_error(ArgumentError)
