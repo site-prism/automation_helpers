@@ -19,7 +19,7 @@ AllCops:
 # This cop seems erroneous still
 Gemspec/DevelopmentDependencies:
   Enabled: false
-  
+
 # We don't enable MFA yet on this repo
 Gemspec/RequireMFA:
   Enabled: false
