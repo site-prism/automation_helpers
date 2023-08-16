@@ -36,7 +36,7 @@ space for any associated patches that may come out accordingly.
 
 ## Configurable Logger
 
-Previously `ca_testing` had a verbose logger
+The `ca_testing` logger
 
 ```ruby
   CaTesting.logger.info('This is an informative message')

@@ -1,11 +1,27 @@
 ## <sub>main</sub>
 #### _Unreleased_
 
+**Breaking Changes**
+
+**Removals**
+
+**New**
+
+**Changes**
+
+**Updates**
+
+**Bugfixes**
+
+## <sub>v4.1.1</sub>
+#### _Aug. 16, 2023_
+
 **New**
 * Run CI for Ruby 3.2
+
 * Add dependabot into repo
 
-**Changed**
+**Changes**
 * All patches are now more unrestricted in the gemspec
 
 **Bugfixes**
@@ -22,10 +38,11 @@
 
 **New**
 * Added extension for `String#to_bool`
+
 * Added extensions for `Array.alphabet` and `String.alphabet_char`
   * These take a single argument for the casing of the alphabet (Defaults to upper case by default)
 
-**Changed**
+**Changes**
 * Fixed up all outstanding cop offenses for rubocop (And bumped all rubocop gems)
 
 * Fixed an issue where the CI flows weren't switching ruby correctly
@@ -39,7 +56,7 @@
   * TODO file re-generated (and partially fixed), to show what other cop offenses need tackling
   * Updated `rubocop` to a later version
 
-**Changed**
+**Changes**
 * Updated testing matrix for CI
   * Removed selenium alpha testing, added ruby 3.1
 
@@ -73,16 +90,16 @@
 ## <sub>v3.0.2</sub>
 #### _Sep. 20, 2021_
 
+**Removals**
+* As we're using GHA we don't need rake tasks anymore
+  * `rake` is no longer a dev dependency
+
 **New**
 * Added testing for a matrix of ruby / selenium versions
   * Initially we're testing alpha/beta/latest versions of selenium against ruby 2.7 and 3.0
 
 * Added Local Edge driver tests
   * Previously, there weren't any tests for Edge driver
-
-**Removals**
-* As we're using GHA we don't need rake tasks anymore
-  * `rake` is no longer a dev dependency
 
 **Bugfixes**
 * Fix Load error in Edge Options
@@ -109,13 +126,13 @@
 
 * New (private), API for Capabilities which mirrors Options
 
-**New**
-* Added **working** Browserstack-specific capabilities for Android driver (Previously were hard-coded and placeholder)
-
 **Removals**
 * Removed all Docker/Jenkins code as we now use GHA as our CI pipeline
 
-**Changed**
+**New**
+* Added **working** Browserstack-specific capabilities for Android driver (Previously were hard-coded and placeholder)
+
+**Changes**
 * Amalgamation / Standardisation down of tests and namespaces
   * The previous v3 internet explorer namespace has been moved to v4 because it was actually a v4 driver
 
@@ -138,7 +155,7 @@
 #### _Jun. 18, 2021_
 
 **Bugfixes**
-* Fixed ios capabilities to accept a device name as well as an ios version
+* Fixed iOS capabilities to accept a device name as well as an ios version
 
 ## <sub>v2.0</sub>
 #### _Jun. 17, 2021_
@@ -228,6 +245,7 @@
 
 **Updates**
 * The docker files are now slightly lighter
+
 * LICENSE year update
 
 ## <sub>v0.3</sub>
@@ -245,6 +263,7 @@
 
 **New**
 * Added CI pipeline to repo
+
 * Added Logging functionality to gem. Currently set to de-activated (Unknown level by default)
 
 **Bugfixes**
@@ -267,5 +286,7 @@
 
 **New**
 * Added base changelog, versioning, and cut blank gem
+
 * Made suite fully rubocop compliant with CA styles
+
 * Dockerized suite
