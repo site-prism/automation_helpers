@@ -11,6 +11,8 @@
 **New**
 
 **Changes**
+* Safari Capabilities are now just a vanilla `{}` as the STP driver name is correctly determined and set
+by the `Selenium::WebDriver::Safari::Options` instance
 
 **Updates**
 * Rubocop updates across the suite of gems
