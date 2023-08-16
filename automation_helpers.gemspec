@@ -31,7 +31,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'faraday', '~> 2.7'
   spec.add_development_dependency 'parallel_tests', ['>= 3.7', '< 5']
   spec.add_development_dependency 'rspec', '~> 3.12'
-  spec.add_development_dependency 'rubocop', '~> 1.50.0'
+  spec.add_development_dependency 'rubocop', '~> 1.56.0'
   spec.add_development_dependency 'rubocop-performance', '~> 1.19.0'
   spec.add_development_dependency 'rubocop-rspec', '~> 2.23.2'
   spec.add_development_dependency 'selenium-webdriver', ['>= 4.0', '< 5']
