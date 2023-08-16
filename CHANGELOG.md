@@ -11,6 +11,14 @@
 
 * Some legacy code that was supporting old pre v4.0 selenium is now removed in internal tests
 
+* Removed 3 patches from gem
+  * `AutomationHelpers::Patches::ParallelCucumber` - which helped fix CLI args for cucumber in parallel has
+    been deprecated for over a year, and banned from usage for the previous 6 months
+  * `AutomationHelpers::Patches::SeleniumOptions` - which fixed some options not being cased right for
+    firefox and safari drivers has been deprecated for 18 months, and banned from usage for the previous 12 months
+  * `AutomationHelpers::Patches::SeleniumManager` - which fixed the `httpOnly` property of cookies not being made
+    available has been deprecated for over 2 years, and banned from usage for the previous 18 months
+
 **New**
 
 **Changes**
