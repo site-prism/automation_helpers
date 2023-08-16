@@ -14,7 +14,7 @@
 **Bugfixes**
 
 ## <sub>v4.1.1</sub>
-#### _May. 11, 2023_
+#### _Aug. 16, 2023_
 
 **New**
 * Run CI for Ruby 3.2
