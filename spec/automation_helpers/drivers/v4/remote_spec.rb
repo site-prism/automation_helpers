@@ -67,6 +67,28 @@ RSpec.describe AutomationHelpers::Drivers::V4::Remote do
       end
     end
 
+    context 'when the browser is edge' do
+      let(:browser) { :edge }
+
+      it 'has correct top level properties' do
+        expect(options.keys).to eq(%i[browser clear_local_storage clear_session_storage capabilities url])
+      end
+
+      it 'has correct desired capabilities' do
+        expect(options[:capabilities].first.as_json).to eq({})
+      end
+
+      it 'has correct browser options' do
+        expect(options[:capabilities].last.as_json)
+          .to eq(
+            {
+              'browserName' => 'MicrosoftEdge',
+              'ms:edgeOptions' => {}
+            }
+          )
+      end
+    end
+
     context 'when the browser is anything else' do
       let(:browser) { :foo }
 

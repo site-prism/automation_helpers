@@ -54,7 +54,7 @@ module AutomationHelpers
         end
 
         def supported_browser?
-          %i[chrome firefox].include?(browser)
+          %i[chrome edge firefox].include?(browser)
         end
       end
     end
