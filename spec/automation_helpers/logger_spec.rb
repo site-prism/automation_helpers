@@ -10,7 +10,7 @@ describe AutomationHelpers::Logger do
       expect(logger.progname).to eq('Automation Helpers')
     end
 
-    it 'is turned off by default' do
+    it 'logs at an INFO level by default' do
       expect(logger.level).to eq(1)
     end
   end

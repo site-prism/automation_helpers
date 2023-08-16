@@ -17,7 +17,6 @@ module AutomationHelpers
 
     # The Automation Helpers logger object - This is called automatically in several
     # locations and will log messages according to the normal Ruby protocol
-    # To alter (or check), the log level; call .log_level= or .log_level
     #
     # This logger object can also be used to manually log messages
     #
@@ -31,12 +30,6 @@ module AutomationHelpers
       @logger ||= Logger.create
     end
 
-    def logger=(logger)
-      raise ArgumentError, 'You must supply an existing Logger' unless logger.is_a?(::Logger)
-
-      @logger = logger
-    end
-
     # This writer method allows you to configure where you want the output of
     # the automation_helpers logs to go (Default is $stdout)
     #
@@ -44,25 +37,6 @@ module AutomationHelpers
     # log messages to `./automation_helpers.log`
     def log_path=(logdev)
       logger.reopen(logdev)
-    end
-
-    # To enable full logging (This uses the Ruby API, so can accept any of a
-    # Symbol / String / Integer as an input
-    #   AutomationHelpers.log_level = :DEBUG
-    #   AutomationHelpers.log_level = 'DEBUG'
-    #   AutomationHelpers.log_level = 0
-    #
-    # To disable all logging
-    #   AutomationHelpers.log_level = :UNKNOWN
-    def log_level=(value)
-      logger.level = value
-    end
-
-    # To query what level is being logged
-    #   AutomationHelpers.log_level
-    #   => :INFO # By default
-    def log_level
-      %i[DEBUG INFO WARN ERROR FATAL UNKNOWN][logger.level]
     end
   end
 end

@@ -16,9 +16,9 @@ Capybara.configure do |config|
   config.default_max_wait_time = 0
 end
 
-AutomationHelpers.configure do |config|
-  config.log_level = :UNKNOWN
-end
+# AutomationHelpers.configure do |config|
+#   config.log_level = :UNKNOWN
+# end
 
 def capture_stdout
   original_stdout = $stdout
@@ -37,10 +37,6 @@ end
 
 def lines(string)
   string.split("\n").length
-end
-
-def run_selenium_options_patch?
-  Selenium::WebDriver::VERSION <= '4.0.0.beta5'
 end
 
 def old_ruby?

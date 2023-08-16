@@ -14,7 +14,7 @@ module AutomationHelpers
 
         Kernel.warn('This is now deprecated and should not be used') if deprecate?
         AutomationHelpers.logger.info("Adding patch: #{self.class}")
-        AutomationHelpers.logger.debug(description)
+        AutomationHelpers.logger.info(description)
         perform
         AutomationHelpers.logger.info('Patch successfully added.')
       end

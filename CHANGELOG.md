@@ -7,12 +7,18 @@
   * Remote / Browserstack drivers are unaffected
 
 **Removals**
+* The logger can no longer be customised, other than the `log_path`
+
+* Some legacy code that was supporting old pre v4.0 selenium is now removed in internal tests
 
 **New**
 
 **Changes**
 * Safari Capabilities are now just a vanilla `{}` as the STP driver name is correctly determined and set
 by the `Selenium::WebDriver::Safari::Options` instance
+
+* The appium versions usable are now unlocked all up to the final `v1.x` revision.
+  * In accordance with this, the minimum iOS version supported is now v12 (Was v11)
 
 **Updates**
 * Rubocop updates across the suite of gems

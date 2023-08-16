@@ -46,10 +46,6 @@ RSpec.describe AutomationHelpers::Drivers::V4::Remote do
     end
 
     context 'when the browser is firefox' do
-      before do
-        AutomationHelpers::Patches::SeleniumOptions.new(browser).patch! if run_selenium_options_patch?
-      end
-
       let(:browser) { :firefox }
 
       it 'has correct top level properties' do
