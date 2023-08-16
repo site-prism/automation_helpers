@@ -7,7 +7,7 @@ module AutomationHelpers
   module Drivers
     module V4
       #
-      # The Remote Driver that will connect to a dockerised self-hosted grid
+      # The Remote Driver that will connect to a dockerized self-hosted grid
       # This expects the grid to be live **and** accepting node requests
       #
       class Remote
@@ -17,7 +17,7 @@ module AutomationHelpers
         # #### Initial setup options
         #
         # - **browser** (required) - When instantiating, the first argument must be the symbol that represents what browser to use
-        # - **ENV["HUB_URL"]** (required) - The environment variable HUB_URL must be set to the actively running dockerised grid
+        # - **ENV["HUB_URL"]** (required) - The environment variable HUB_URL must be set to the actively running dockerized grid
         #   (By default this should be +http://hub:4444/wd/hub+)
         def initialize(browser)
           @browser = browser

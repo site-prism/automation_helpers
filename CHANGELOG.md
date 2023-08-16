@@ -12,6 +12,7 @@
 * Some legacy code that was supporting old pre v4.0 selenium is now removed in internal tests
 
 **New**
+* Edge can now be used as a remote browser in a dockerized grid
 
 **Changes**
 * Safari Capabilities are now just a vanilla `{}` as the STP driver name is correctly determined and set
