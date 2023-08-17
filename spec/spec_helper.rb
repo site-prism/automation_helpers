@@ -3,7 +3,6 @@
 require 'selenium/webdriver'
 require 'capybara'
 require 'capybara/dsl'
-require 'webdrivers'
 require 'cucumber'
 
 require 'automation_helpers'
