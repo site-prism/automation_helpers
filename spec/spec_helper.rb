@@ -7,7 +7,7 @@ require 'cucumber'
 
 require 'automation_helpers'
 
-Dir['./spec/support/**/*.rb'].sort.each { |f| require f }
+Dir['./spec/support/**/*.rb'].each { |f| require f }
 
 Capybara.configure do |config|
   config.app_host = "file://#{File.dirname(__FILE__)}/support/fixtures"
