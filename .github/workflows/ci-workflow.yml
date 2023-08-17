@@ -15,11 +15,6 @@ jobs:
       matrix:
         ruby: ['3.0', '3.1', '3.2']
         gemfile: ['gemfiles/low_spec.gemfile', 'Gemfile']
-        exclude:
-          # Old Capybara versions aren't designed to work with Ruby 3+
-          - { ruby: '3.0', gemfile: 'gemfiles/low_spec.gemfile' }
-          - { ruby: '3.1', gemfile: 'gemfiles/low_spec.gemfile' }
-          - { ruby: '3.2', gemfile: 'gemfiles/low_spec.gemfile' }
     env:
       BUNDLE_GEMFILE: ${{ matrix.gemfile }}
     steps:
