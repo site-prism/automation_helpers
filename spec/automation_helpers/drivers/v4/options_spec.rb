@@ -40,7 +40,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Options do
 
       let(:browser) { :chrome }
 
-      it { is_expected.to have_attributes({ args: ['--headless'] }) }
+      it { is_expected.to have_attributes({ args: ['--headless=new'] }) }
     end
 
     context 'when the browser is anything else' do
