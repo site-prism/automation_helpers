@@ -6,6 +6,13 @@
   * This is to facilitate the switch to SM and also tidying up some deprecation notices
   * Remote / Browserstack drivers are unaffected
 
+* Minimum ruby version is now `3.0`
+
+* The `AutomationHelpers.logger` has now been massively simplified. Everything logs at `INFO` level now
+  * You can't alter/detect the level of the logger (It's always INFO)
+  * You can't overwrite / pipe the logger to a different object
+  * You are still able to switch the `log_path` and decide where to pipe the existing log to
+
 **Removals**
 * The logger can no longer be customised, other than the `log_path`
 
@@ -29,10 +36,17 @@ by the `Selenium::WebDriver::Safari::Options` instance
 * The appium versions usable are now unlocked all up to the final `v1.x` revision.
   * In accordance with this, the minimum iOS version supported is now v12 (Was v11)
 
+* The CI now runs on the latest LTS version of Ubuntu, and latest bundler
+
+* Selenium Manager is now exclusively used for all testing of browsers, accordingly `webdrivers` is no longer a dev dependency
+
+* The legacy `headless!` helper has now been removed. Chrome/Edge now accordingly use the new `--headless=new` flag
+
 **Updates**
 * Rubocop updates across the suite of gems
 
 **Bugfixes**
+* Some of the device specs were slightly incorrect and are now realistic
 
 ## <sub>v4.1.1</sub>
 #### _Aug. 16, 2023_
