@@ -69,9 +69,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
 
     context 'when the browser is safari' do
       before do
-        # These tests are notoriously flaky on some of the older ruby versions.
-        # Observe the failures and if they grow above 10-20% then we can just ignore them until we move to ruby3+
-        skip 'Test is flaky on ruby 2.7' if old_ruby?
+        skip 'Test will not pass on old selenium' if old_selenium?
         # Prevent OS complaining it doesn't know where safari is!
         allow(Selenium::WebDriver::Platform).to receive(:assert_executable)
       end

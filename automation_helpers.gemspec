@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.metadata['source_code_uri'] = 'https://www.github.com/site-prism/automation_helpers'
   spec.metadata['changelog_uri'] = 'https://www.github.com/site-prism/automation_helpers/blob/main/CHANGELOG.md'
 
-  spec.required_ruby_version = '>= 2.7'
+  spec.required_ruby_version = '>= 3.0'
 
   spec.files = Dir.glob('lib/**/*') + %w[LICENSE.txt README.md]
 
@@ -33,6 +33,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubocop', '~> 1.56.0'
   spec.add_development_dependency 'rubocop-performance', '~> 1.19.0'
   spec.add_development_dependency 'rubocop-rspec', '~> 2.23.2'
-  spec.add_development_dependency 'selenium-webdriver', ['>= 4.0', '< 5']
-  spec.add_development_dependency 'webdrivers', '~> 5.2'
+  spec.add_development_dependency 'selenium-webdriver', '~> 4.0'
 end

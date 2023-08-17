@@ -7,6 +7,8 @@ describe Selenium::WebDriver::Logs do
   let(:logs) { capybara_session.driver.browser.logs }
 
   before do
+    skip 'Test is not compatible on new ruby and older capybara' if incompatible_ruby_and_capybara?
+
     allow(bridge)
       .to receive(:log)
       .with(type)

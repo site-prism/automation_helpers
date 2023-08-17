@@ -3,21 +3,16 @@
 require 'selenium/webdriver'
 require 'capybara'
 require 'capybara/dsl'
-require 'webdrivers'
 require 'cucumber'
 
 require 'automation_helpers'
 
-Dir['./spec/support/**/*.rb'].sort.each { |f| require f }
+Dir['./spec/support/**/*.rb'].each { |f| require f }
 
 Capybara.configure do |config|
   config.app_host = "file://#{File.dirname(__FILE__)}/support/fixtures"
   config.default_max_wait_time = 0
 end
-
-# AutomationHelpers.configure do |config|
-#   config.log_level = :UNKNOWN
-# end
 
 def capture_stdout
   original_stdout = $stdout
@@ -38,10 +33,14 @@ def lines(string)
   string.split("\n").length
 end
 
-def old_ruby?
-  RUBY_VERSION.to_f < 3
-end
-
 def capybara_session(type = :selenium_chrome_headless)
   Capybara::Session.new(type)
+end
+
+def incompatible_ruby_and_capybara?
+  RUBY_VERSION.to_f >= 3 && Capybara::VERSION.to_f <= 3.36
+end
+
+def old_selenium?
+  Selenium::WebDriver::VERSION.to_f <= 4.2
 end
