@@ -2,6 +2,21 @@
 #### _Unreleased_
 
 **Breaking Changes**
+
+**Removals**
+
+**New**
+
+**Changes**
+
+**Updates**
+
+**Bugfixes**
+
+## <sub>v5.0</sub>
+#### _Aug. 17, 2023_
+
+**Breaking Changes**
 * The v4 local driver is now instantiated completely differently, with a different key and payload
   * This is to facilitate the switch to SM and also tidying up some deprecation notices
   * Remote / Browserstack drivers are unaffected
