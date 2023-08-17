@@ -40,3 +40,7 @@ end
 def incompatible_ruby_and_capybara?
   RUBY_VERSION.to_f > 3 && Capybara::VERSION.to_f < 3.36
 end
+
+def old_selenium?
+  Selenium::WebDriver::VERSION.to_f < 4.2
+end
