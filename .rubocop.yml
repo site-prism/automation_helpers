@@ -8,8 +8,8 @@ AllCops:
   DisplayStyleGuide: true
   # Enable all NewCops by default (Even new 1.x cops)
   NewCops: enable
-  # Target Ruby 2.7 only
-  TargetRubyVersion: 2.7
+  # Target Ruby 3.0
+  TargetRubyVersion: 3.0
   Exclude:
     # Remove vendor files from being checked
     - vendor/**/*
