@@ -14,10 +14,6 @@ Capybara.configure do |config|
   config.default_max_wait_time = 0
 end
 
-# AutomationHelpers.configure do |config|
-#   config.log_level = :UNKNOWN
-# end
-
 def capture_stdout
   original_stdout = $stdout
   $stdout = StringIO.new
