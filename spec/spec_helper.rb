@@ -33,10 +33,6 @@ def lines(string)
   string.split("\n").length
 end
 
-def old_ruby?
-  RUBY_VERSION.to_f < 3
-end
-
 def capybara_session(type = :selenium_chrome_headless)
   Capybara::Session.new(type)
 end
