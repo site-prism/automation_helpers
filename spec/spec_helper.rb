@@ -36,3 +36,7 @@ end
 def capybara_session(type = :selenium_chrome_headless)
   Capybara::Session.new(type)
 end
+
+def incompatible_ruby_and_capybara?
+  RUBY_VERSION.to_f > 3 && Capybara::VERSION.to_f < 3.36
+end

@@ -3,7 +3,10 @@
 describe Capybara::Node::Element do
   subject(:capybara_element) { session.find('.embedded_element') }
 
-  before { session.visit('/sample_page.html') }
+  before do
+    skip 'Test is not compatible on new ruby and older capybara' if incompatible_ruby_and_capybara?
+    session.visit('/sample_page.html')
+  end
 
   let(:session) { capybara_session }
 
