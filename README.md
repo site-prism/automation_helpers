@@ -53,10 +53,8 @@ $ rspec && rubocop
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at
-https://github.com/site-prism/automation_helpers
+Bug reports and pull requests are welcome on GitHub at https://github.com/site-prism/automation_helpers
 
 ## Verbose Documentation
 
-This will come in time. Meanwhile if you check the gem code some of the methods are now
-beginning to get documented. Also check the specs
+This will come in time. Meanwhile if you check the gem code most methods are documented. Also check the specs
