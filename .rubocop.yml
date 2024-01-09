@@ -40,6 +40,11 @@ RSpec/ExampleLength:
   CountAsOne: ['array', 'hash']
 
 # This is a single standardised transform
+RSpec/SpecFilePathFormat:
+  CustomTransform:
+    WebDriver: webdriver
+
+# This is a single standardised transform - DEPRECATED (Remove in rubocop-rspec v3)
 RSpec/FilePath:
   CustomTransform:
     WebDriver: webdriver
