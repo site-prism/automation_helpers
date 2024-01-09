@@ -10,6 +10,7 @@
 **Changes**
 
 **Updates**
+* CI workflow now tests Ruby 3.3
 
 **Bugfixes**
 
