@@ -42,5 +42,5 @@ def incompatible_ruby_and_capybara?
 end
 
 def old_selenium?
-  Gem::Version.new(Selenium::WebDriver::VERSION) < Gem::Version.new('4.2')
+  Gem::Version.new(Selenium::WebDriver::VERSION) < Gem::Version.new('4.7')
 end
