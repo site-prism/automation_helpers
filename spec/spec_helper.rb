@@ -37,7 +37,7 @@ def capybara_session(type = :selenium_chrome_headless)
   Capybara::Session.new(type)
 end
 
-def incompatible_capybara?
+def old_capybara?
   Gem::Version.new(Capybara::VERSION) < Gem::Version.new('3.36')
 end
 

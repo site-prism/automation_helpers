@@ -4,7 +4,7 @@ describe Capybara::Node::Element do
   subject(:capybara_element) { session.find('.embedded_element') }
 
   before do
-    skip 'Test is not compatible on older capybara' if incompatible_capybara?
+    skip 'Test is not compatible on older capybara' if old_capybara?
     session.visit('/sample_page.html')
   end
 
