@@ -10,7 +10,14 @@
 **Changes**
 
 **Updates**
-* CI workflow now tests Ruby 3.3
+
+**Bugfixes**
+
+## <sub>v5.0.1</sub>
+#### _Jan. 29, 2024_
+
+**Updates**
+* CI workflow now tests Ruby 3.3. Low spec gemfiles bumped accordingly
 
 **Bugfixes**
 
