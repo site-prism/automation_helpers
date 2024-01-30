@@ -16,18 +16,10 @@ end
 
 RSpec.configure do |config|
   config.include SpecSupport::Console
-end
 
-def wipe_logger!
-  return unless AutomationHelpers.instance_variable_get(:@logger)
+  def wipe_logger!
+    return unless AutomationHelpers.instance_variable_get(:@logger)
 
-  AutomationHelpers.remove_instance_variable(:@logger)
-end
-
-def capybara_session(type = :selenium_chrome_headless)
-  Capybara::Session.new(type)
-end
-
-def old_selenium?
-  Gem::Version.new(Selenium::WebDriver::VERSION) < Gem::Version.new('4.7')
+    AutomationHelpers.remove_instance_variable(:@logger)
+  end
 end
