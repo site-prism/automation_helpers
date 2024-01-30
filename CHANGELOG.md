@@ -8,6 +8,7 @@
 **New**
 
 **Changes**
+* Removed redundant `spec` code
 
 **Updates**
 
