@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module SpecSupport
-  module Console
+  module Browser
     def capybara_session(type = :selenium_chrome_headless)
       Capybara::Session.new(type)
     end

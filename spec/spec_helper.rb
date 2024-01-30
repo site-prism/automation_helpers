@@ -15,6 +15,7 @@ Capybara.configure do |config|
 end
 
 RSpec.configure do |config|
+  config.include SpecSupport::Browser
   config.include SpecSupport::Console
 
   def wipe_logger!
