@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SpecSupport
   module Console
     def capture_stdout
