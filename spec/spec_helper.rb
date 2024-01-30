@@ -37,10 +37,6 @@ def capybara_session(type = :selenium_chrome_headless)
   Capybara::Session.new(type)
 end
 
-def old_capybara?
-  Gem::Version.new(Capybara::VERSION) < Gem::Version.new('3.36')
-end
-
 def old_selenium?
   Gem::Version.new(Selenium::WebDriver::VERSION) < Gem::Version.new('4.7')
 end
