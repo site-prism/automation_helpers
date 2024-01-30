@@ -11,7 +11,7 @@
 * Removed redundant `spec` code
 
 **Updates**
-* Newer versions used for selenium grid and appium when using Browserstack drivers
+* Newer versions used for selenium grid, IE driver and appium when using Browserstack drivers
 
 **Bugfixes**
 
