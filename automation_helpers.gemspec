@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'capybara', '> 3.30', '< 4'
   spec.add_development_dependency 'cucumber', '> 7.0', '< 10'
-  spec.add_development_dependency 'faraday', '~> 2.7'
+  spec.add_development_dependency 'faraday', '~> 2.8'
   spec.add_development_dependency 'rspec', '~> 3.12'
   spec.add_development_dependency 'rubocop', '~> 1.60.2'
   spec.add_development_dependency 'rubocop-performance', '~> 1.19.0'
