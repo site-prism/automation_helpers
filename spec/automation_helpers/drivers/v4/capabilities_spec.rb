@@ -57,7 +57,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
             'browserName' => 'internet explorer',
             'bstack:options' => {
               'ie' => {
-                'driver' => '3.141.59',
+                'driver' => '4.14.0.0',
                 'arch' => 'x32'
               }
             }
