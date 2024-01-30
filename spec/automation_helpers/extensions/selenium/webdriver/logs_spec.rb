@@ -7,16 +7,9 @@ describe Selenium::WebDriver::Logs do
   let(:logs) { capybara_session.driver.browser.logs }
 
   before do
-    skip 'Test is not compatible on older gems' if old_capybara? || old_selenium?
-
-    allow(bridge)
-      .to receive(:log)
-      .with(type)
-      .and_return([log_entry])
-
-    allow(logs)
-      .to receive(:cached_logs)
-      .and_call_original
+    skip 'Test is not compatible on older selenium' if old_selenium?
+    allow(bridge).to receive(:log).with(type).and_return([log_entry])
+    allow(logs).to receive(:cached_logs).and_call_original
   end
 
   context 'when logging browser messages' do
