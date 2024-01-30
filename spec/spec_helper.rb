@@ -14,23 +14,14 @@ Capybara.configure do |config|
   config.default_max_wait_time = 0
 end
 
-def capture_stdout
-  original_stdout = $stdout
-  $stdout = StringIO.new
-  yield
-  $stdout.string
-ensure
-  $stdout = original_stdout
+RSpec.configure do |config|
+  config.include SpecSupport::Console
 end
 
 def wipe_logger!
   return unless AutomationHelpers.instance_variable_get(:@logger)
 
   AutomationHelpers.remove_instance_variable(:@logger)
-end
-
-def lines(string)
-  string.split("\n").length
 end
 
 def capybara_session(type = :selenium_chrome_headless)
