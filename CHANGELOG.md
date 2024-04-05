@@ -11,6 +11,7 @@
 * Removed redundant `spec` code
 
 **Updates**
+* Permit `Options` customisation within Local, Remote and Browserstack Drivers
 
 **Bugfixes**
 
