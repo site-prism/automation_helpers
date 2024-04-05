@@ -40,7 +40,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Browserstack do
                 'os' => 'os',
                 'osVersion' => 'osversionnumber',
                 'local' => 'false',
-                'seleniumVersion' => '4.0.0-alpha-6',
+                'seleniumVersion' => '4.15.0',
                 'consoleLogs' => 'verbose',
                 'networkLogs' => 'true',
                 'resolution' => '1920x1080'

@@ -90,7 +90,7 @@ module AutomationHelpers
           {
             'bstack:options' => {
               'local' => 'false',
-              'seleniumVersion' => '4.0.0-alpha-6',
+              'seleniumVersion' => '4.15.0',
               'consoleLogs' => 'verbose',
               'networkLogs' => 'true',
               'resolution' => '1920x1080'

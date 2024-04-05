@@ -28,7 +28,9 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
       let(:device_options) { { device_name: 'SamsungGalaxyS9', os_version: '8' } }
 
       it 'complains that the android version is invalid' do
-        expect { capabilities }.to raise_error(ArgumentError)
+        expect { capabilities }
+          .to raise_error(ArgumentError)
+          .with_message("Your Android Version is too low. Please don't use lower than Android Pie (9).")
       end
     end
 
@@ -57,7 +59,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
             'browserName' => 'internet explorer',
             'bstack:options' => {
               'ie' => {
-                'driver' => '3.141.59',
+                'driver' => '4.14.0.0',
                 'arch' => 'x32'
               }
             }
@@ -76,7 +78,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
             'bstack:options' => {
               'deviceName' => 'iPhone13',
               'realMobile' => 'true',
-              'appiumVersion' => '1.22.0'
+              'appiumVersion' => '1.22.3'
             }
           }
         )
@@ -88,7 +90,9 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
       let(:device_options) { { device_name: 'iPhone8', os_version: '11' } }
 
       it 'complains that the iOS version is invalid' do
-        expect { capabilities }.to raise_error(ArgumentError)
+        expect { capabilities }
+          .to raise_error(ArgumentError)
+          .with_message("Your iOS Version is too low. Please don't use lower than iOS 12.")
       end
     end
 
