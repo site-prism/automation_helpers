@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 describe Cucumber::Core::Test::Case do
-  subject(:test_case) { described_class.new(:_id, :_name, [:_test_steps], location, :_tags, :_language) }
+  subject(:test_case) { described_class.new(:_id, :_name, [:_test_steps], location, :_parent_locations, :_tags, :_language) }
 
   let(:location) { class_double(Cucumber::Core::Test::Location, to_s: 'file/path/to/feature.feature:5') }
 
