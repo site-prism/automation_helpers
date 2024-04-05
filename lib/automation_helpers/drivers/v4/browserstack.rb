@@ -17,6 +17,8 @@ module AutomationHelpers
         attr_reader :browser, :browserstack_options, :device_options
         private :browser, :browserstack_options, :device_options
 
+        attr_writer :options
+
         # #### Initial setup options
         #
         # - **browser** (required) - When instantiating, the first argument must be the symbol that represents what browser to use
@@ -32,6 +34,8 @@ module AutomationHelpers
         #   - :username (String)                 -> The username for Browserstack
         #   - :api_key (String)                  -> The api key for Browserstack
         #
+        # #### Post initialization setup options
+        # - **options** (optional) -> You can instantiate an Options payload that can be used when registering your driver
         def initialize(browser, browserstack_options, device_options = {})
           @browser = browser
           @browserstack_options = browserstack_options
@@ -105,7 +109,7 @@ module AutomationHelpers
         end
 
         def options
-          Options.for(browser)
+          @options ||= Options.for(browser)
         end
 
         def browserstack_hub_url
