@@ -14,9 +14,14 @@ module AutomationHelpers
         attr_reader :browser
         private :browser
 
+        attr_writer :options
+
         # #### Initial setup options
         #
         # - **browser** (required) - When instantiating, the first argument must be the symbol that represents what browser to use
+        #
+        # #### Post initialization setup options
+        # - **options** (optional) -> You can instantiate an Options payload that can be used when registering your driver
         #
         def initialize(browser)
           @browser = browser
@@ -49,7 +54,7 @@ module AutomationHelpers
         end
 
         def options
-          Options.for(browser)
+          @options ||= Options.for(browser)
         end
 
         def safari?
