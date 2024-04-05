@@ -14,11 +14,16 @@ module AutomationHelpers
         attr_reader :browser
         private :browser
 
+        attr_writer :options
+
         # #### Initial setup options
         #
         # - **browser** (required) - When instantiating, the first argument must be the symbol that represents what browser to use
         # - **ENV["HUB_URL"]** (required) - The environment variable HUB_URL must be set to the actively running dockerized grid
         #   (By default this should be +http://hub:4444/wd/hub+)
+        #
+        # #### Post initialization setup options
+        # - **options** (optional) -> You can instantiate an Options payload that can be used when registering your driver
         def initialize(browser)
           @browser = browser
         end
@@ -46,7 +51,7 @@ module AutomationHelpers
         end
 
         def options
-          Options.for(browser)
+          @options ||= Options.for(browser)
         end
 
         def hub_url

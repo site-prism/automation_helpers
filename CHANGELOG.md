@@ -11,7 +11,11 @@
 * Removed redundant `spec` code
 
 **Updates**
+* Permit `Options` customisation within Local, Remote and Browserstack Drivers
+
 * Newer versions used for selenium grid, IE driver and appium when using Browserstack drivers
+
+* Miscellaneous CI updates to workflows / versions
 
 **Bugfixes**
 
