@@ -22,7 +22,6 @@ module AutomationHelpers
         #
         # #### Post initialization setup options
         # - **options** (optional) -> You can instantiate an Options payload that can be used when registering your driver
-        #
         def initialize(browser)
           @browser = browser
         end
