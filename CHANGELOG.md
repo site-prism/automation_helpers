@@ -12,6 +12,7 @@
 
 **Updates**
 * Permit `Options` customisation within Local, Remote and Browserstack Drivers
+* Miscellaneous CI updates to workflows / versions
 
 **Bugfixes**
 
