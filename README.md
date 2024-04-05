@@ -57,4 +57,5 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/site-p
 
 ## Verbose Documentation
 
-This will come in time. Meanwhile if you check the gem code most methods are documented. Also check the specs
+This will come in time. Meanwhile if you check the gem code most methods are
+documented. Also check the specs for more detailed information
