@@ -27,12 +27,12 @@ Gem::Specification.new do |spec|
 
   spec.require_paths = ['lib']
 
-  spec.add_development_dependency 'capybara', '> 3.30', '< 4'
+  spec.add_development_dependency 'capybara', '> 3.35', '< 4'
   spec.add_development_dependency 'cucumber', '> 7.0', '< 10'
   spec.add_development_dependency 'faraday', '~> 2.8'
   spec.add_development_dependency 'rspec', '~> 3.12'
   spec.add_development_dependency 'rubocop', '~> 1.62.1'
   spec.add_development_dependency 'rubocop-performance', '~> 1.22.1'
   spec.add_development_dependency 'rubocop-rspec', '~> 2.25.0'
-  spec.add_development_dependency 'selenium-webdriver', '~> 4.0'
+  spec.add_development_dependency 'selenium-webdriver', '~> 4.12'
 end
