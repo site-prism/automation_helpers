@@ -11,10 +11,8 @@ module AutomationHelpers
       # The Local Driver that will spin up and run on your machine (Without connecting to any grid)
       #
       class Local
-        attr_reader :browser
+        attr_reader :browser, :options
         private :browser
-
-        attr_writer :options
 
         # #### Initial setup options
         #
