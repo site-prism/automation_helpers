@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'capybara', '< 3.37'
-gem 'selenium-webdriver', '< 4.6'
+gem 'capybara', '< 3.38'
+gem 'selenium-webdriver', '< 4.18'
 
 gemspec path: '..'

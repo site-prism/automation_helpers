@@ -55,7 +55,7 @@ module AutomationHelpers
         end
 
         def hub_url
-          ENV.fetch('HUB_URL')
+          ENV.fetch('HUB_URL') { raise ArgumentError, 'Please set HUB_URL env key for your grid' }
         end
 
         def supported_browser?
