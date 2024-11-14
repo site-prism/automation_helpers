@@ -19,11 +19,10 @@ module AutomationHelpers
         # #### Initial setup options
         #
         # - **browser** (required) - When instantiating, the first argument must be the symbol that represents what browser to use
-        #
-        # #### Post initialization setup options
         # - **options** (optional) -> You can instantiate an Options payload that can be used when registering your driver
-        def initialize(browser)
+        def initialize(browser, options = Options.for(browser))
           @browser = browser
+          @options = options
         end
 
         # @return [Nil]
@@ -50,10 +49,6 @@ module AutomationHelpers
 
           ::Selenium::WebDriver::Safari.technology_preview!
           ::Selenium::WebDriver::Service.safari(args: ['--diagnose'])
-        end
-
-        def options
-          @options ||= Options.for(browser)
         end
 
         def safari?
