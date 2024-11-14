@@ -11,19 +11,15 @@ module AutomationHelpers
       # This expects the grid to be live **and** accepting node requests
       #
       class Remote
-        attr_reader :browser
-        private :browser
-
-        attr_writer :options
+        attr_reader :browser, :options
 
         # #### Initial setup options
         #
         # - **browser** (required) - When instantiating, the first argument must be the symbol that represents what browser to use
+        # - **options** (optional) -> You can instantiate an Options payload that can be used when registering your driver
+        #
         # - **ENV["HUB_URL"]** (required) - The environment variable HUB_URL must be set to the actively running dockerized grid
         #   (By default this should be +http://hub:4444/wd/hub+)
-        #
-        # #### Post initialization setup options
-        # - **options** (optional) -> You can instantiate an Options payload that can be used when registering your driver
         def initialize(browser)
           @browser = browser
         end

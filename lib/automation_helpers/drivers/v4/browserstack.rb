@@ -14,10 +14,7 @@ module AutomationHelpers
       # This requires a series of pre-set values to be passed in
       #
       class Browserstack
-        attr_reader :browser, :browserstack_options, :device_options
-        private :browser, :browserstack_options, :device_options
-
-        attr_writer :options
+        attr_reader :browser, :browserstack_options, :device_options, :options
 
         # #### Initial setup options
         #
@@ -33,13 +30,15 @@ module AutomationHelpers
         #     i.e. Windows_10_92 means run on Windows Operating System, OS Version 10, Browser Version 92
         #   - :username (String)                 -> The username for Browserstack
         #   - :api_key (String)                  -> The api key for Browserstack
-        #
-        # #### Post initialization setup options
+        # - **device_options** (optional)        - A Hash of all device specific options that can customise your device
+        #   - :device_name (String)              -> The name of your device
+        #   - :os_version (String)               -> The operating system for your device
         # - **options** (optional) -> You can instantiate an Options payload that can be used when registering your driver
-        def initialize(browser, browserstack_options, device_options = {})
+        def initialize(browser, browserstack_options, device_options = {}, options = Options.for(browser))
           @browser = browser
           @browserstack_options = browserstack_options
           @device_options = device_options
+          @options = options
         end
 
         # @return [Nil]
@@ -106,10 +105,6 @@ module AutomationHelpers
           return {} if device?
 
           { 'browserVersion' => browser_version }
-        end
-
-        def options
-          @options ||= Options.for(browser)
         end
 
         def browserstack_hub_url
