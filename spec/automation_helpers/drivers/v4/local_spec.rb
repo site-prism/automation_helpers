@@ -61,6 +61,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
         expect(options[:options].as_json)
           .to eq(
             {
+              'browserName' => 'internet explorer',
               'se:ieOptions' => { 'enablePersistentHover' => true, 'nativeEvents' => true }
             }
           )
