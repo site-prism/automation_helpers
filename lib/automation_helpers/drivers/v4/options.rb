@@ -48,11 +48,7 @@ module AutomationHelpers
 
           # Constantly fire mouseOver events on click actions (Should help mitigate flaky clicks)
           def internet_explorer_options
-            ::Selenium::WebDriver::IE::Options.new(persistent_hover: true).tap do |opts|
-              # This can be removed once we migrate past Se4 proper (As the space version name is present there)
-              AutomationHelpers.logger.info('Removing `browser_name` key from options payload.')
-              opts.options.delete(:browser_name)
-            end
+            ::Selenium::WebDriver::IE::Options.new(persistent_hover: true)
           end
 
           def headless?
