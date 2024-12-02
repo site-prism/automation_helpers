@@ -8,6 +8,15 @@
 **New**
 
 **Changes**
+
+**Updates**
+
+**Bugfixes**
+
+## <sub>v5.1.0</sub>
+#### _Dec. 2, 2024_
+
+**Changes**
 * Removed redundant `spec` code
 
 **Updates**
@@ -16,8 +25,6 @@
 * Newer versions used for selenium grid, IE driver and appium when using Browserstack drivers
 
 * Miscellaneous CI updates to workflows / versions
-
-**Bugfixes**
 
 ## <sub>v5.0.1</sub>
 #### _Jan. 29, 2024_
