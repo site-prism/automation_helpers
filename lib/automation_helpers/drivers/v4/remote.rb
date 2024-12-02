@@ -20,8 +20,9 @@ module AutomationHelpers
         #
         # - **ENV["HUB_URL"]** (required) - The environment variable HUB_URL must be set to the actively running dockerized grid
         #   (By default this should be +http://hub:4444/wd/hub+)
-        def initialize(browser)
+        def initialize(browser, options = Options.for(browser))
           @browser = browser
+          @options = options
         end
 
         # @return [Nil]
@@ -44,10 +45,6 @@ module AutomationHelpers
           raise ArgumentError, 'You must use a supported browser' unless supported_browser?
 
           Capabilities.for(browser)
-        end
-
-        def options
-          @options ||= Options.for(browser)
         end
 
         def hub_url
