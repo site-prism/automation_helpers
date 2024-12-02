@@ -12,7 +12,6 @@ module AutomationHelpers
       #
       class Local
         attr_reader :browser, :options
-        private :browser
 
         # #### Initial setup options
         #
