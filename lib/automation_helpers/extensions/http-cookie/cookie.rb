@@ -17,13 +17,5 @@ module HTTP
         expires: expires
       }
     end
-
-    # Temporary holding pattern for patch
-    def expires=(t)
-      t = t.to_time
-      @max_age = nil
-      @session = t.nil?
-      @expires = t
-    end
   end
 end
