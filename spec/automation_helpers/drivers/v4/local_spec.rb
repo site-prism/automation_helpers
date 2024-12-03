@@ -70,7 +70,6 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
 
     context 'when the browser is safari' do
       before do
-        skip 'Test will not pass on old selenium' if old_selenium?
         # Prevent OS complaining it doesn't know where safari is!
         allow(Selenium::WebDriver::Platform).to receive(:assert_executable)
       end
