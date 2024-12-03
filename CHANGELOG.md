@@ -1,6 +1,5 @@
 ## <sub>main</sub>
 #### _Unreleased_
-
 **Breaking Changes**
 
 **Removals**
@@ -10,15 +9,18 @@
 **Changes**
 
 **Updates**
+
+**Bugfixes**
+
+## <sub>v5.2.0</sub>
+#### _Dec. 3, 2024_
+**Updates**
 * Deprecated the `AutomationHelpers::Patches::SeleniumLogger` patch added in v0.4
   * This has been fixed on a combination of Ruby 3.2+ and a modern version of RubyMine (Where
   the primary problem was noticed. It will remain deprecated for 1 year)
 
-**Bugfixes**
-
 ## <sub>v5.1.0</sub>
 #### _Dec. 2, 2024_
-
 **Changes**
 * Removed redundant `spec` code
 
@@ -31,7 +33,6 @@
 
 ## <sub>v5.0.1</sub>
 #### _Jan. 29, 2024_
-
 **Updates**
 * CI workflow now tests Ruby 3.3. Low spec gemfiles bumped accordingly
 
@@ -39,7 +40,6 @@
 
 ## <sub>v5.0</sub>
 #### _Aug. 17, 2023_
-
 **Breaking Changes**
 * The v4 local driver is now instantiated completely differently, with a different key and payload
   * This is to facilitate the switch to SM and also tidying up some deprecation notices
@@ -89,7 +89,6 @@ by the `Selenium::WebDriver::Safari::Options` instance
 
 ## <sub>v4.1.1</sub>
 #### _Aug. 16, 2023_
-
 **New**
 * Run CI for Ruby 3.2
 
@@ -109,7 +108,6 @@ by the `Selenium::WebDriver::Safari::Options` instance
 
 ## <sub>v4.1</sub>
 #### _Nov. 1, 2022_
-
 **New**
 * Added extension for `String#to_bool`
 
@@ -123,7 +121,6 @@ by the `Selenium::WebDriver::Safari::Options` instance
 
 ## <sub>v4.0.1</sub>
 #### _Aug. 22, 2022_
-
 **New**
 * Added in new rubocop subgems
   * Existing rubocop config has been slightly amended to avoid long arrays/hashes breaking the rules
@@ -142,7 +139,6 @@ by the `Selenium::WebDriver::Safari::Options` instance
 
 ## <sub>v4.0</sub>
 #### _Nov. 19, 2021_
-
 **Breaking Changes**
 * Gem has been renamed to `automation_helpers` to facilitate move to fully OSS
   * All namespaces will need to be updated: **See 
@@ -163,7 +159,6 @@ by the `Selenium::WebDriver::Safari::Options` instance
 
 ## <sub>v3.0.2</sub>
 #### _Sep. 20, 2021_
-
 **Removals**
 * As we're using GHA we don't need rake tasks anymore
   * `rake` is no longer a dev dependency
@@ -178,17 +173,14 @@ by the `Selenium::WebDriver::Safari::Options` instance
 **Bugfixes**
 * Fix Load error in Edge Options
   * Mac Edge was not properly processing the browser name by default
-  
 ## <sub>v3.0.1</sub>
 #### _Sep. 07, 2021_
-
 **Bugfixes**
 * Fixed load error in Selenium Webdriver Edge
   * This issue was due to Selenium changing their path for Edge Options during the V4 betas
   
 ## <sub>v3.0</sub>
 #### _Sep. 02, 2021_
-
 **Breaking Changes**
 * Altered format / structure of patches to accept either...
   * `#deprecation_notice_date` (Time) or `#deprecate_from` (Gem version)
@@ -212,14 +204,12 @@ by the `Selenium::WebDriver::Safari::Options` instance
 
 ## <sub>v2.2</sub>
 #### _Aug. 12, 2021_
-
 **New**
 * Added Parallel Tests patch
   * The converted order of the command line options passed to cucumber was incorrect
 
 ## <sub>v2.1</sub>
 #### _Jul. 26, 2021_
-
 **New**
 * Added extension for `Capybara::Node::Element#stale?`
 
@@ -227,13 +217,11 @@ by the `Selenium::WebDriver::Safari::Options` instance
 
 ## <sub>v2.0.1</sub>
 #### _Jun. 18, 2021_
-
 **Bugfixes**
 * Fixed iOS capabilities to accept a device name as well as an ios version
 
 ## <sub>v2.0</sub>
 #### _Jun. 17, 2021_
-
 **Breaking Changes**
 * Options class refactors
   * Now is no longer directly instantiated -> `Options.new(browser)` becomes `Options.for(browser)`
@@ -247,13 +235,11 @@ by the `Selenium::WebDriver::Safari::Options` instance
 
 ## <sub>v1.1</sub>
 #### _May. 4, 2021_
-
 **New**
 * Added extensions for `Array#uniq?` and `Array#non_uniq`
 
 ## <sub>v1.0</sub>
 #### _Mar. 24, 2021_
-
 **Breaking Changes**
 * Altered the Selenium Logger patch
   * No longer require an input logger object (Only operates on selenium logger)
@@ -297,7 +283,6 @@ by the `Selenium::WebDriver::Safari::Options` instance
 
 ## <sub>v0.4</sub>
 #### _Feb. 22, 2021_
-
 **New**
 * Added sample code / specs for patches
   * This will now enable all future patches to conform to a sensible structure
@@ -324,7 +309,6 @@ by the `Selenium::WebDriver::Safari::Options` instance
 
 ## <sub>v0.3</sub>
 #### _Jan. 15, 2021_
-
 **New**
 * Added remote (grid), driver creation
 
@@ -334,7 +318,6 @@ by the `Selenium::WebDriver::Safari::Options` instance
 
 ## <sub>v0.2.1</sub>
 #### _Jan. 11, 2021_
-
 **New**
 * Added CI pipeline to repo
 
@@ -348,7 +331,6 @@ by the `Selenium::WebDriver::Safari::Options` instance
 
 ## <sub>v0.2</sub>
 #### _Dec. 03, 2020_
-
 **Breaking Changes**
 * Rename of suite to `ca_testing`
 
@@ -357,7 +339,6 @@ by the `Selenium::WebDriver::Safari::Options` instance
 
 ## <sub>v0.1</sub>
 #### _Nov. 27, 2020_
-
 **New**
 * Added base changelog, versioning, and cut blank gem
 
