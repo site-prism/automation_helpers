@@ -27,8 +27,8 @@ module AutomationHelpers
     #
     module HTTPCookiePatch
       # Permit DateTime objects to be casted in HTTP::Cookie
-      def expires=(t)
-        t = t.to_time if t.is_a?(DateTime)
+      def expires=(datetime)
+        datetime = datetime.to_time if datetime.is_a?(DateTime)
         super
       end
     end
