@@ -17,7 +17,7 @@
 **Updates**
 * Deprecated the `AutomationHelpers::Patches::SeleniumLogger` patch added in v0.4
   * This has been fixed on a combination of Ruby 3.2+ and a modern version of RubyMine (Where
-  the primary problem was noticed. It will remain deprecated for 1 year)
+  the primary problem was noticed), It will remain deprecated for 1 year
 
 ## <sub>v5.1.0</sub>
 #### _Dec. 2, 2024_
