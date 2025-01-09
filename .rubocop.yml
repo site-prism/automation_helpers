@@ -14,7 +14,7 @@ AllCops:
     # Remove vendor files from being checked
     - vendor/**/*
 
-# This cop seems erroneous still
+# Stylistic preference for this repo
 Gemspec/DevelopmentDependencies:
   Enabled: false
 
@@ -22,18 +22,13 @@ Gemspec/DevelopmentDependencies:
 Gemspec/RequireMFA:
   Enabled: false
 
-# We have a linelength of 140 characters across the codebase/s
+# We have a line length of 140 characters across the codebase/s
 Layout/LineLength:
   Max: 140
   Exclude:
     - ^Given
     - ^When
     - ^Then
-
-Metrics/BlockLength:
-  Exclude:
-    # Specs deliberately will almost always break this cop (It should be added to rubocop-rspec defaults ideally)
-    - spec/**/*
 
 # Remove specs breaking the cop limit for large array/hash responses
 RSpec/ExampleLength:
