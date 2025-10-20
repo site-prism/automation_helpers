@@ -31,12 +31,17 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'cucumber', '> 7.0', '< 11'
   spec.add_development_dependency 'faraday', '~> 2.8'
   spec.add_development_dependency 'rspec', '~> 3.12'
+<<<<<<< HEAD
   spec.add_development_dependency 'rubocop', '~> 1.78.0'
   spec.add_development_dependency 'rubocop-performance', '~> 1.23.1'
 <<<<<<< HEAD
   spec.add_development_dependency 'rubocop-rspec', '~> 3.4.0'
   spec.add_development_dependency 'selenium-webdriver', '~> 4.18'
 =======
+=======
+  spec.add_development_dependency 'rubocop', '~> 1.75.2'
+  spec.add_development_dependency 'rubocop-performance', '~> 1.26.1'
+>>>>>>> 154fb2a (Update rubocop-performance requirement from ~> 1.23.1 to ~> 1.26.1)
   spec.add_development_dependency 'rubocop-rspec', '~> 3.7.0'
   spec.add_development_dependency 'selenium-webdriver', '~> 4.12'
 >>>>>>> 99cddde (Update rubocop-rspec requirement from ~> 3.4.0 to ~> 3.7.0)
