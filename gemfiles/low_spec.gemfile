@@ -3,6 +3,6 @@
 source 'https://rubygems.org'
 
 gem 'capybara', '< 3.39'
-gem 'selenium-webdriver', '< 4.25'
+gem 'selenium-webdriver', '< 4.27'
 
 gemspec path: '..'
