@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.metadata['source_code_uri'] = 'https://www.github.com/site-prism/automation_helpers'
   spec.metadata['changelog_uri'] = 'https://www.github.com/site-prism/automation_helpers/blob/main/CHANGELOG.md'
 
-  spec.required_ruby_version = '>= 3.0'
+  spec.required_ruby_version = '>= 3.1'
   spec.required_rubygems_version = '>= 3.2.8'
 
   spec.files = Dir.glob('lib/**/*') + %w[LICENSE.txt README.md]
