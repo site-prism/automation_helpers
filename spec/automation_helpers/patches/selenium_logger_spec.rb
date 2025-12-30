@@ -5,7 +5,7 @@ RSpec.describe AutomationHelpers::Patches::SeleniumLogger do
     subject(:patch) { described_class.new }
 
     before do
-      skip 'Test will not pass on old selenium with semi-old capybara' if incompatible_capybara_and_selenium_versions?
+      skip 'Test will not pass on old selenium with semi-old capybara' if legacy_capybara?
     end
   end
 end
