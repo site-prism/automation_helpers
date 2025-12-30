@@ -27,7 +27,7 @@ $ bundle
 
 ## Usage
 
-Either require all of the extensions required, or require individual bits and pieces
+Either require all the extensions required, or require the individual bits and pieces you need
 
 ```shell
 # Require all of the drivers/patches/extensions code
@@ -57,5 +57,5 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/site-p
 
 ## Verbose Documentation
 
-This will come in time. Meanwhile if you check the gem code most methods are
+This will come in time. Meanwhile, if you check the gem code most methods are
 documented. Also check the specs for more detailed information
