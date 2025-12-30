@@ -1,6 +1,7 @@
 ## <sub>main</sub>
 #### _Unreleased_
 **Breaking Changes**
+* Minimum ruby version is now `3.1`
 
 **Removals**
 
@@ -99,7 +100,7 @@ by the `Selenium::WebDriver::Safari::Options` instance
 
 **Bugfixes**
 * `String.alphabet_char` was referencing `Array` extension 
-  * Now runs of it's own volition so you won't get a `NoMethodError`
+  * Now runs of its own volition so you won't get a `NoMethodError`
 
 * Fix missing configuration for Safari Capabilities when running in remote or browserstack
   * NB: For now remote execution isn't possible as there isn't a grid image for this
