@@ -35,6 +35,11 @@ Metrics/BlockLength:
     # Specs deliberately will almost always break this cop (It should be added to rubocop-rspec defaults ideally)
     - spec/**/*
 
+# This is a casting method which is in a catch-22 situation as it casts to a boolean, but it is in itself not really a boolean method
+Naming/PredicateMethod:
+  AllowedMethods:
+    - to_bool
+
 # Remove specs breaking the cop limit for large array/hash responses
 RSpec/ExampleLength:
   CountAsOne: ['array', 'hash']
