@@ -13,10 +13,8 @@ module AutomationHelpers
         raise 'This is no longer supported' if prevent_usage?
 
         Kernel.warn('This is now deprecated and should not be used') if deprecate?
-        AutomationHelpers.logger.info("Adding patch: #{self.class}")
-        AutomationHelpers.logger.info(description)
+        AutomationHelpers.logger.info("Adding patch: #{self.class}\n#{description}")
         perform
-        AutomationHelpers.logger.info('Patch successfully added.')
       end
 
       private
