@@ -9,14 +9,14 @@ module Cucumber
       class Case
         # @return [String]
         #
-        # The file name of the feature being ran (Without the .feature extension)
+        # The file name of the feature that is running (Without the .feature extension)
         def feature_file_name
           feature_file_path.split('/').last&.split('.')&.first.to_s
         end
 
         # @return [String]
         #
-        # The fully qualified location of the feature being ran
+        # The fully qualified location (filepath), of the feature file that is running
         def feature_file_path
           location.to_s
         end
