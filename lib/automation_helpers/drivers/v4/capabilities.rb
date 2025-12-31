@@ -82,22 +82,21 @@ module AutomationHelpers
 
           def android_appium_version(android_version)
             case android_version.to_f
-            when 14..; then '2.0.0'
-            when 12..; then '1.22.3'
-            when 10..; then '1.21.0'
-            when 9..;  then '1.20.2'
-            else raise ArgumentError, "Your Android Version is too low. Please don't use lower than Android Pie (9)."
+            when 16..; then '3.1.0'
+            when 14..; then '2.19.0'
+            when 12..; then '2.15.0'
+            when 10..; then '2.0.1'
+            else raise ArgumentError, "Your Android Version is too low. Please don't use lower than Android Quince (10)."
             end
           end
 
           def ios_appium_version(ios_version)
             case ios_version.to_f
-            when 16..; then '2.0.0'
-            when 15..; then '1.22.3'
-            when 14..; then '1.22.2'
-            when 13..; then '1.21.0'
-            when 12..; then '1.20.2'
-            else raise ArgumentError, "Your iOS Version is too low. Please don't use lower than iOS 12."
+            when 17..; then '3.1.0'
+            when 16..; then '2.15.0'
+            when 15..; then '2.4.1'
+            when 14..; then '2.0.1'
+            else raise ArgumentError, "Your iOS Version is too low. Please don't use lower than iOS 14."
             end
           end
         end
