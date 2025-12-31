@@ -63,7 +63,7 @@ module AutomationHelpers
                 'ie' => {
                   # This is a minor hack until the IEDriver catches up and releases a V4 compliant copy
                   # It is confirmed to be compliant with V4 selenium jars e.t.c.
-                  'driver' => '4.14.0.0',
+                  'driver' => '4.16.0.0',
                   'arch' => 'x32'
                 }
               }
