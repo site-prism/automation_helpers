@@ -10,6 +10,8 @@
 **Changes**
 
 **Updates**
+* Optimised some bits of patch code / tests to be slightly more efficient
+* Internal changes to permit higher dev dependencies
 
 **Bugfixes**
 
