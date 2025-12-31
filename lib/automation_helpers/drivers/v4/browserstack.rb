@@ -25,9 +25,9 @@ module AutomationHelpers
         #   - :session_name (String)             -> The session name to be stored on browserstack servers
         #   - :browserstack_debug_mode (Boolean) -> Set this to true to run in browserstack debug mode (Note this runs slower!)
         #   - :config (String)                   -> This is an underscore separated key that distils the granular running information
-        #     i.e. Windows_7_86 means run on Windows Operating System, OS Version 7, Browser Version 86
+        #     i.e. Windows_7_115 means run on Windows Operating System, OS Version 7, Browser Version 115
         #     i.e. OSX_Mojave_12 means run on Mac Operating System, OS Version Mojave, Browser Version 12
-        #     i.e. Windows_10_92 means run on Windows Operating System, OS Version 10, Browser Version 92
+        #     i.e. Windows_10_113 means run on Windows Operating System, OS Version 10, Browser Version 113
         #   - :username (String)                 -> The username for Browserstack
         #   - :api_key (String)                  -> The api key for Browserstack
         # - **device_options** (optional)        - A Hash of all device specific options that can customise your device

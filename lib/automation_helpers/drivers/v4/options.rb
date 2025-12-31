@@ -6,8 +6,7 @@ module AutomationHelpers
   module Drivers
     module V4
       #
-      # The Options object that will be used to instantiate whatever driver you
-      # are configuring
+      # The Options object for the relevant browser whose driver you are configuring
       #
       # #### Initial setup options
       #
