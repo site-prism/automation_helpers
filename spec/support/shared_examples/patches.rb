@@ -4,6 +4,7 @@ RSpec.shared_examples 'a patch' do
   before do
     allow(patch).to receive_messages(deprecate?: deprecate?, prevent_usage?: prevent_usage?)
     allow(Kernel).to receive(:warn)
+    allow($stdout).to receive(:puts)
   end
 
   let(:deprecate?) { false }
