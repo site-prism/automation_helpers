@@ -2,6 +2,8 @@
 #### _Unreleased_
 **Breaking Changes**
 * Minimum ruby version is now `3.1`
+* Removed support for iOS versions below 14, and android versions below 10
+  * Corresponding bumps to appium versions used also made (Latest v1 usage for legacy systems, otherwise much more modern)
 
 **Removals**
 
