@@ -6,6 +6,7 @@
   * Corresponding bumps to appium versions used also made (Latest v1 usage for legacy systems, otherwise much more modern)
 
 **Removals**
+* Removed the `AutomationHelpers.logger` instance. Simplified all messages and output to `$stdout` by default
 
 **New**
 
