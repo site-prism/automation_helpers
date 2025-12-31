@@ -31,8 +31,8 @@ module AutomationHelpers
         DESCRIPTION
       end
 
-      def deprecation_notice_date
-        Time.new(2025, 12, 3)
+      def deprecate?
+        true
       end
 
       def prevent_usage_date
