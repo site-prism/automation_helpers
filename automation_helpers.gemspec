@@ -31,8 +31,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'cucumber', '> 7.0', '< 11'
   spec.add_development_dependency 'faraday', '~> 2.8'
   spec.add_development_dependency 'rspec', '~> 3.12'
-  spec.add_development_dependency 'rubocop', '~> 1.78.0'
+  spec.add_development_dependency 'rubocop', '~> 1.81.0'
   spec.add_development_dependency 'rubocop-performance', '~> 1.26.1'
-  spec.add_development_dependency 'rubocop-rspec', '~> 3.7.0'
+  spec.add_development_dependency 'rubocop-rspec', '~> 3.8.0'
   spec.add_development_dependency 'selenium-webdriver', '~> 4.18'
 end
