@@ -17,10 +17,4 @@ end
 RSpec.configure do |config|
   config.include SpecSupport::Browser
   config.include SpecSupport::Console
-
-  def wipe_logger!
-    return unless AutomationHelpers.instance_variable_get(:@logger)
-
-    AutomationHelpers.remove_instance_variable(:@logger)
-  end
 end
