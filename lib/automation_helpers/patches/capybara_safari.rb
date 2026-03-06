@@ -19,6 +19,14 @@ module AutomationHelpers
       def perform
         ::Capybara::Node::Element.prepend SafariTextPatch
       end
+
+      def deprecate
+        true
+      end
+
+      def prevent_usage_date
+        Time.new(2027, 3, 30)
+      end
     end
 
     #
