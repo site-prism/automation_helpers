@@ -61,8 +61,7 @@ module AutomationHelpers
               'browserName' => 'internet explorer',
               'bstack:options' => {
                 'ie' => {
-                  # This is a minor hack until the IEDriver catches up and releases a V4 compliant copy
-                  # It is confirmed to be compliant with V4 selenium jars e.t.c.
+                  # This appears to be the last maintained version and we will remove IE support in V8 of helpers
                   'driver' => '4.16.0.0',
                   'arch' => 'x32'
                 }
