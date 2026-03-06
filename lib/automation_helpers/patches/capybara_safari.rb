@@ -5,7 +5,7 @@ module AutomationHelpers
     #
     # Fix the issue where the `#text` method doesn't normalize whitespace (Only the matchers do)
     #
-    class Capybara < Base
+    class CapybaraSafari < Base
       private
 
       def description
