@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe AutomationHelpers::Patches::SeleniumLogger do
+RSpec.describe AutomationHelpers::Patches::CapybaraSafari do
   it_behaves_like 'a patch' do
     subject(:patch) { described_class.new }
   end

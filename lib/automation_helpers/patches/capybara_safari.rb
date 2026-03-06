@@ -5,7 +5,7 @@ module AutomationHelpers
     #
     # Fix the issue where the `#text` method doesn't normalize whitespace (Only the matchers do)
     #
-    class Capybara < Base
+    class CapybaraSafari < Base
       private
 
       def description
@@ -18,6 +18,14 @@ module AutomationHelpers
 
       def perform
         ::Capybara::Node::Element.prepend SafariTextPatch
+      end
+
+      def deprecate?
+        true
+      end
+
+      def prevent_usage_date
+        Time.new(2027, 3, 30)
       end
     end
 
