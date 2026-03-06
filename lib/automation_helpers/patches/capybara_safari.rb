@@ -20,7 +20,7 @@ module AutomationHelpers
         ::Capybara::Node::Element.prepend SafariTextPatch
       end
 
-      def deprecate
+      def deprecate?
         true
       end
 
