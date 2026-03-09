@@ -1,5 +1,21 @@
 ## <sub>main</sub>
 #### _Unreleased_
+
+**Breaking Changes**
+
+**Removals**
+
+**New**
+
+**Changes**
+
+**Updates**
+
+**Bugfixes**
+
+## <sub>v7.0</sub>
+#### _Mar. 6, 2026_
+
 **Breaking Changes**
 * Minimum ruby version is now `3.3`
 * The `AutomationHelpers::Patches::Capybara` has been renamed to `AutomationHelpers::Patches::CapybaraSafariText` to be more descriptive of its purpose, and to allow for future Capybara patches to be added without confusion
