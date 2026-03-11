@@ -6,8 +6,14 @@
 **Removals**
 
 **New**
+* A new `AutomationHelpers::Patches::HTTPCookie` patch has been added to fix an issue where datetime casting wasn't possible
+* Added new HTTPCookie extensions
+  * `HTTP::Cookie` now has a hashified response (`#to_h`), that responds with an object similar to a selenium cookie
+  * `HTTP::CookieJar` now has a `#include?` method that returns whether a cookie is present in the jar
+  * `HTTP::CookieJar` now has a `#cookie_named` method that requires a name and returns the cookie accordingly named in the jar
 
 **Changes**
+* Added caveat note for CapybaraWindow patch, as it may cause issues with network interception
 
 **Updates**
 
@@ -22,19 +28,13 @@
   * This patch is still only for Safari, and the name change is purely for clarity
   * This patch is now marked as deprecated, and will be marked as prevented from use in 1 year
 
-**Removals**
-
 **New**
 * A new `AutomationHelpers::Patches::CapybaraWindow` patch has been added to fix an issue where the first opened `window`
 could not be closed due to a quirk in the way Capybara handles window handles. This patch ensures that all window handles are
 properly tracked and can be closed as expected
 
-**Changes**
-
 **Updates**
 * With the release of v7, all IE logic / code / behaviour is now in maintenance mode. It will all be removed in v8
-
-**Bugfixes**
 
 ## <sub>v6.0</sub>
 #### _Jan. 6, 2026_

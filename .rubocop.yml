@@ -13,7 +13,7 @@ AllCops:
     # Remove vendor files from being checked
     - vendor/**/*
 
-# This cop seems erroneous still
+# Stylistic preference for this repo
 Gemspec/DevelopmentDependencies:
   Enabled: false
 
@@ -21,7 +21,7 @@ Gemspec/DevelopmentDependencies:
 Gemspec/RequireMFA:
   Enabled: false
 
-# We have a linelength of 140 characters across the codebase/s
+# We have a line length of 140 characters across the codebase/s
 Layout/LineLength:
   Max: 140
   Exclude:
