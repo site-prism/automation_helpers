@@ -15,6 +15,8 @@ module AutomationHelpers
           This was introduced over a decade ago and given the propensity for new windows to be opened in the course of testing,
           this is a significant issue for users of Capybara and Selenium.
 
+          NB: WHEN USING THIS PATCH, NETWORK INTERCEPTION IS AFFECTED. DO NOT USE THIS PATCH IF YOU RELY ON NETWORK INTERCEPTION IN YOUR TESTS.
+
           See https://github.com/teamcapybara/capybara/issues/2834 for more details.
         DESCRIPTION
       end
