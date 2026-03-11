@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe AutomationHelpers::Patches::Capybara do
+RSpec.describe AutomationHelpers::Patches::CapybaraWindow do
   it_behaves_like 'a patch' do
     subject(:patch) { described_class.new }
   end

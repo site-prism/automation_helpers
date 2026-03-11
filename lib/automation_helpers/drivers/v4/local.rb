@@ -39,8 +39,7 @@ module AutomationHelpers
         private
 
         # This is required to make local drivers work with Safari TP
-        # This is required in V13+ of Safari as the driver there is notoriously flaky
-        # Safari V11/V12 is unsupported
+        # This is required for v13+ of Safari as the old(er), drivers are notoriously flaky
         def service
           return unless safari?
 

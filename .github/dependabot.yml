@@ -5,7 +5,7 @@ updates:
     schedule:
       interval: "daily"
     ignore:
-      # We don't pin most of our patched gems as plenty of people might need old(er) versions
+      # We don't pin most of our patched gems as people might need old(er) versions
       - dependency-name: "capybara"
       - dependency-name: "cucumber"
       - dependency-name: "selenium-webdriver"

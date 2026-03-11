@@ -16,7 +16,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
             'bstack:options' => {
               'deviceName' => 'SamsungGalaxyS20',
               'realMobile' => 'true',
-              'appiumVersion' => '1.21.0'
+              'appiumVersion' => '2.0.1'
             }
           }
         )
@@ -25,12 +25,12 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
 
     context 'with an invalid android version' do
       let(:browser) { :android }
-      let(:device_options) { { device_name: 'SamsungGalaxyS9', os_version: '8' } }
+      let(:device_options) { { device_name: 'SamsungGalaxyS10', os_version: '8' } }
 
       it 'complains that the android version is invalid' do
         expect { capabilities }
           .to raise_error(ArgumentError)
-          .with_message("Your Android Version is too low. Please don't use lower than Android Pie (9).")
+          .with_message("Your Android Version is too low. Please don't use lower than Android Quince (10).")
       end
     end
 
@@ -59,7 +59,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
             'browserName' => 'internet explorer',
             'bstack:options' => {
               'ie' => {
-                'driver' => '4.14.0.0',
+                'driver' => '4.16.0.0',
                 'arch' => 'x32'
               }
             }
@@ -70,15 +70,15 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
 
     context 'with a valid device / iOS version' do
       let(:browser) { :ios }
-      let(:device_options) { { device_name: 'iPhone13', os_version: '15' } }
+      let(:device_options) { { device_name: 'iPhone15', os_version: '15' } }
 
       it 'has correct iOS capabilities' do
         expect(capabilities).to eq(
           {
             'bstack:options' => {
-              'deviceName' => 'iPhone13',
+              'deviceName' => 'iPhone15',
               'realMobile' => 'true',
-              'appiumVersion' => '1.22.3'
+              'appiumVersion' => '2.4.1'
             }
           }
         )
@@ -87,12 +87,12 @@ RSpec.describe AutomationHelpers::Drivers::V4::Capabilities do
 
     context 'with an invalid iOS version' do
       let(:browser) { :ios }
-      let(:device_options) { { device_name: 'iPhone8', os_version: '11' } }
+      let(:device_options) { { device_name: 'iPhone10', os_version: '12' } }
 
       it 'complains that the iOS version is invalid' do
         expect { capabilities }
           .to raise_error(ArgumentError)
-          .with_message("Your iOS Version is too low. Please don't use lower than iOS 12.")
+          .with_message("Your iOS Version is too low. Please don't use lower than iOS 14.")
       end
     end
 
