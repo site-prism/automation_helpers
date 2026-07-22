@@ -19,7 +19,7 @@ module SpecSupport
     end
 
     def selenium_in_visible_viewport?(element)
-      driver.execute_script(viewport_visibility_js, element)
+      driver.execute_script("return #{viewport_visibility_js}", element)
     end
 
     def viewport_visibility_js
