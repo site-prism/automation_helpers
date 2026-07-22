@@ -6,6 +6,16 @@
 **Removals**
 
 **New**
+
+**Changes**
+
+**Updates**
+
+**Bugfixes**
+
+## <sub>v7.1</sub>
+#### _Jul. 22, 2026_
+**New**
 * A new `AutomationHelpers::Patches::HTTPCookie` patch has been added to fix an issue where datetime casting wasn't possible
 * Added new HTTPCookie extensions
   * `HTTP::Cookie` now has a hashified response (`#to_h`), that responds with an object similar to a selenium cookie
@@ -18,14 +28,11 @@
 * Added caveat note for `CapybaraWindow` patch, as it may cause issues with network interception
 * Raise the minimum selenium support from `4.18` to `4.22`
 
-**Updates**
-
 **Bugfixes**
 * Handle Selenium v4.45+ giving safari a slightly different name based on whether TP is used or not
 
 ## <sub>v7.0</sub>
 #### _Mar. 6, 2026_
-
 **Breaking Changes**
 * Minimum ruby version is now `3.3`
 * The `AutomationHelpers::Patches::Capybara` has been renamed to `AutomationHelpers::Patches::CapybaraSafariText` to be more descriptive of its purpose, and to allow for future Capybara patches to be added without confusion
