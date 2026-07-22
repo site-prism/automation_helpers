@@ -24,7 +24,11 @@ RSpec.describe AutomationHelpers::Drivers::V4::Options do
 
     context 'when the browser is safari' do
       let(:browser) { :safari }
-      let(:browser_name) { Selenium::WebDriver::Safari::Options::BROWSER }
+      let(:browser_name) { Selenium::WebDriver::Safari::Options.new.browser_name }
+
+      before do
+        Selenium::WebDriver::Safari.technology_preview!
+      end
 
       it { is_expected.to have_attributes({ browser_name: browser_name, automatic_inspection: true }) }
     end
