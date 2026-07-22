@@ -11,9 +11,11 @@
   * `HTTP::Cookie` now has a hashified response (`#to_h`), that responds with an object similar to a selenium cookie
   * `HTTP::CookieJar` now has a `#include?` method that returns whether a cookie is present in the jar
   * `HTTP::CookieJar` now has a `#cookie_named` method that requires a name and returns the cookie accordingly named in the jar
+* Added a new extension for `Capybara::Node::Element` / `Selenium::WebDriver::Element` to scroll an element into view
+  * This will always place it in the middle of the screen
 
 **Changes**
-* Added caveat note for CapybaraWindow patch, as it may cause issues with network interception
+* Added caveat note for `CapybaraWindow` patch, as it may cause issues with network interception
 
 **Updates**
 
