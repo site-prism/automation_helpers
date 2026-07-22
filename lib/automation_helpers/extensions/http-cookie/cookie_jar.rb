@@ -5,7 +5,7 @@ module HTTP
   # Additional useful methods to extend the HTTP::CookieJar class with
   #
   class CookieJar
-    # @return [HTTP::Cookie || Nil]
+    # @return [HTTP::Cookie, nil]
     #
     # The cookie that has the supplied name
     def cookie_named(name)
