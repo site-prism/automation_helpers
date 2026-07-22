@@ -72,6 +72,7 @@ RSpec.describe AutomationHelpers::Drivers::V4::Local do
       before do
         # Prevent OS complaining it doesn't know where safari is!
         allow(Selenium::WebDriver::Platform).to receive(:assert_executable)
+        options[:options].browser_name
       end
 
       let(:browser) { :safari }
