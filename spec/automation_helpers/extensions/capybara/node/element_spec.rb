@@ -21,6 +21,32 @@ describe Capybara::Node::Element do
     end
   end
 
+  describe '#scroll_into_view' do
+    let(:session) { visible_capybara_session }
+
+    before do
+      session.visit('/tall_page.html')
+    end
+
+    def random_element
+      session.find("#cell-#{rand(1..50)}-#{rand(1..3)}")
+    end
+
+    it 'returns the original element (to aid chaining)' do
+      element = random_element
+
+      expect(element.scroll_into_view).to eq(element)
+    end
+
+    it 'scrolls the element into the visible viewport' do
+      element = random_element
+      element.scroll_into_view
+      visible = capybara_in_visible_viewport?(element)
+
+      expect(visible).to be true
+    end
+  end
+
   describe '#stale?' do
     context 'when not stale' do
       it { is_expected.not_to be_stale }

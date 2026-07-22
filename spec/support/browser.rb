@@ -6,12 +6,16 @@ module SpecSupport
       Capybara::Session.new(type)
     end
 
+    def visible_capybara_session(type = :selenium_chrome)
+      Capybara::Session.new(type)
+    end
+
     def legacy_capybara?
       Gem::Version.new(Capybara::VERSION) < Gem::Version.new('3.40')
     end
 
     def capybara_in_visible_viewport?(element)
-      page.evaluate_script(viewport_visibility_js, element.native)
+      session.evaluate_script(viewport_visibility_js, element.native)
     end
 
     def selenium_in_visible_viewport?(element)
