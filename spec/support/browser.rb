@@ -15,7 +15,7 @@ module SpecSupport
     end
 
     def capybara_in_visible_viewport?(element)
-      session.evaluate_script(viewport_visibility_js, element.native)
+      element.session.evaluate_script(viewport_visibility_js, element.native)
     end
 
     def selenium_in_visible_viewport?(element)
