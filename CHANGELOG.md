@@ -16,6 +16,7 @@
 
 **Changes**
 * Added caveat note for `CapybaraWindow` patch, as it may cause issues with network interception
+* Raise the minimum selenium support from `4.18` to `4.22`
 
 **Updates**
 
