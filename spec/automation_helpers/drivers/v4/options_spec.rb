@@ -27,6 +27,8 @@ RSpec.describe AutomationHelpers::Drivers::V4::Options do
       let(:browser_name) { Selenium::WebDriver::Safari::Options.new.browser_name }
 
       before do
+        # Prevent OS complaining it doesn't know where safari is!
+        allow(Selenium::WebDriver::Platform).to receive(:assert_executable)
         Selenium::WebDriver::Safari.technology_preview!
       end
 
