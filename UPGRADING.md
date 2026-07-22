@@ -2,7 +2,7 @@
 
 ## Name
 
-The name of the gem changed from version 3.x to 4.x
+The name of the gem changed from version `3.x` to `4.x`
 
 As such you need to alter all your default namespaces from `CaTesting` to `AutomationHelpers`
 
@@ -28,7 +28,7 @@ AutomationHelpers::Patches::Capybara.new.patch!
 
 ## Selenium-Webdriver support
 
-Previously in 3.x we only supported the pre-release versions of selenium 4. We now support the full
+Previously in `3.x` we only supported the pre-release versions of selenium 4. We now support the full
 version 4 of selenium-webdriver (As well as the pre-release versions).
 
 Note as version 4 is still reasonably new, it's likely some interop issues may be observed. Watch this
@@ -39,13 +39,13 @@ space for any associated patches that may come out accordingly.
 The `ca_testing` logger
 
 ```ruby
-  CaTesting.logger.info('This is an informative message')
+CaTesting.logger.info('This is an informative message')
 ```
 
 now becomes ...
 
 ```ruby
-  AutomationHelpers.logger.info('This is an informative message')
+AutomationHelpers.logger.info('This is an informative message')
 ```
 
 In the same way as the other items did.

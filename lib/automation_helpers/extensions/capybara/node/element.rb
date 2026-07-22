@@ -20,6 +20,17 @@ module Capybara
         native.rect.y.to_i
       end
 
+      # @return [Capybara::Node::Element]
+      #
+      # Scrolls the element directly into view. Useful to mitigate vs stale element errors
+      def scroll_into_view
+        session.driver.browser.execute_script(
+          "arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});",
+          native
+        )
+        self
+      end
+
       # @return [Boolean]
       #
       # Whether the element is in a stale state or not
