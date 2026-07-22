@@ -4,6 +4,7 @@ describe Selenium::WebDriver::Element do
   describe '#scroll_into_view' do
     let(:options) do
       AutomationHelpers::Drivers::V4::Options.for(:chrome).tap do |opts|
+        opts.add_argument('--headless=new')
         opts.add_argument('--no-sandbox')
         opts.add_argument('--disable-dev-shm-usage')
       end
