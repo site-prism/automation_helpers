@@ -21,6 +21,7 @@
 **Updates**
 
 **Bugfixes**
+* Handle Selenium v4.45+ giving safari a slightly different name based on whether TP is used or not
 
 ## <sub>v7.0</sub>
 #### _Mar. 6, 2026_
