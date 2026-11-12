@@ -20,13 +20,9 @@ module Selenium
       def write_log_to_file(type, file = default_file_path)
         get(type) unless cached_logs.key?(type)
 
-        cached_logs[type].each do |log_entry|
-          if file == $stdout
-            file << log_entry
-          else
-            File.write(file, log_entry)
-          end
-        end
+        content = cached_logs[type].join("\n")
+
+        file == $stdout ? file << content : File.write(file, content)
       end
 
       private
