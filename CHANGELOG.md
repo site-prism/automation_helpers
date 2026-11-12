@@ -8,6 +8,7 @@
 **New**
 
 **Changes**
+* Add info about changes to the HTTP cookie patch and begin deprecation process
 
 **Updates**
 
