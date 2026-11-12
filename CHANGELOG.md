@@ -8,11 +8,15 @@
 **New**
 
 **Changes**
+* Add info about changes to the HTTP cookie patch and begin deprecation process
 
 **Updates**
 
 **Bugfixes**
 * `Selenium::WebDriver::Logs#write_log_to_file` now writes every log entry (One per line), instead of overwriting the file with each entry
+
+**Security**
+* Use SHA pinning for GHA pipelines
 
 ## <sub>v7.1</sub>
 #### _Jul. 22, 2026_
