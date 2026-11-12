@@ -29,7 +29,7 @@ module AutomationHelpers
       #
       def deprecate?
         if defined?(deprecation_notice_date)
-          Time.new >= deprecation_notice_date
+          Time.now >= deprecation_notice_date
         elsif defined?(deprecate_from)
           Gem::Version.new(gem_version) >= Gem::Version.new(deprecate_from)
         end
@@ -45,7 +45,7 @@ module AutomationHelpers
       #
       def prevent_usage?
         if defined?(prevent_usage_date)
-          Time.new >= prevent_usage_date
+          Time.now >= prevent_usage_date
         elsif defined?(prevent_usage_from)
           Gem::Version.new(gem_version) >= Gem::Version.new(prevent_usage_from)
         end
