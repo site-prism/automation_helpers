@@ -34,6 +34,15 @@ describe Selenium::WebDriver::Logs do
         expect(file.read).to eq(log_entry.to_s)
       end
 
+      it 'writes every log message to a filepath, one per line' do
+        other_entry = instance_double(Selenium::WebDriver::LogEntry, to_s: 'Other message')
+        allow(bridge).to receive(:log).with(type).and_return([log_entry, other_entry])
+
+        logs.write_log_to_file(type, file.path)
+
+        expect(file.read).to eq("#{log_entry}\n#{other_entry}")
+      end
+
       it 'writes the log messages to $stdout' do
         console_output = capture_stdout do
           logs.write_log_to_file(type, $stdout)

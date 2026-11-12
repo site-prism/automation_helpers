@@ -12,6 +12,7 @@
 **Updates**
 
 **Bugfixes**
+* `Selenium::WebDriver::Logs#write_log_to_file` now writes every log entry (One per line), instead of overwriting the file with each entry
 
 ## <sub>v7.1</sub>
 #### _Jul. 22, 2026_
