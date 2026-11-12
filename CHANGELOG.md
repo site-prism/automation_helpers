@@ -10,6 +10,9 @@
 **Changes**
 
 **Updates**
+* Bumped development dependencies
+  * `rubocop` to `~> 1.92.2`
+  * `rubocop-performance` to `~> 1.27.0`
 
 **Bugfixes**
 * `Selenium::WebDriver::Logs#write_log_to_file` now writes every log entry (One per line), instead of overwriting the file with each entry
