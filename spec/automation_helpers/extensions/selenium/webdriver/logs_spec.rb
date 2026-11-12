@@ -4,6 +4,7 @@ describe Selenium::WebDriver::Logs do
   # The Bridge is considered API Private, but we need to mock it!
   let(:bridge) { logs.instance_variable_get(:@bridge) }
   let(:log_entry) { instance_double(Selenium::WebDriver::LogEntry, to_s: 'Time - SEV - Browser or Driver Message') }
+  let(:other_entry) { instance_double(Selenium::WebDriver::LogEntry, to_s: 'Other message') }
   let(:logs) { capybara_session.driver.browser.logs }
 
   before do
@@ -35,7 +36,6 @@ describe Selenium::WebDriver::Logs do
       end
 
       it 'writes every log message to a filepath, one per line' do
-        other_entry = instance_double(Selenium::WebDriver::LogEntry, to_s: 'Other message')
         allow(bridge).to receive(:log).with(type).and_return([log_entry, other_entry])
 
         logs.write_log_to_file(type, file.path)
