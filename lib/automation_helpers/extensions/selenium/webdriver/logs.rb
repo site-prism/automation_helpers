@@ -20,7 +20,7 @@ module Selenium
       def write_log_to_file(type, file = default_file_path)
         get(type) unless cached_logs.key?(type)
 
-        content = cached_logs[type].map(&:to_s).join("\n")
+        content = cached_logs[type].join("\n")
 
         file == $stdout ? file << content : File.write(file, content)
       end
