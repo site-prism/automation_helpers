@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 module AutomationHelpers
-  VERSION = '7.1'
+  VERSION = '7.1.1'
 end

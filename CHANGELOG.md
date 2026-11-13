@@ -8,6 +8,16 @@
 **New**
 
 **Changes**
+
+**Updates**
+
+**Bugfixes**
+
+**Security**
+
+## <sub>v7.1.1</sub>
+#### _Nov. 13, 2026_
+**Changes**
 * Add info about changes to the HTTP cookie patch and begin deprecation process
 
 **Updates**
