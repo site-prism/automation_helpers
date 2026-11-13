@@ -15,14 +15,17 @@ module Selenium
 
       # @return [Integer]
       #
-      # Write the logs to a filepath (If provided), or default file path (Configured). Returns the filesize
-      # as per the regular Ruby Filesystem method
+      # Write the logs to a filepath (If provided), or default file path (Configured). If the file already
+      # has content, the logs are appended on a new line rather than overwriting it. Returns the number of
+      # bytes written as per the regular Ruby Filesystem method
       def write_log_to_file(type, file = default_file_path)
         get(type) unless cached_logs.key?(type)
 
         content = cached_logs[type].join("\n")
+        return file << content if file == $stdout
 
-        file == $stdout ? file << content : File.write(file, content)
+        content = "\n#{content}" if File.size?(file)
+        File.write(file, content, mode: 'a')
       end
 
       private

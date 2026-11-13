@@ -8,6 +8,7 @@
 **New**
 
 **Changes**
+* `Selenium::WebDriver::Logs#write_log_to_file` now appends to a file that already has content (On a new line), rather than overwriting it
 
 **Updates**
 
