@@ -9,7 +9,6 @@ describe Selenium::WebDriver::Logs do
 
   before do
     allow(bridge).to receive(:log).with(type).and_return([log_entry])
-    allow(logs).to receive(:cached_logs).and_call_original
   end
 
   context 'when logging browser messages' do
@@ -34,11 +33,13 @@ describe Selenium::WebDriver::Logs do
       end
 
       it 'creates the file when it does not exist' do
-        path = File.join(Dir.mktmpdir, 'new_log.txt')
+        Dir.mktmpdir do |dir|
+          path = File.join(dir, 'new_log.txt')
 
-        logs.write_log_to_file(type, path)
+          logs.write_log_to_file(type, path)
 
-        expect(File.read(path)).to eq(log_entry.to_s)
+          expect(File.read(path)).to eq(log_entry.to_s)
+        end
       end
 
       it 'appends the log messages to a file that already has content' do
@@ -99,11 +100,13 @@ describe Selenium::WebDriver::Logs do
       end
 
       it 'creates the file when it does not exist' do
-        path = File.join(Dir.mktmpdir, 'new_log.txt')
+        Dir.mktmpdir do |dir|
+          path = File.join(dir, 'new_log.txt')
 
-        logs.write_log_to_file(type, path)
+          logs.write_log_to_file(type, path)
 
-        expect(File.read(path)).to eq(log_entry.to_s)
+          expect(File.read(path)).to eq(log_entry.to_s)
+        end
       end
 
       it 'appends the log messages to a file that already has content' do
@@ -112,6 +115,14 @@ describe Selenium::WebDriver::Logs do
         logs.write_log_to_file(type, file.path)
 
         expect(file.read).to eq("Existing line\n#{log_entry}")
+      end
+
+      it 'writes every log message to a filepath, one per line' do
+        allow(bridge).to receive(:log).with(type).and_return([log_entry, log_entry])
+
+        logs.write_log_to_file(type, file.path)
+
+        expect(file.read).to eq("#{log_entry}\n#{log_entry}")
       end
 
       it 'writes the log messages to $stdout' do
