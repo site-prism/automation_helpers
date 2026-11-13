@@ -6,8 +6,12 @@
 **Removals**
 
 **New**
+* Added `Selenium::WebDriver::Logs#write_all_logs_to_file` to write the Browser and Driver logs (Or the `types:` requested) to one destination in a single call
 
 **Changes**
+* `Selenium::WebDriver::Logs#get` now accumulates logs across calls, rather than overwriting the previously stored logs
+* `Selenium::WebDriver::Logs#write_log_to_file` now always fetches outstanding logs, writes everything accumulated, then clears it (Logs are never written twice). Nothing is written when there are no logs
+* `Selenium::WebDriver::Logs#write_log_to_file` now appends to a file that already has content (On a new line), rather than overwriting it
 
 **Updates**
 
